@@ -4,50 +4,30 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AJAX - Example 01</title>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .container {
-            max-width: 350px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-	</style>
+	<title>Учёт расходов</title>
+	<link rel="stylesheet" type="text/css" href="styles/css/style.css">
+	<script src="js/app.js"></script>
+<!--	<script src="js/get_create_table_ajax.js"></script>-->
+<!--	<script defer src="js/get_delete_table_ajax.js"></script>-->
 </head>
 
 <body>
 
 <div class="container">
+	<div>
+		<button type="button" id="get" onclick="getData()">Добавить таблицу в базу</button>
+		<div id="result"></div>
+<!--		<script src="js/get_create_table_ajax.js"></script>-->
+	</div>
 
-	<button type="button" id="get">Получить текст с сервера</button>
-	<div id="result"></div>
-
+	<div>
+		<button type="button" id="get-delete" onclick="getDataAboutDeletingTable()">Удалить таблицу с базы</button>
+		<div id="result-delete"></div>
+<!--		<script src="js/get_delete_table_ajax.js"></script>-->
+	</div>
 </div>
-
-<script>
-	function getData() {
-		// URL на который будем отправлять GET запрос
-		const requestURL = '/php/create-table.php';
-		const xhr = new XMLHttpRequest();
-		xhr.open('GET', requestURL);
-		xhr.onload = () => {
-			if (xhr.status !== 200) {
-				return;
-			}
-			document.querySelector('#result').innerHTML = xhr.response;
-		}
-		xhr.send();
-	}
-	// при нажатию на кнопку
-	document.querySelector('#get').addEventListener('click', () => {
-		getData();
-	});
-</script>
-
+<!--<script src="js/get_delete_table_ajax.js"></script>-->
+<!--<script defer src="js/get_create_table_ajax.js"></script>-->
 </body>
 
 </html>

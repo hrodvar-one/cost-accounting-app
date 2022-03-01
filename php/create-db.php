@@ -1,8 +1,8 @@
 <?php
 //подключение к файлу базы данных
-$db = new SQLite3('../db/my.db');
+$db = new SQLite3('../db/app_db.db');
 //Закрываем соединение с базой.
 $db->close();
-//Саму базу данных уже создавать не нужно, так как my.db и есть база
-//if ($db->exec("CREATE DATABASE my.db"))
+//Саму базу данных уже создавать не нужно, так как app_db.db и есть база
+//if ($db->exec("CREATE DATABASE app_db.db"))
 //    echo "База данных создана<br>";

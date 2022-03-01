@@ -1,5 +1,8 @@
 # IDE
 .idea
 
+# SCSS
+styles/css/style.css.map
+
 # NODE.JS
 /node_modules
