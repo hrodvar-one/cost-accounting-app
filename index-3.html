@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AJAX - Example 01</title>
+	<title>AJAX - Example 02</title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<style>
         body {
@@ -23,22 +23,30 @@
 
 <div class="container">
 
-	<button type="button" id="get">Получить текст с сервера</button>
-	<div id="result"></div>
+	<input type="number" id="nums" min="1" max="8" value="3">
+	<button type="button" id="get">Получить список</button>
+	<ul id="list"></ul>
 
 </div>
 
 <script>
 	function getData() {
+		const nums = parseInt(document.querySelector('#nums').value);
 		// URL на который будем отправлять GET запрос
-		const requestURL = '/php/create-table.php';
+		const requestURL = `/examples/ajax/01.php?nums=${nums}`;
+		// const requestURL = `/examples/ajax/01.php`;
 		const xhr = new XMLHttpRequest();
 		xhr.open('GET', requestURL);
-		xhr.onload = () => {
+		xhr.onload = function () {
 			if (xhr.status !== 200) {
 				return;
 			}
-			document.querySelector('#result').innerHTML = xhr.response;
+			const response = JSON.parse(xhr.response);
+			let html = [];
+			for (let i = 0, length = response.length; i < length; i++) {
+				html.push(`<li>${response[i]}</li>`);
+			}
+			document.querySelector('#list').innerHTML = html.join('');
 		}
 		xhr.send();
 	}
