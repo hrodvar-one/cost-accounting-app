@@ -1,15 +1,32 @@
+// нормализация стилей
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// стили для input
+.table-name_input {
+  padding-left: 8px;
+  //font-family: inherit;
+  color: #212529;
+  background-color: #e0dfdf;
+  background-clip: padding-box;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 body {
   background-color: darkslategray;
-  //background: aquamarine;
-  //background-color: green;
 
   .container {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    margin: auto;
+    display: block;
+    //height: 500px;
     background-color: gray;
 
     .work-with-sqlite {
-      height: 200px;
+      height: 100px;
       background-color: chocolate;
 
       .panel-create-table {
@@ -22,6 +39,21 @@ body {
         height: 50px;
         background-color: #3a3afd;
         border: 3px solid black;
+      }
+    }
+
+    .shopping-panel {
+      //height: 100px;
+      background-color: chocolate;
+
+      .shopping-input-panel {
+        //height: 50px;
+        background-color: #c90303;
+        border: 3px solid black;
+
+        .buy-list-form {
+          margin: 10px;
+        }
       }
     }
   }

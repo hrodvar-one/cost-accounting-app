@@ -1,13 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.table-name_input {
+  padding-left: 8px;
+  color: #212529;
+  background-color: #e0dfdf;
+  background-clip: padding-box;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 body {
   background-color: darkslategray;
 }
 body .container {
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  margin: auto;
+  display: block;
   background-color: gray;
 }
 body .container .work-with-sqlite {
-  height: 200px;
+  height: 100px;
   background-color: chocolate;
 }
 body .container .work-with-sqlite .panel-create-table {
@@ -19,6 +34,16 @@ body .container .work-with-sqlite .panel-delete-table {
   height: 50px;
   background-color: #3a3afd;
   border: 3px solid black;
+}
+body .container .shopping-panel {
+  background-color: chocolate;
+}
+body .container .shopping-panel .shopping-input-panel {
+  background-color: #c90303;
+  border: 3px solid black;
+}
+body .container .shopping-panel .shopping-input-panel .buy-list-form {
+  margin: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

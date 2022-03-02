@@ -17,68 +17,42 @@
 	<div class="work-with-sqlite">
 		<div class="panel-create-table">
 			<form name="table" action="/php/create-table.php" method="post">
-				<label for="table-name">Название таблицы:</label><input type="text" name="table-name" id="table-name">
+				<label for="table-name">Название таблицы:</label>
+				<input type="text" class="table-name_input" name="table-name" id="table-name">
 				<button type="submit">Создать таблицу</button>
 			</form>
 			<div id="result"></div>
 		</div>
 		<div class="panel-delete-table">
 			<form name="delete-table" action="/php/delete-table.php" method="post">
-				<label for="table-name-delete">Название таблицы:</label><input type="text" name="table-name-delete" id="table-name-delete">
+				<label for="table-name-delete">Название таблицы:</label>
+				<input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">
 				<button type="submit">Удалить таблицу</button>
 			</form>
 			<div id="result-delete"></div>
 		</div>
-
-<!--		<div>-->
-<!--			<button type="button" id="get-delete" onclick="getDataAboutDeletingTable()">Удалить таблицу с базы</button>-->
-<!--			<div id="result-delete"></div>-->
-<!--		</div>-->
+	</div>
+	<br>
+	<div class="shopping-panel">
+		<div class="shopping-input-panel">
+			<form name="buy-list-form" class="buy-list-form" action="" method="post">
+				<label for="date">Дата:</label><input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">
+				<br>
+				<label for="title">Название:</label><input type="text" class="table-name_input" name="firstname" id="firstname">
+				<br>
+				<label for="price">Цена:</label><input type="text" class="table-name_input" name="lastname" id="lastname">
+				<br>
+				<button type="submit">Добавить покупку</button>
+			</form>
+			<div id="result-add-purchase"></div>
+		</div>
+		<div>
+			<button></button>
+			<button></button>
+			<button></button>
+		</div>
 	</div>
 
-	<br>
-<!--	<form name="user" action="/examples/ajax/02.php" method="post">-->
-<!--		<label for="firstname">Имя:</label><input type="text" name="firstname" id="firstname">-->
-<!--		<label for="lastname">Фамилия:</label><input type="text" name="lastname" id="lastname">-->
-<!--		<button type="submit">Отправить</button>-->
-<!--	</form>-->
-<!--	<div class="result-wrapper">-->
-<!--		Полученные данные:-->
-<!--		<ul id="result-table">...</ul>-->
-<!--	</div>-->
-
-<!--	<script>-->
-<!--		const elForm = document.querySelector('[name="user"]');-->
-<!--		const elFirstname = elForm.querySelector('[name="firstname"]');-->
-<!--		const elLastname = elForm.querySelector('[name="lastname"]');-->
-<!--		const elResult = document.querySelector('#result-table');-->
-<!--		const requestURL = elForm.action;-->
-<!---->
-<!--		function sendForm() {-->
-<!--			const firstname = encodeURIComponent(elFirstname.value);-->
-<!--			const lastname = encodeURIComponent(elLastname.value);-->
-<!--			const formData = 'firstname=' + firstname + '&lastname=' + lastname;-->
-<!--			const xhr = new XMLHttpRequest();-->
-<!--			xhr.open('POST', requestURL);-->
-<!--			xhr.responseType = 'json';-->
-<!--			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');-->
-<!--			xhr.onload = () => {-->
-<!--				if (xhr.status !== 200) {-->
-<!--					return;-->
-<!--				}-->
-<!--				const response = xhr.response;-->
-<!--				elResult.innerHTML = `<ul><li>Имя: <b>${response.firstname}</b></li><li>Фамилия: <b>${response.lastname}</b></li></ul>`;-->
-<!--			}-->
-<!--			xhr.send(formData);-->
-<!--			elResult.textContent = '...';-->
-<!--		}-->
-<!---->
-<!--		// при отправке формы-->
-<!--		elForm.addEventListener('submit', (e) => {-->
-<!--			e.preventDefault();-->
-<!--			sendForm();-->
-<!--		});-->
-<!--	</script>-->
 </div>
 <script src="js/app.js"></script>
 </body>

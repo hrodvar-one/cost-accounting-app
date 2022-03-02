@@ -47,6 +47,7 @@ elForm.addEventListener('submit', (e) => {
 	sendForm();
 });
 
+// ---------------------------------------
 // Список констант для формы удаления таблицы
 const elFormDelete = document.querySelector('[name="delete-table"]');
 const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
@@ -76,6 +77,44 @@ function sendFormDelete() {
 elFormDelete.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormDelete();
+});
+
+// ---------------------------------------
+// Список констант для формы удаления таблицы
+const elBuyListForm = document.querySelector('[name="buy-list-form"]');
+const elDate = document.querySelector('[name="date"]');
+const elTitle = document.querySelector('[name="title"]');
+const elPrice = document.querySelector('[name="price"]');
+const elResultAddPurchase = document.querySelector('#result-add-purchase');
+const requestURLBuyListForm = elBuyListForm.action;
+
+//  тут редактировать
+function sendFormAddBuyList() {
+	const date = encodeURIComponent(elDate.value);
+	const title = encodeURIComponent(elTitle.value);
+	const price = encodeURIComponent(elPrice.value);
+	const formData = 'date=' + date + '&title=' + title + '&price=' + price;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', requestURLBuyListForm);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		// const response = xhr.response;
+		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+	}
+	xhr.send(formData);
+	elResultAddPurchase.textContent = 'Расходы добавлены';
+}
+
+// запуск функции отправки запроса на добавление
+// расходов в соответствующие колонки
+// в таблице базы данных
+elBuyListForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormAddBuyList();
 });
 
 // ---------------------------------------
