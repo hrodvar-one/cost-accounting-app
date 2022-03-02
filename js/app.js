@@ -47,18 +47,18 @@ function sendForm() {
 		if (xhr.status !== 200) {
 			return;
 		}
-		const response = xhr.response;
-		elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+		// const response = xhr.response;
+		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
-	elResult.textContent = '...';
+	elResult.textContent = 'Таблица создана';
 }
 
-// // при отправке формы
-// elForm.addEventListener('submit', (e) => {
-// 	e.preventDefault();
-// 	sendForm();
-// });
+// при отправке формы
+elForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendForm();
+});
 
 // Функция отправки запроса к php скрипту
 // который удаляет таблицу в базе данных
