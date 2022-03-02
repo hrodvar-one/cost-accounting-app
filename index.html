@@ -18,21 +18,22 @@
 		<div class="panel-create-table">
 			<form name="table" action="/php/create-table.php" method="post">
 				<label for="table-name">Название таблицы:</label><input type="text" name="table-name" id="table-name">
-<!--				<button type="submit" onclick="sendForm()">Создать таблицу</button>-->
 				<button type="submit">Создать таблицу</button>
 			</form>
-			<div id="result">
-
-			</div>
-<!--			<input type="text" maxlength="10" id="input-name-table" value="">-->
-<!--			<button type="button" id="get" onclick="getData()">Добавить таблицу в базу</button>-->
-<!--			<div id="result"></div>-->
+			<div id="result"></div>
 		</div>
-
-		<div>
-			<button type="button" id="get-delete" onclick="getDataAboutDeletingTable()">Удалить таблицу с базы</button>
+		<div class="panel-delete-table">
+			<form name="delete-table" action="/php/delete-table.php" method="post">
+				<label for="table-name-delete">Название таблицы:</label><input type="text" name="table-name-delete" id="table-name-delete">
+				<button type="submit">Удалить таблицу</button>
+			</form>
 			<div id="result-delete"></div>
 		</div>
+
+<!--		<div>-->
+<!--			<button type="button" id="get-delete" onclick="getDataAboutDeletingTable()">Удалить таблицу с базы</button>-->
+<!--			<div id="result-delete"></div>-->
+<!--		</div>-->
 	</div>
 
 	<br>

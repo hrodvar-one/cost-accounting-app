@@ -11,8 +11,13 @@ body .container .work-with-sqlite {
   background-color: chocolate;
 }
 body .container .work-with-sqlite .panel-create-table {
-  height: 100px;
+  height: 50px;
   background-color: forestgreen;
+  border: 3px solid black;
+}
+body .container .work-with-sqlite .panel-delete-table {
+  height: 50px;
+  background-color: #3a3afd;
   border: 3px solid black;
 }
 
