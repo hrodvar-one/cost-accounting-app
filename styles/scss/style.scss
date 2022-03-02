@@ -2,4 +2,21 @@ body {
   background-color: darkslategray;
   //background: aquamarine;
   //background-color: green;
+
+  .container {
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+
+    .work-with-sqlite {
+      height: 200px;
+      background-color: chocolate;
+
+      .panel-create-table {
+        height: 100px;
+        background-color: forestgreen;
+        border: 3px solid black;
+      }
+    }
+  }
 }

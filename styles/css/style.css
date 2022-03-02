@@ -1,5 +1,19 @@
 body {
   background-color: darkslategray;
 }
+body .container {
+  width: 500px;
+  height: 500px;
+  background-color: gray;
+}
+body .container .work-with-sqlite {
+  height: 200px;
+  background-color: chocolate;
+}
+body .container .work-with-sqlite .panel-create-table {
+  height: 100px;
+  background-color: forestgreen;
+  border: 3px solid black;
+}
 
 /*# sourceMappingURL=style.css.map */
