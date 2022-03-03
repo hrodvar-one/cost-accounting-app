@@ -14,6 +14,23 @@ function getData() {
 	xhr.send();
 }
 
+// ---------------------------------------
+// Функция отправки запроса к php скрипту
+// который удаляет таблицу в базе данных
+function getDataAboutDeletingTable() {
+	// URL на который будем отправлять GET запрос
+	const requestURL = '/php/delete-table.php';
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', requestURL);
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		document.querySelector('#result-delete').innerHTML = xhr.response;
+	}
+	xhr.send();
+}
+
 // -------------------------------------------
 // Список констант для формы создания таблицы
 const elForm = document.querySelector('[name="table"]');
@@ -47,7 +64,8 @@ elForm.addEventListener('submit', (e) => {
 	sendForm();
 });
 
-// ---------------------------------------
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Список констант для формы удаления таблицы
 const elFormDelete = document.querySelector('[name="delete-table"]');
 const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
@@ -78,8 +96,10 @@ elFormDelete.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormDelete();
 });
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// ---------------------------------------
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Список констант для формы удаления таблицы
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
 const elDate = document.querySelector('[name="date"]');
@@ -88,7 +108,8 @@ const elPrice = document.querySelector('[name="price"]');
 const elResultAddPurchase = document.querySelector('#result-add-purchase');
 const requestURLBuyListForm = elBuyListForm.action;
 
-//  тут редактировать
+// Функция передачи значений формы Панели покупок
+// через Ajax запрос в php скрипт
 function sendFormAddBuyList() {
 	const date = encodeURIComponent(elDate.value);
 	const title = encodeURIComponent(elTitle.value);
@@ -116,20 +137,39 @@ elBuyListForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormAddBuyList();
 });
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// ---------------------------------------
-// Функция отправки запроса к php скрипту
-// который удаляет таблицу в базе данных
-function getDataAboutDeletingTable() {
-	// URL на который будем отправлять GET запрос
-	const requestURL = '/php/delete-table.php';
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// скрипт вывода суммы за продукты за определённый
+// месяц
+const elFormStat = document.querySelector('[name="statistics-per-month-form"]');
+const elMonth = document.querySelector('[name="month"]');
+const elResultStatistics = document.querySelector('#result-statistics');
+const requestURLsummPrice = elFormStat.action;
+
+function sendFormSummPrice() {
+	const month = encodeURIComponent(elMonth.value);
+	const formData = 'month=' + month;
 	const xhr = new XMLHttpRequest();
-	xhr.open('GET', requestURL);
+	xhr.open('POST', requestURLsummPrice);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.onload = () => {
 		if (xhr.status !== 200) {
 			return;
 		}
-		document.querySelector('#result-delete').innerHTML = xhr.response;
+		const response = xhr.response;
+		elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.price_all}</b></li></ul>`;
 	}
-	xhr.send();
+	xhr.send(formData);
+	elResultStatistics.textContent = 'Общая сумма выведена';
 }
+
+// ----------------------------------
+// запуск функции отправки запроса на создание таблицы
+// в базе данных при отправке формы
+elFormStat.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormSummPrice();
+});

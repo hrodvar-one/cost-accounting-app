@@ -11,7 +11,7 @@
   background-color: #e0dfdf;
   background-clip: padding-box;
   border: 1px solid black;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -52,6 +52,18 @@ body {
         border: 3px solid black;
 
         .buy-list-form {
+          margin: 10px;
+        }
+      }
+    }
+
+    .statistics-panel {
+      background-color: orangered;
+
+      .amount-per-month-output {
+        border: 3px solid black;
+
+        .statistics-per-month-form {
           margin: 10px;
         }
       }

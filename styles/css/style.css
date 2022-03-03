@@ -8,7 +8,7 @@
   background-color: #e0dfdf;
   background-clip: padding-box;
   border: 1px solid black;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -43,6 +43,15 @@ body .container .shopping-panel .shopping-input-panel {
   border: 3px solid black;
 }
 body .container .shopping-panel .shopping-input-panel .buy-list-form {
+  margin: 10px;
+}
+body .container .statistics-panel {
+  background-color: orangered;
+}
+body .container .statistics-panel .amount-per-month-output {
+  border: 3px solid black;
+}
+body .container .statistics-panel .amount-per-month-output .statistics-per-month-form {
   margin: 10px;
 }
 
