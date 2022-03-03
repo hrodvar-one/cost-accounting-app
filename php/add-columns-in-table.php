@@ -7,12 +7,11 @@
 $db = new SQLite3('../db/app_db.db');
 
 //Создаем таблицу пользователей
-if ($db->exec("CREATE TABLE IF NOT EXISTS '$table_name'
+if ($db->exec("CREATE TABLE IF NOT EXISTS 'buy_list'
                ('id' INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , 
-               'name' VARCHAR(20), 
-               'age' INT(3), 
-               'city' VARCHAR(50))"))
-//	echo "Таблица пользователей создана<br>";
+               'date' INTEGER, 
+               'title' VARCHAR(20), 
+               'price' INTEGER(10))"))
 
 //Закрываем соединение с базой.
 	$db->close();
