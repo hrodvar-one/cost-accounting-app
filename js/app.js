@@ -160,7 +160,7 @@ function sendFormSummPrice() {
 			return;
 		}
 		const response = xhr.response;
-		elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.price_all}</b></li></ul>`;
+		elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.summ_price}</b></li></ul>`;
 	}
 	xhr.send(formData);
 	elResultStatistics.textContent = 'Общая сумма выведена';

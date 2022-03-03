@@ -16,11 +16,14 @@ $price_all = $db->query("SELECT SUM(price)
 				FROM buy_list
 				WHERE date = '$date'");
 
-//echo ($price_all);
+$row = $price_all->fetchArray();
+
+$summ_price = $row[0];
+//print_r($row[0]);
 
 // закрываем соединение с базой данных
 $db->close();
 
 // сформируем ответ
-$output = ['price_all' => $price_all];
+$output = ['summ_price' => $summ_price];
 exit(json_encode($output));
