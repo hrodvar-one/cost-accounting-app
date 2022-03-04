@@ -103,6 +103,7 @@ elFormDelete.addEventListener('submit', (e) => {
 // Список констант для формы удаления таблицы
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
 const elDate = document.querySelector('[name="date"]');
+const elCategory = document.querySelector('[name="category"]');
 const elTitle = document.querySelector('[name="title"]');
 const elPrice = document.querySelector('[name="price"]');
 const elResultAddPurchase = document.querySelector('#result-add-purchase');
@@ -112,9 +113,10 @@ const requestURLBuyListForm = elBuyListForm.action;
 // через Ajax запрос в php скрипт
 function sendFormAddBuyList() {
 	const date = encodeURIComponent(elDate.value);
+	const category = encodeURIComponent(elCategory.value);
 	const title = encodeURIComponent(elTitle.value);
 	const price = encodeURIComponent(elPrice.value);
-	const formData = 'date=' + date + '&title=' + title + '&price=' + price;
+	const formData = 'date=' + date + '&category=' + category + '&title=' + title + '&price=' + price;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURLBuyListForm);
 	xhr.responseType = 'json';

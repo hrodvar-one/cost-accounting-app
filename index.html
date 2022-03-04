@@ -37,19 +37,20 @@
 		<div class="shopping-input-panel">
 			<h3>Панель покупок</h3>
 			<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
-				<label for="date">Дата:</label><input type="text" class="table-name_input" name="date" id="date">
+				<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
 				<br>
 <!--				<label for="category">Категория товара:</label><input type="text" class="table-name_input" name="category" id="category">-->
-				<label for="">Категория:</label>
-				<select class="table-name_input">
+				<label for="category">Категория:</label>
+				<select class="table-name_input" id="category" name="category">
 					<option value="ЕДА">ЕДА</option>
 					<option value="ЛЕКАРСТВА">ЛЕКАРСТВА</option>
 					<option value="ЖКХ">ЖКХ</option>
 					<option value="ТРАНСПОРТ">ТРАНСПОРТ</option>
-					<option value="БЫТОВАЯ ТЕХНИКА">БЫТОВАЯ ТЕХНИКА</option>
-					<option value="ИНТЕРНЕТ">ИНТЕРНЕТ</option>
+					<option value="ИНТЕРНЕТ ТВ">ИНТЕРНЕТ ТВ</option>
 					<option value="МОБИЛЬНАЯ СВЯЗЬ">МОБИЛЬНАЯ СВЯЗЬ</option>
 					<option value="ХОСТИНГ">ХОСТИНГ</option>
+					<option value="КРЕДИТ">КРЕДИТ</option>
+					<option value="ОЗОН И ТЕХНИКА">ОЗОН И ТЕХНИКА</option>
 				</select>
 				<br>
 				<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
@@ -66,7 +67,7 @@
 		<div class="amount-per-month-output">
 			<h3>Панель статистики</h3>
 			<form name="statistics-per-month-form" class="statistics-per-month-form" action="/php/request-amount-for-month.php" method="post">
-				<label for="month">Введите месяц:</label><input type="text" class="table-name_input" name="month" id="month">
+				<label for="month">Введите месяц:</label><input type="month" class="table-name_input" name="month" id="month">
 				<br>
 				<button type="submit">Вывести сумму</button>
 			</form>

@@ -14,7 +14,7 @@ $db = new SQLite3('../db/app_db.db');
 // Запрос суммы значений столбца price за нужную дату
 $price_all = $db->query("SELECT SUM(price)
 				FROM buy_list
-				WHERE date = '$date'");
+				WHERE date LIKE '".$date."%'");
 
 $row = $price_all->fetchArray();
 
