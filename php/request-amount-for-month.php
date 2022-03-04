@@ -1,29 +1,30 @@
 <?php
-
-// получим POST данные
-$date = $_POST['month'];
+//
+//// получим POST данные
+//$date = $_POST['month'];
 
 //подключение к файлу базы данных
 $db = new SQLite3('../db/app_db.db');
 
 //// Запрос суммы значений столбца price за нужную дату
-//$db->query("SELECT SUM(price)
+//$price_all = $db->query("SELECT SUM(price)
 //				FROM buy_list
-//				WHERE date = '$date'");
+//				WHERE date LIKE '".$date."%'");
 
 // Запрос суммы значений столбца price за нужную дату
-$price_all = $db->query("SELECT SUM(price)
+$price_all = $db->query("SELECT category, SUM(price)
 				FROM buy_list
-				WHERE date LIKE '".$date."%'");
+				WHERE date LIKE '2022-03%'
+				GROUP BY category");
 
-$row = $price_all->fetchArray();
-
-$summ_price = $row[0];
-//print_r($row[0]);
-
+//$row = $price_all->fetchArray();
+//
+//$summ_price = $row[0];
+$row = json_decode($price_all);
+print_r($row);
 // закрываем соединение с базой данных
 $db->close();
 
-// сформируем ответ
-$output = ['summ_price' => $summ_price];
-exit(json_encode($output));
+//// сформируем ответ
+//$output = ['summ_price' => $summ_price];
+//exit(json_encode($output));
