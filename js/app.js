@@ -162,7 +162,8 @@ function sendFormSummPrice() {
 			return;
 		}
 		const response = xhr.response;
-		elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.summ_price}</b></li></ul>`;
+		// elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.massive[1]}</b></li></ul>`;
+		elResultStatistics.innerHTML = response;
 	}
 	xhr.send(formData);
 	elResultStatistics.textContent = 'Общая сумма выведена';

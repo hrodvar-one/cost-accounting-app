@@ -1,5 +1,5 @@
 <?php
-//
+////
 //// получим POST данные
 //$date = $_POST['month'];
 
@@ -17,14 +17,22 @@ $price_all = $db->query("SELECT category, SUM(price)
 				WHERE date LIKE '2022-03%'
 				GROUP BY category");
 
+// '2022-03%'
+
+$massive = array();
+while ($row = $price_all->fetchArray(SQLITE3_ASSOC)) {
+	array_push($massive, $row);
+}
+print_r(json_encode($massive));
+
 //$row = $price_all->fetchArray();
 //
 //$summ_price = $row[0];
-$row = json_decode($price_all);
-print_r($row);
+//$row = json_decode($price_all);
+//print_r($row);
 // закрываем соединение с базой данных
 $db->close();
 
 //// сформируем ответ
-//$output = ['summ_price' => $summ_price];
-//exit(json_encode($output));
+//$output = ['data' => $massive];
+//exit(json_encode($massive));
