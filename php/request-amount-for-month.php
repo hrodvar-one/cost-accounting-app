@@ -23,7 +23,9 @@ $massive = array();
 while ($row = $price_all->fetchArray(SQLITE3_ASSOC)) {
 	array_push($massive, $row);
 }
-print_r(json_encode($massive));
+
+//print_r(json_encode($massive));
+//echo(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 
 //$row = $price_all->fetchArray();
 //
@@ -35,4 +37,4 @@ $db->close();
 
 //// сформируем ответ
 //$output = ['data' => $massive];
-//exit(json_encode($massive));
+exit(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));

@@ -147,7 +147,8 @@ elBuyListForm.addEventListener('submit', (e) => {
 // месяц
 const elFormStat = document.querySelector('[name="statistics-per-month-form"]');
 const elMonth = document.querySelector('[name="month"]');
-const elResultStatistics = document.querySelector('#result-statistics');
+const elResultStatistics = document.querySelector('#result-statistics-one');
+// const elResultStatisticsTwo = document.querySelector('#result-statistics-two');
 const requestURLsummPrice = elFormStat.action;
 
 function sendFormSummPrice() {
@@ -162,8 +163,20 @@ function sendFormSummPrice() {
 			return;
 		}
 		const response = xhr.response;
-		// elResultStatistics.innerHTML = `<ul><li>Сумма: <b>${response.massive[1]}</b></li></ul>`;
-		elResultStatistics.innerHTML = response;
+		// Вычисляем количество элементов в объекте
+		// и присваиваем постоянной size
+		const size = Object.keys(response).length
+		console.log(response);
+		console.log(response[0]);
+		console.log(response[0]['category']);
+		console.log(size);
+		let i = 0;
+		while (i <= size) {
+			elResultStatistics.innerHTML = `<ul><li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li></ul>`;
+			i = i + 1;
+		}
+		// elResultStatistics.innerHTML = `<ul><li>${response[0]['category']} : <b>${response[0]['SUM(price)']}</b></li></ul>`;
+		// elResultStatisticsTwo.innerHTML = `<ul><li>${response[1]['category']} : <b>${response[1]['SUM(price)']}</b></li></ul>`;
 	}
 	xhr.send(formData);
 	elResultStatistics.textContent = 'Общая сумма выведена';
