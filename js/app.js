@@ -170,11 +170,26 @@ function sendFormSummPrice() {
 		console.log(response[0]);
 		console.log(response[0]['category']);
 		console.log(size);
-		let i = 0;
-		while (i <= size) {
-			elResultStatistics.innerHTML = `<ul><li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li></ul>`;
-			i = i + 1;
-		}
+		// let i = 0;
+		// while (i <= size) {
+		// 	elResultStatistics.innerHTML = `<ul><li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li></ul>`;
+		// 	i = i + 1;
+		// }
+
+		// function getListContent() {
+		// 	let fragment = new DocumentFragment();
+		//
+		// 	for(let i=0; i<=size; i++) {
+		// 		let li = document.createElement('li');
+		// 		li.append({response[i]['category']}{response[i]['SUM(price)']});
+		// 		fragment.append(li);
+		// 	}
+		//
+		// 	return fragment;
+		// }
+
+		// elResultStatistics.innerHTML =
+
 		// elResultStatistics.innerHTML = `<ul><li>${response[0]['category']} : <b>${response[0]['SUM(price)']}</b></li></ul>`;
 		// elResultStatisticsTwo.innerHTML = `<ul><li>${response[1]['category']} : <b>${response[1]['SUM(price)']}</b></li></ul>`;
 	}
