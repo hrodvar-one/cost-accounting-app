@@ -148,7 +148,6 @@ elBuyListForm.addEventListener('submit', (e) => {
 const elFormStat = document.querySelector('[name="statistics-per-month-form"]');
 const elMonth = document.querySelector('[name="month"]');
 const elResultStatistics = document.querySelector('#result-statistics-one');
-// const elResultStatisticsTwo = document.querySelector('#result-statistics-two');
 const requestURLsummPrice = elFormStat.action;
 
 function sendFormSummPrice() {
@@ -166,16 +165,20 @@ function sendFormSummPrice() {
 		// Вычисляем количество элементов в объекте
 		// и присваиваем постоянной size
 		const size = Object.keys(response).length
-		console.log(response);
-		console.log(response[0]);
-		console.log(response[0]['category']);
-		console.log(size);
 
+		// console.log(response);
+		// console.log(response[0]);
+		// console.log(response[0]['category']);
+		// console.log(size);
+		let summa = 0;
 		let html = [];
 		for (let i = 0; i < size; i++) {
 			html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
+			summa = response[i]['SUM(price)'] + summa;
+			// console.log(summa);
 		}
-		document.querySelector('#result-statistics-one').innerHTML = html.join('');
+		html.push(`<li>Итого : <b>${summa}</b></li>`);
+		elResultStatistics.innerHTML = html.join('');
 
 		// let i = 0;
 		// while (i <= size) {

@@ -1,7 +1,7 @@
 <?php
-////
-//// получим POST данные
-//$date = $_POST['month'];
+//
+// получим POST данные
+$date = $_POST['month'];
 
 //подключение к файлу базы данных
 $db = new SQLite3('../db/app_db.db');
@@ -14,7 +14,7 @@ $db = new SQLite3('../db/app_db.db');
 // Запрос суммы значений столбца price за нужную дату
 $price_all = $db->query("SELECT category, SUM(price)
 				FROM buy_list
-				WHERE date LIKE '2022-03%'
+				WHERE date LIKE '".$date."%'
 				GROUP BY category");
 
 // '2022-03%'
