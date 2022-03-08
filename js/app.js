@@ -170,6 +170,13 @@ function sendFormSummPrice() {
 		console.log(response[0]);
 		console.log(response[0]['category']);
 		console.log(size);
+
+		let html = [];
+		for (let i = 0; i < size; i++) {
+			html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
+		}
+		document.querySelector('#result-statistics-one').innerHTML = html.join('');
+
 		// let i = 0;
 		// while (i <= size) {
 		// 	elResultStatistics.innerHTML = `<ul><li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li></ul>`;
