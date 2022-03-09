@@ -14,28 +14,29 @@
 <body>
 
 <div class="container">
-	<div class="work-with-sqlite">
-		<div class="panel-create-table">
-			<form name="table" action="/php/create-table.php" method="post">
-				<label for="table-name">Название таблицы:</label>
-				<input type="text" class="table-name_input" name="table-name" id="table-name">
-				<button type="submit">Создать таблицу</button>
-			</form>
-			<div id="result"></div>
-		</div>
-		<div class="panel-delete-table">
-			<form name="delete-table" action="/php/delete-table.php" method="post">
-				<label for="table-name-delete">Название таблицы:</label>
-				<input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">
-				<button type="submit">Удалить таблицу</button>
-			</form>
-			<div id="result-delete"></div>
-		</div>
-	</div>
+<!--	<div class="work-with-sqlite">-->
+<!--		<div class="panel-create-table">-->
+<!--			<form name="table" action="/php/create-table.php" method="post">-->
+<!--				<label for="table-name">Название таблицы:</label>-->
+<!--				<input type="text" class="table-name_input" name="table-name" id="table-name">-->
+<!--				<button type="submit">Создать таблицу</button>-->
+<!--			</form>-->
+<!--			<div id="result"></div>-->
+<!--		</div>-->
+<!--		<div class="panel-delete-table">-->
+<!--			<form name="delete-table" action="/php/delete-table.php" method="post">-->
+<!--				<label for="table-name-delete">Название таблицы:</label>-->
+<!--				<input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">-->
+<!--				<button type="submit">Удалить таблицу</button>-->
+<!--			</form>-->
+<!--			<div id="result-delete"></div>-->
+<!--		</div>-->
+<!--	</div>-->
 	<br>
 	<div class="shopping-panel">
+		<!--		Панель расходов - expense panel-->
 		<div class="shopping-input-panel">
-			<h3>Панель покупок</h3>
+			<h3>Панель расходов</h3>
 			<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
 				<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
 				<br>
@@ -57,7 +58,59 @@
 				<br>
 				<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
 				<br>
-				<button type="submit">Добавить покупку</button>
+				<button type="submit">Добавить расходы</button>
+				<br>
+			</form>
+			<div id="result-add-purchase"></div>
+			<div class="add-category">
+				<button type="button" class="" onclick="addCategory()">Добавить <br>категорию</br></button>
+				<input type="text" class="table-name_input" id="add-category-input" value="">
+			</div>
+			<div>
+				<button type="button" class="" onclick="deleteCategory()">Удалить <br>категорию</br></button>
+<!--				<select class="table-name_input" id="category" name="category">-->
+<!--					<option value="ЕДА">ЕДА</option>-->
+<!--					<option value="ЛЕКАРСТВА">ЛЕКАРСТВА</option>-->
+<!--					<option value="ЖКХ">ЖКХ</option>-->
+<!--					<option value="ТРАНСПОРТ">ТРАНСПОРТ</option>-->
+<!--					<option value="ИНТЕРНЕТ ТВ">ИНТЕРНЕТ ТВ</option>-->
+<!--					<option value="МОБИЛЬНАЯ СВЯЗЬ">МОБИЛЬНАЯ СВЯЗЬ</option>-->
+<!--					<option value="ХОСТИНГ">ХОСТИНГ</option>-->
+<!--					<option value="КРЕДИТ">КРЕДИТ</option>-->
+<!--					<option value="ОЗОН И ТЕХНИКА">ОЗОН И ТЕХНИКА</option>-->
+<!--				</select>-->
+			</div>
+			<!--	Форма добавления категории-->
+<!--			<form action="/php/add-category-to-expenses.php" method="post">-->
+<!--				<button type="submit">Добавить категорию</button>-->
+<!--				<label for="category-input"></label><input type="text" id="category-input">-->
+<!--			</form>-->
+		</div>
+		<!--		Панель доходов - income panel -->
+		<div class="income-input-panel">
+			<h3>Панель доходов</h3>
+			<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
+				<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
+				<br>
+				<!--				<label for="category">Категория товара:</label><input type="text" class="table-name_input" name="category" id="category">-->
+				<label for="category">Категория:</label>
+				<select class="table-name_input" id="category" name="category">
+					<option value="ЕДА">ЕДА</option>
+					<option value="ЛЕКАРСТВА">ЛЕКАРСТВА</option>
+					<option value="ЖКХ">ЖКХ</option>
+					<option value="ТРАНСПОРТ">ТРАНСПОРТ</option>
+					<option value="ИНТЕРНЕТ ТВ">ИНТЕРНЕТ ТВ</option>
+					<option value="МОБИЛЬНАЯ СВЯЗЬ">МОБИЛЬНАЯ СВЯЗЬ</option>
+					<option value="ХОСТИНГ">ХОСТИНГ</option>
+					<option value="КРЕДИТ">КРЕДИТ</option>
+					<option value="ОЗОН И ТЕХНИКА">ОЗОН И ТЕХНИКА</option>
+				</select>
+				<br>
+				<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
+				<br>
+				<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
+				<br>
+				<button type="submit">Добавить доходы</button>
 			</form>
 			<div id="result-add-purchase"></div>
 		</div>

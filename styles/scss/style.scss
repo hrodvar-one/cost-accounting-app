@@ -49,6 +49,17 @@ body {
       .shopping-input-panel {
         //height: 50px;
         background-color: #c90303;
+        display: inline-block;
+        border: 3px solid black;
+
+        .buy-list-form {
+          margin: 10px;
+        }
+      }
+
+      .income-input-panel {
+        background-color: green;
+        display: inline-block;
         border: 3px solid black;
 
         .buy-list-form {
@@ -59,6 +70,7 @@ body {
 
     .statistics-panel {
       background-color: orangered;
+      float: none;
 
       .amount-per-month-output {
         //height: 400px;

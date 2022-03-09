@@ -214,3 +214,26 @@ elFormStat.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormSummPrice();
 });
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// функция добавления новой категории в общий
+// список категорий
+function addCategory() {
+	let option = document.createElement('option');
+	let inputValue = document.getElementById("add-category-input").value;
+
+	option.text = inputValue;
+	option.value = inputValue;
+
+	document.querySelector('#category').add(option);
+
+	document.getElementById("add-category-input").value = "";
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// функция удаления категории из общего списка
+// категорий
+function deleteCategory() {
+
+}

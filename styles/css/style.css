@@ -40,13 +40,23 @@ body .container .shopping-panel {
 }
 body .container .shopping-panel .shopping-input-panel {
   background-color: #c90303;
+  display: inline-block;
   border: 3px solid black;
 }
 body .container .shopping-panel .shopping-input-panel .buy-list-form {
   margin: 10px;
 }
+body .container .shopping-panel .income-input-panel {
+  background-color: green;
+  display: inline-block;
+  border: 3px solid black;
+}
+body .container .shopping-panel .income-input-panel .buy-list-form {
+  margin: 10px;
+}
 body .container .statistics-panel {
   background-color: orangered;
+  float: none;
 }
 body .container .statistics-panel .amount-per-month-output {
   border: 3px solid black;
