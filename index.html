@@ -63,24 +63,23 @@
 			</form>
 			<div id="result-add-purchase"></div>
 			<!--	Форма добавления категории-->
-			<form name=add-new-category class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
+			<form name="add-new-category" class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
 				<button type="submit">Добавить <br>категорию</button>
 				<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
 			</form>
-			<div>
-				<button type="button" class="" onclick="deleteCategory()">Удалить <br>категорию</br></button>
-<!--				<select class="table-name_input" id="category" name="category">-->
+			<form name="delete-new-category" class="delete-new-category" action="/php/delete-category-in-expenses-table.php" method="post">
+				<button type="submit">Удалить <br>категорию</button>
+				<label for="category-delete-input"></label>
+				<select class="table-name_input" id="category-delete-input" name="category-delete-input">
 <!--					<option value="ЕДА">ЕДА</option>-->
-<!--					<option value="ЛЕКАРСТВА">ЛЕКАРСТВА</option>-->
-<!--					<option value="ЖКХ">ЖКХ</option>-->
-<!--					<option value="ТРАНСПОРТ">ТРАНСПОРТ</option>-->
-<!--					<option value="ИНТЕРНЕТ ТВ">ИНТЕРНЕТ ТВ</option>-->
-<!--					<option value="МОБИЛЬНАЯ СВЯЗЬ">МОБИЛЬНАЯ СВЯЗЬ</option>-->
-<!--					<option value="ХОСТИНГ">ХОСТИНГ</option>-->
-<!--					<option value="КРЕДИТ">КРЕДИТ</option>-->
-<!--					<option value="ОЗОН И ТЕХНИКА">ОЗОН И ТЕХНИКА</option>-->
+				</select>
+			</form>
+<!--			<div>-->
+<!--				<button type="button" class="" onclick="deleteCategory()">Удалить <br>категорию</br></button>-->
+<!--				<select class="table-name_input" id="category" name="category">-->
+<!---->
 <!--				</select>-->
-			</div>
+<!--			</div>-->
 		</div>
 		<!--		Панель доходов - income panel -->
 		<div class="income-input-panel">

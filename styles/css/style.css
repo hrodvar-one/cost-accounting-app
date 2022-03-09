@@ -56,7 +56,6 @@ body .container .shopping-panel .income-input-panel .buy-list-form {
 }
 body .container .statistics-panel {
   background-color: orangered;
-  float: none;
 }
 body .container .statistics-panel .amount-per-month-output {
   border: 3px solid black;

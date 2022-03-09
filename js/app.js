@@ -218,15 +218,30 @@ elFormStat.addEventListener('submit', (e) => {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция добавления новой категории в общий
 // список категорий
-function addCategory() {
+function addString() {
 	let option = document.createElement('option');
-	let inputValue = document.getElementById("add-category-input").value;
-	option.text = inputValue;
-	option.value = inputValue;
-	document.querySelector('#category').add(option);
-	document.getElementById("add-category-input").value = "";
+	// let inputValue = document.getElementById("add-category-input").value;
+	// option.text = inputValue;
+	// option.value = inputValue;
+	option.text = 'МОРОЖЕНОЕ';
+	option.value = 'МОРОЖЕНОЕ';
+	document.querySelector('#category-delete-input').add(option);
+	// document.getElementById("add-category-input").value = "";
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// // функция добавления новой категории в общий
+// // список категорий
+// function addCategory() {
+// 	let option = document.createElement('option');
+// 	let inputValue = document.getElementById("add-category-input").value;
+// 	option.text = inputValue;
+// 	option.value = inputValue;
+// 	document.querySelector('#category').add(option);
+// 	document.getElementById("add-category-input").value = "";
+// }
+// // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция удаления категории из общего списка
@@ -264,11 +279,45 @@ function sendFormAddNewCategory() {
 }
 
 // запуск функции отправки запроса на добавление
-// расходов в соответствующие колонки
-// в таблице базы данных
+// новой категории в соответствующую таблицу
+// базы данных
 elNewCategoryForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormAddNewCategory();
+	// делаем поле ввода пустым после отправки данных на сервер
 	document.getElementById("category-input").value = "";
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Список констант для формы удаления строки в таблице
+const elFormDelete = document.querySelector('[name="delete-table"]');
+const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
+const elResultDelete = document.querySelector('#result-delete');
+const requestURLDelete = elFormDelete.action;
+
+function sendFormDelete() {
+	const tableName = encodeURIComponent(elTableNameDelete.value);
+	const formData = 'table-name-delete=' + tableName;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', requestURLDelete);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		// const response = xhr.response;
+		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+	}
+	xhr.send(formData);
+	elResultDelete.textContent = 'Таблица удалена';
+}
+
+// запуск функции отправки запроса на создание таблицы
+// в базе данных при отправке формы
+elFormDelete.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormDelete();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
