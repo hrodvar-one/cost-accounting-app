@@ -207,13 +207,13 @@ function sendFormSummPrice() {
 	elResultStatistics.textContent = 'Общая сумма выведена';
 }
 
-// ----------------------------------
 // запуск функции отправки запроса на создание таблицы
 // в базе данных при отправке формы
 elFormStat.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormSummPrice();
 });
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция добавления новой категории в общий
@@ -221,19 +221,54 @@ elFormStat.addEventListener('submit', (e) => {
 function addCategory() {
 	let option = document.createElement('option');
 	let inputValue = document.getElementById("add-category-input").value;
-
 	option.text = inputValue;
 	option.value = inputValue;
-
 	document.querySelector('#category').add(option);
-
 	document.getElementById("add-category-input").value = "";
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция удаления категории из общего списка
 // категорий
 function deleteCategory() {
 
 }
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Список констант для формы добавления новой категории
+const elNewCategoryForm = document.querySelector('[name="add-new-category"]');
+const elNewCategory = document.querySelector('[name="category-input"]');
+// const elResultAddPurchase = document.querySelector('#result-add-purchase');
+const requestURLNewCategoryForm = elNewCategoryForm.action;
+
+// Функция передачи значения формы Добавить категорию
+// через Ajax запрос в php скрипт
+function sendFormAddNewCategory() {
+	const category = encodeURIComponent(elNewCategory.value);
+	const formData = 'category=' + category;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', requestURLNewCategoryForm);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		// const response = xhr.response;
+		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+	}
+	xhr.send(formData);
+	// elResultAddPurchase.textContent = 'Расходы добавлены';
+}
+
+// запуск функции отправки запроса на добавление
+// расходов в соответствующие колонки
+// в таблице базы данных
+elNewCategoryForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormAddNewCategory();
+	document.getElementById("category-input").value = "";
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
