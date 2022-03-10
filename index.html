@@ -30,6 +30,7 @@
 				<button type="submit">Удалить таблицу</button>
 			</form>
 			<div id="result-delete"></div>
+			<button type="button" onclick="requestCategoriesFromDB()"></button>
 		</div>
 	</div>
 	<br>
@@ -54,6 +55,14 @@
 					<option value="ОЗОН И ТЕХНИКА">ОЗОН И ТЕХНИКА</option>
 				</select>
 				<br>
+				<!--		Тестовый выпадающий список		-->
+				<label for="category-test">Категория тест:</label>
+				<select class="table-name_input" id="select-test" name="category-test">
+<!--					<option value="none" hidden="">Выберите тип</option>-->
+<!--					<option value=""></option>-->
+				</select>
+				<br>
+				<!--				-->
 				<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
 				<br>
 				<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">

@@ -100,10 +100,11 @@ elFormDelete.addEventListener('submit', (e) => {
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Список констант для формы удаления таблицы
+// Список констант для формы добавления покупок
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
 const elDate = document.querySelector('[name="date"]');
-const elCategory = document.querySelector('[name="category"]');
+// const elCategory = document.querySelector('[name="category"]');
+const elCategory = document.querySelector('[name="category-test"]');
 const elTitle = document.querySelector('[name="title"]');
 const elPrice = document.querySelector('[name="price"]');
 const elResultAddPurchase = document.querySelector('#result-add-purchase');
@@ -271,11 +272,9 @@ function sendFormAddNewCategory() {
 		if (xhr.status !== 200) {
 			return;
 		}
-		// const response = xhr.response;
-		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
-	// elResultAddPurchase.textContent = 'Расходы добавлены';
+	requestCategoriesFromDB();
 }
 
 // запуск функции отправки запроса на добавление
@@ -289,35 +288,76 @@ elNewCategoryForm.addEventListener('submit', (e) => {
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Список констант для формы удаления строки в таблице
-const elFormDelete = document.querySelector('[name="delete-table"]');
-const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
-const elResultDelete = document.querySelector('#result-delete');
-const requestURLDelete = elFormDelete.action;
+// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// // Список констант для формы удаления строки в таблице
+// const elFormDelete = document.querySelector('[name="delete-table"]');
+// const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
+// const elResultDelete = document.querySelector('#result-delete');
+// const requestURLDelete = elFormDelete.action;
+//
+// function sendCategoryDelete() {
+// 	const tableName = encodeURIComponent(elTableNameDelete.value);
+// 	const formData = 'table-name-delete=' + tableName;
+// 	const xhr = new XMLHttpRequest();
+// 	xhr.open('POST', requestURLDelete);
+// 	xhr.responseType = 'json';
+// 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// 	xhr.onload = () => {
+// 		if (xhr.status !== 200) {
+// 			return;
+// 		}
+// 		// const response = xhr.response;
+// 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+// 	}
+// 	xhr.send(formData);
+// 	elResultDelete.textContent = 'Таблица удалена';
+// }
+//
+// // запуск функции отправки запроса на создание таблицы
+// // в базе данных при отправке формы
+// elFormDelete.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// 	sendCategoryDelete();
+// });
+// // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-function sendFormDelete() {
-	const tableName = encodeURIComponent(elTableNameDelete.value);
-	const formData = 'table-name-delete=' + tableName;
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// функция передачи списка категорий в
+// выпадающий список
+
+const addselecttest = document.querySelector('#select-test');
+
+function requestCategoriesFromDB() {
 	const xhr = new XMLHttpRequest();
-	xhr.open('POST', requestURLDelete);
+	xhr.open('POST', '/php/request-categories-from-table.php');
 	xhr.responseType = 'json';
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.onload = () => {
 		if (xhr.status !== 200) {
 			return;
 		}
-		// const response = xhr.response;
-		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+		const response = xhr.response;
+
+		// Вычисляем количество элементов в объекте
+		// и присваиваем постоянной size
+		const size = Object.keys(response).length
+
+		console.log(response);
+		console.log(response[0]);
+		console.log(response[0]['category']);
+		console.log(size);
+
+		let html = [];
+		html.push(`<option value="none" hidden="">Выберите тип</option>`);
+		for (let i = 0; i < size; i++) {
+			html.push(`<option value="${response[i]['category']}">${response[i]['category']}</option>`);
+			// console.log(summa);
+		}
+		addselecttest.innerHTML = html.join('');
 	}
-	xhr.send(formData);
-	elResultDelete.textContent = 'Таблица удалена';
+	xhr.send();
 }
 
-// запуск функции отправки запроса на создание таблицы
-// в базе данных при отправке формы
-elFormDelete.addEventListener('submit', (e) => {
-	e.preventDefault();
-	sendFormDelete();
-});
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// Загрузка списка категорий из БД в выпадающий
+// список категорий загрузке страницы сайта
+window.onload = requestCategoriesFromDB;
