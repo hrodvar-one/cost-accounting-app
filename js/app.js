@@ -169,9 +169,21 @@ function sendFormSummPrice() {
 		// console.log(size);
 		let summa = 0;
 		let html = [];
+		// for (let i = 0; i < size; i++) {
+		// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
+		// 	summa = response[i]['SUM(price)'] + summa;
+		// 	// console.log(summa);
+		// }
+		// html.push(`<li>Итого : <b>${summa}</b></li>`);
+		// elResultStatistics.innerHTML = html.join('');
+
 		for (let i = 0; i < size; i++) {
-			html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
 			summa = response[i]['SUM(price)'] + summa;
+			html.push(`<input type="checkbox" name="chacor" id="chacor1" checked="checked" />
+				<label for="chacor1">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></label>
+				<div class="acor-body">
+					<p>Описание вкладки</p>
+				</div>`);
 			// console.log(summa);
 		}
 		html.push(`<li>Итого : <b>${summa}</b></li>`);
@@ -348,3 +360,6 @@ function requestCategoriesFromDB() {
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта
 window.onload = requestCategoriesFromDB;
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// функция вывода статистики покупок за месяц
