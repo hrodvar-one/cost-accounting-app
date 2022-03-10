@@ -6,9 +6,9 @@
 //подключение к файлу базы данных
 $db = new SQLite3('../db/app_db.db');
 
-// Запрос суммы значений столбца price за нужную дату
+// Запрос названий всех категорий расходов
 $category_all = $db->query("SELECT category
-				FROM category_list");
+				FROM expense_categories");
 
 $massive = array();
 while ($row = $category_all->fetchArray(SQLITE3_ASSOC)) {

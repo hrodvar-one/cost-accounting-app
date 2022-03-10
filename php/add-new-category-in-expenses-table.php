@@ -7,11 +7,11 @@ $category_name = $_POST['category'];
 $db = new SQLite3('../db/app_db.db');
 
 //Создаем таблицу пользователей
-if ($db->exec("CREATE TABLE IF NOT EXISTS 'category_list'
+if ($db->exec("CREATE TABLE IF NOT EXISTS 'expense_categories'
                ('id' INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , 
                'category' TEXT(20))"))
 
-$db->query("INSERT INTO category_list (category) VALUES ('$category_name')");
+$db->query("INSERT INTO expense_categories (category) VALUES ('$category_name')");
 
 //Закрываем соединение с базой.
 $db->close();
