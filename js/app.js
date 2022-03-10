@@ -49,8 +49,6 @@ function sendForm() {
 		if (xhr.status !== 200) {
 			return;
 		}
-		// const response = xhr.response;
-		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
 	elResult.textContent = 'Таблица создана';
@@ -83,8 +81,6 @@ function sendFormDelete() {
 		if (xhr.status !== 200) {
 			return;
 		}
-		// const response = xhr.response;
-		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
 	elResultDelete.textContent = 'Таблица удалена';
@@ -103,8 +99,8 @@ elFormDelete.addEventListener('submit', (e) => {
 // Список констант для формы добавления покупок
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
 const elDate = document.querySelector('[name="date"]');
-// const elCategory = document.querySelector('[name="category"]');
-const elCategory = document.querySelector('[name="category-test"]');
+
+const elCategory = document.querySelector('[name="category"]');
 const elTitle = document.querySelector('[name="title"]');
 const elPrice = document.querySelector('[name="price"]');
 const elResultAddPurchase = document.querySelector('#result-add-purchase');
@@ -130,7 +126,7 @@ function sendFormAddBuyList() {
 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
-	elResultAddPurchase.textContent = 'Расходы добавлены';
+	// elResultAddPurchase.textContent = 'Расходы добавлены';
 }
 
 // запуск функции отправки запроса на добавление
@@ -216,40 +212,32 @@ elFormStat.addEventListener('submit', (e) => {
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// функция добавления новой категории в общий
-// список категорий
-function addString() {
-	let option = document.createElement('option');
-	// let inputValue = document.getElementById("add-category-input").value;
-	// option.text = inputValue;
-	// option.value = inputValue;
-	option.text = 'МОРОЖЕНОЕ';
-	option.value = 'МОРОЖЕНОЕ';
-	document.querySelector('#category-delete-input').add(option);
-	// document.getElementById("add-category-input").value = "";
-}
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// // функция добавления новой категории в общий
-// // список категорий
-// function addCategory() {
-// 	let option = document.createElement('option');
-// 	let inputValue = document.getElementById("add-category-input").value;
-// 	option.text = inputValue;
-// 	option.value = inputValue;
-// 	document.querySelector('#category').add(option);
-// 	document.getElementById("add-category-input").value = "";
-// }
-// // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция удаления категории из общего списка
 // категорий
 function deleteCategory() {
-
+	const form = document.querySelector('[name="category-delete-input"]');
+	const category = encodeURIComponent(form.value);
+	console.log(category);
+	const formData = 'category=' + category;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', '/php/delete-category-in-expenses-table.php');
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+	requestCategoriesFromDB();
 }
+
+document.querySelector('[name="delete-new-category"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	deleteCategory();
+});
+
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -324,9 +312,6 @@ elNewCategoryForm.addEventListener('submit', (e) => {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция передачи списка категорий в
 // выпадающий список
-
-const addselecttest = document.querySelector('#select-test');
-
 function requestCategoriesFromDB() {
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', '/php/request-categories-from-table.php');
@@ -342,10 +327,10 @@ function requestCategoriesFromDB() {
 		// и присваиваем постоянной size
 		const size = Object.keys(response).length
 
-		console.log(response);
-		console.log(response[0]);
-		console.log(response[0]['category']);
-		console.log(size);
+		// console.log(response);
+		// console.log(response[0]);
+		// console.log(response[0]['category']);
+		// console.log(size);
 
 		let html = [];
 		html.push(`<option value="none" hidden="">Выберите тип</option>`);
@@ -353,11 +338,13 @@ function requestCategoriesFromDB() {
 			html.push(`<option value="${response[i]['category']}">${response[i]['category']}</option>`);
 			// console.log(summa);
 		}
-		addselecttest.innerHTML = html.join('');
+		// addselecttest.innerHTML = html.join('');
+		document.querySelector('#category').innerHTML = html.join('');
+		document.querySelector('#category-delete-input').innerHTML = html.join('');
 	}
 	xhr.send();
 }
 
 // Загрузка списка категорий из БД в выпадающий
-// список категорий загрузке страницы сайта
+// список категорий при загрузке страницы сайта
 window.onload = requestCategoriesFromDB;
