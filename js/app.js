@@ -177,16 +177,20 @@ function sendFormSummPrice() {
 		// html.push(`<li>Итого : <b>${summa}</b></li>`);
 		// elResultStatistics.innerHTML = html.join('');
 
+		// if ({response[]['category']}) {
+		//
+		// }
+
 		for (let i = 0; i < size; i++) {
-			summa = response[i]['SUM(price)'] + summa;
+			summa = response[i]['price'] + summa;
 			html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
 			html.push(`<div class="panel">`);
-			html.push(`<p>Lorem ipsum...</p>`);
+			html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
 			html.push(`</div>`);
 
 			// console.log(summa);
 		}
-		// html.push(`<li>Итого : <b>${summa}</b></li>`);
+		html.push(`<li>Итого : <b>${summa}</b></li>`);
 		elResultStatistics.innerHTML = html.join('');
 
 		// Вторая раскрывающаяся панель (аккордеон)
@@ -357,35 +361,3 @@ function requestCategoriesFromDB() {
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта
 window.onload = requestCategoriesFromDB;
-
-// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// // блок выполнения раскрытия
-// const accordion = document.getElementsByClassName('container-accordion');
-//
-// for (let i=0; i<accordion.length; i++) {
-// 	accordion[i].addEventListener('click', function () {
-// 		this.classList.toggle('active')
-// 	})
-// }
-
-
-// // Вторая раскрывающаяся панель
-// //
-// let acc = document.getElementsByClassName("accordion");
-// let i;
-//
-// for (i = 0; i < acc.length; i++) {
-// 	acc[i].addEventListener("click", function() {
-// 		/* Переключение между добавлением и удалением класса "active",
-// 		чтобы выделить кнопку, управляющую панелью */
-// 		this.classList.toggle("active");
-//
-// 		/* Переключение между скрытием и отображением активной панели */
-// 		let panel = this.nextElementSibling;
-// 		if (panel.style.display === "block") {
-// 			panel.style.display = "none";
-// 		} else {
-// 			panel.style.display = "block";
-// 		}
-// 	});
-// }

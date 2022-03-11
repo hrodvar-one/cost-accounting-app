@@ -11,30 +11,40 @@ $db = new SQLite3('../db/app_db.db');
 //				FROM buy_list
 //				WHERE date LIKE '".$date."%'");
 
-// Запрос суммы значений столбца price за нужную дату
-$price_all = $db->query("SELECT category, SUM(price)
-				FROM expenses_list
-				WHERE date LIKE '".$date."%'
-				GROUP BY category");
+//// Запрос суммы значений столбца price за нужную дату
+//$price_all = $db->query("SELECT category, SUM(price)
+//				FROM expenses_list
+//				WHERE date LIKE '2022-03%'
+//				GROUP BY category");
 
+// '".$date."%'
 // '2022-03%'
 
-$massive = array();
-while ($row = $price_all->fetchArray(SQLITE3_ASSOC)) {
-	array_push($massive, $row);
-}
+$test_request = $db->query("SELECT date, category, title, price
+				FROM expenses_list
+				WHERE date LIKE '".$date."%'");
 
-//print_r(json_encode($massive));
+//$massive = array();
+//while ($row = $price_all->fetchArray(SQLITE3_ASSOC)) {
+//	array_push($massive, $row);
+//}
+
+$massive_all = array();
+while ($row = $test_request->fetchArray(SQLITE3_ASSOC))
+	array_push($massive_all, $row);
+
+//print_r(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+//print_r('                         ');
+//print_r(json_encode($massive_all, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 //echo(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 
-//$row = $price_all->fetchArray();
-//
-//$summ_price = $row[0];
-//$row = json_decode($price_all);
-//print_r($row);
+
 // закрываем соединение с базой данных
 $db->close();
 
 //// сформируем ответ
 //$output = ['data' => $massive];
-exit(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+
+//exit(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+exit(json_encode($massive_all, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+
