@@ -64,66 +64,38 @@ body .container .statistics-panel .amount-per-month-output {
 body .container .statistics-panel .amount-per-month-output .statistics-per-month-form {
   margin: 10px;
 }
-body .container .statistics-panel .amount-per-month-output .acor-container {
-  margin: 20px 0;
-}
-body .container .statistics-panel .amount-per-month-output .acor-container .acor-body {
-  width: calc(100% - 40px);
-  margin: 0 auto;
-  height: 0;
-  color: rgba(0, 0, 0, 0);
-  background-color: #BFE2FF;
-  line-height: 18px;
-  padding: 0 30px;
-  box-sizing: border-box;
-  transition: color 0.5s, padding 0.5s;
-  overflow: hidden;
-  font-family: Verdana, sans-serif;
-  font-size: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 10px 16px rgba(0, 0, 0, 0.2);
-}
-body .container .statistics-panel .amount-per-month-output .acor-container .acor-body p {
-  margin: 0 0 10px;
-}
-body .container .statistics-panel .amount-per-month-output .acor-container label {
+body .container .statistics-panel .amount-per-month-output .accordion-body .accordion {
+  background-color: #eee;
+  color: #444;
   cursor: pointer;
-  background-color: #337AB7;
-  display: block;
-  padding: 15px 20px;
+  padding: 18px;
   width: 100%;
-  color: #BFE2FF;
-  font-weight: 300;
-  box-sizing: border-box;
-  z-index: 100;
-  font-family: Verdana, sans-serif;
-  font-size: 18px;
-  margin: 0 0 5px;
-  transition: color 0.35s;
+  text-align: left;
+  border: 1px solid black;
+  outline: none;
+  transition: 0.4s;
 }
-body .container .statistics-panel .amount-per-month-output .acor-container label:hover {
-  color: #FFF;
-}
-body .container .statistics-panel .amount-per-month-output .acor-container input {
-  display: none;
-}
-body .container .statistics-panel .amount-per-month-output .acor-container label:before {
-  content: "❯";
+body .container .statistics-panel .amount-per-month-output .accordion-body .accordion:after {
+  content: "➕";
+  font-size: 13px;
+  color: #777;
   float: right;
+  margin-left: 5px;
 }
-body .container .statistics-panel .amount-per-month-output .acor-container input:checked + label {
-  background-color: #285f8f;
-  color: #FFF;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
+body .container .statistics-panel .amount-per-month-output .accordion-body .accordion:hover {
+  background-color: #ccc;
 }
-body .container .statistics-panel .amount-per-month-output .acor-container input:checked + label:before {
-  transition: transform 0.35s;
-  transform: rotate(90deg);
+body .container .statistics-panel .amount-per-month-output .accordion-body .active {
+  background-color: #ccc;
 }
-body .container .statistics-panel .amount-per-month-output .acor-container input:checked + label + .acor-body {
-  height: auto;
-  margin-top: -5px;
-  color: #000;
-  padding: 20px 30px 10px;
+body .container .statistics-panel .amount-per-month-output .accordion-body .active:after {
+  content: "➖";
+}
+body .container .statistics-panel .amount-per-month-output .accordion-body .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -179,14 +179,14 @@ function sendFormSummPrice() {
 
 		for (let i = 0; i < size; i++) {
 			summa = response[i]['SUM(price)'] + summa;
-			html.push(`<input type="checkbox" name="chacor" id="chacor1" checked="checked" />
-				<label for="chacor1">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></label>
-				<div class="acor-body">
-					<p>Описание вкладки</p>
-				</div>`);
+			html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
+			html.push(`<div class="panel">`);
+			html.push(`<p>Lorem ipsum...</p>`);
+			html.push(`</div>`);
+
 			// console.log(summa);
 		}
-		html.push(`<li>Итого : <b>${summa}</b></li>`);
+		// html.push(`<li>Итого : <b>${summa}</b></li>`);
 		elResultStatistics.innerHTML = html.join('');
 
 		// let i = 0;
@@ -361,5 +361,34 @@ function requestCategoriesFromDB() {
 // список категорий при загрузке страницы сайта
 window.onload = requestCategoriesFromDB;
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// функция вывода статистики покупок за месяц
+// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// // блок выполнения раскрытия
+// const accordion = document.getElementsByClassName('container-accordion');
+//
+// for (let i=0; i<accordion.length; i++) {
+// 	accordion[i].addEventListener('click', function () {
+// 		this.classList.toggle('active')
+// 	})
+// }
+
+
+// Вторая раскрывающаяся панель
+//
+let acc = document.getElementsByClassName("accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+	acc[i].addEventListener("click", function() {
+		/* Переключение между добавлением и удалением класса "active",
+		чтобы выделить кнопку, управляющую панелью */
+		this.classList.toggle("active");
+
+		/* Переключение между скрытием и отображением активной панели */
+		let panel = this.nextElementSibling;
+		if (panel.style.display === "block") {
+			panel.style.display = "none";
+		} else {
+			panel.style.display = "block";
+		}
+	});
+}
