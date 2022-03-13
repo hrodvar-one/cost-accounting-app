@@ -163,7 +163,16 @@ function sendFormSummPrice() {
 		// и присваиваем постоянной size
 		const size = Object.keys(response).length
 
-		// console.log(response);
+		// сделаем второй массив на основе response где оставим
+		// только уникальные значения элементов category
+		let unique_categories = [];
+		for (let k = 0; k < size; k++) {
+			if (response[k]['category'] === response[k + 1]['category']) {
+				unique_categories.push(response[k]['category']);
+			}
+		}
+		console.log(unique_categories);
+		console.log(response);
 		// console.log(response[0]);
 		// console.log(response[0]['category']);
 		// console.log(size);
@@ -183,13 +192,45 @@ function sendFormSummPrice() {
 
 		for (let i = 0; i < size; i++) {
 			summa = response[i]['price'] + summa;
-			html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
+			// html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
+			html.push(`<button class="accordion">${response[i]['category']}</button>`);
+			// if (response[i]['category'] === response[i+1]['category'])
 			html.push(`<div class="panel">`);
-			html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
+			for (let j = 0; j < size; j++) {
+				if (response[i]['category'] === response[j]['category']) {
+					// for (let k = j; k < size; i++) {
+					// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
+					// 	summa = response[i]['SUM(price)'] + summa;
+					// }
+					html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
+					// html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
+				}
+			}
+			// html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
 			html.push(`</div>`);
-
-			// console.log(summa);
 		}
+
+		// copy
+		// for (let i = 0; i < size; i++) {
+		// 	summa = response[i]['price'] + summa;
+		// 	// html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
+		// 	html.push(`<button class="accordion">${response[i]['category']}</button>`);
+		// 	html.push(`<div class="panel">`);
+		// 	for (let j = 0; j < size; j++) {
+		// 		if (response[i]['category'] === response[j]['category']) {
+		// 			// for (let k = j; k < size; i++) {
+		// 			// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
+		// 			// 	summa = response[i]['SUM(price)'] + summa;
+		// 			// }
+		// 			html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
+		// 			// html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
+		// 		}
+		// 	}
+		// 	// html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
+		// 	html.push(`</div>`);
+		// }
+		// copy
+
 		html.push(`<li>Итого : <b>${summa}</b></li>`);
 		elResultStatistics.innerHTML = html.join('');
 
