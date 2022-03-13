@@ -1,3 +1,4 @@
+
 // Функция отправки запроса к php скрипту
 // который создаёт таблицу в базе данных
 function getData() {
@@ -161,53 +162,48 @@ function sendFormSummPrice() {
 		const response = xhr.response;
 		// Вычисляем количество элементов в объекте
 		// и присваиваем постоянной size
-		const size = Object.keys(response).length
 
-		// сделаем второй массив на основе response где оставим
-		// только уникальные значения элементов category
-		let unique_categories = [];
-		for (let k = 0; k < size; k++) {
-			if (response[k]['category'] === response[k + 1]['category']) {
-				unique_categories.push(response[k]['category']);
-			}
-		}
-		console.log(unique_categories);
 		console.log(response);
+		const size = Object.keys(response).length;
+
+		//
+		let test_array = [];
+
+		for (let i = 0; i < size; i++) {
+			test_array.push(response[i]['category']);
+		}
+
+		const uniqueSet = new Set(test_array);
+		const backToArray = [...uniqueSet];
+
+		console.log(test_array);
+		console.log(backToArray);
+		console.log(backToArray.length);
+
 		// console.log(response[0]);
 		// console.log(response[0]['category']);
 		// console.log(size);
 		let summa = 0;
+		let summa_2 = 0;
 		let html = [];
-		// for (let i = 0; i < size; i++) {
-		// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
-		// 	summa = response[i]['SUM(price)'] + summa;
-		// 	// console.log(summa);
-		// }
-		// html.push(`<li>Итого : <b>${summa}</b></li>`);
-		// elResultStatistics.innerHTML = html.join('');
 
-		// if ({response[]['category']}) {
-		//
-		// }
-
-		for (let i = 0; i < size; i++) {
-			summa = response[i]['price'] + summa;
-			// html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
-			html.push(`<button class="accordion">${response[i]['category']}</button>`);
-			// if (response[i]['category'] === response[i+1]['category'])
+		for (let i = 0; i < backToArray.length; i++) {
+			// summa = response[i]['price'] + summa;
+			html.push(`<button class="accordion">${backToArray[i]}</button>`);
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
-				if (response[i]['category'] === response[j]['category']) {
-					// for (let k = j; k < size; i++) {
-					// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
-					// 	summa = response[i]['SUM(price)'] + summa;
-					// }
-					html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
-					// html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
+				// summa = response[j]['price'] + summa;
+				// summa_2 = response[j]['price'] + summa_2;
+				if (response[j]['category'] === backToArray[i]) {
+					html.push(`<p>${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
 				}
 			}
-			// html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
 			html.push(`</div>`);
+		}
+
+		// сумма всех цен товаров
+		for (let j = 0; j < size; j++) {
+			summa = response[j]['price'] + summa;
 		}
 
 		// copy
@@ -402,3 +398,37 @@ function requestCategoriesFromDB() {
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта
 window.onload = requestCategoriesFromDB;
+
+// Функция конвертации даты
+//
+function timeConversion(date_string) {
+	let monthString = date_string.substring(6, 7);
+	let new_string = '';
+	if (monthString === '1') {
+		new_string = ' янв.';
+	} else if (monthString === '2') {
+		new_string = ' фев.';
+	} else if (monthString === '3') {
+		new_string = ' марта';
+	} else if (monthString === '4') {
+		new_string = ' апр.';
+	} else if (monthString === '5') {
+		new_string = ' май';
+	} else if (monthString === '6') {
+		new_string = ' июнь';
+	} else if (monthString === '7') {
+		new_string = ' июль';
+	} else if (monthString === '8') {
+		new_string = ' авг.';
+	} else if (monthString === '9') {
+		new_string = ' сен.';
+	} else if (monthString === '10') {
+		new_string = ' окт.';
+	} else if (monthString === '11') {
+		new_string = ' ноя.';
+	} else if (monthString === '12') {
+		new_string = ' дек.';
+	}
+
+	return (date_string.substring(date_string.length - 2) + new_string);
+}
