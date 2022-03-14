@@ -59,6 +59,37 @@ body {
         border: 6px solid orangered;
       }
 
+      //кнопка возврата панели расходов
+      .delete-button-show {
+        //position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: #3a3939;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 6px solid red;
+
+        .minus {
+          margin-left: -9px;
+          margin-top: -38px;
+          position: absolute;
+          font-size: 60px;
+          color: red;
+        }
+
+        .minus:hover {
+          color: orangered;
+        }
+      }
+
+      .delete-button-show:hover {
+        border: 6px solid orangered;
+      }
+
+      // кнопка показывающая панель доходов
       .add-button {
         display: inline-block;
         vertical-align: middle;
@@ -106,13 +137,14 @@ body {
     }
 
     .shopping-panel {
-      //height: 100px;
+      height: 240px;
       background-color: chocolate;
 
       .shopping-input-panel {
         //height: 50px;
         background-color: #c90303;
-        display: inline-block;
+        //display: inline-block;
+        display: none;
         border: 3px solid black;
 
         .buy-list-form {

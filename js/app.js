@@ -150,7 +150,7 @@ function sendFormSummPrice() {
 		}
 	}
 	xhr.send(formData);
-	elResultStatistics.textContent = 'Общая сумма выведена';
+	// elResultStatistics.textContent = 'Общая сумма выведена';
 }
 
 // запуск функции отправки запроса на создание таблицы
@@ -330,4 +330,32 @@ function timeConversion(date_string) {
 	}
 
 	return (date_string.substring(date_string.length - 2) + new_string);
+}
+
+// Функция скрытия панели расходов
+//
+function hideExpensePanel() {
+	document.getElementById('shopping-input-panel').style.display='hide'
+
+	// if (document.getElementById('shopping-input-panel').style.display === 'none') {
+	// 	document.getElementById('shopping-input-panel').style.display='inline-block'
+	// } else if (document.getElementById('shopping-input-panel').style.display === 'inline-block'){
+	// document.getElementById('shopping-input-panel').style.display='none'
+	// }
+}
+
+// Функция вывода панели расходов на экран
+//
+function showExpensePanel() {
+	document.getElementById('shopping-input-panel').style.display='inline-block'
+}
+
+// Функция ввода/вывода панели расходов на экран
+//
+function showHideExpensePanel() {
+	if (document.getElementById('shopping-panel').className === 'shopping-panel') {
+		document.getElementById('shopping-panel').className = '';
+	} else if (document.getElementById('shopping-panel').className === '') {
+		document.getElementById('shopping-panel').className = 'shopping-panel';
+	}
 }

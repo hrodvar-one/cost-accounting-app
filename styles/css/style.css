@@ -50,6 +50,30 @@ body .container .button-add-delete-panel .delete-button .minus:hover {
 body .container .button-add-delete-panel .delete-button:hover {
   border: 6px solid orangered;
 }
+body .container .button-add-delete-panel .delete-button-show {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: #3a3939;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 6px solid red;
+}
+body .container .button-add-delete-panel .delete-button-show .minus {
+  margin-left: -9px;
+  margin-top: -38px;
+  position: absolute;
+  font-size: 60px;
+  color: red;
+}
+body .container .button-add-delete-panel .delete-button-show .minus:hover {
+  color: orangered;
+}
+body .container .button-add-delete-panel .delete-button-show:hover {
+  border: 6px solid orangered;
+}
 body .container .button-add-delete-panel .add-button {
   display: inline-block;
   vertical-align: middle;
@@ -89,11 +113,12 @@ body .container .work-with-sqlite .panel-delete-table {
   border: 3px solid black;
 }
 body .container .shopping-panel {
+  height: 240px;
   background-color: chocolate;
 }
 body .container .shopping-panel .shopping-input-panel {
   background-color: #c90303;
-  display: inline-block;
+  display: none;
   border: 3px solid black;
 }
 body .container .shopping-panel .shopping-input-panel .buy-list-form {
