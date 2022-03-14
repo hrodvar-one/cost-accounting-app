@@ -113,12 +113,13 @@ body .container .work-with-sqlite .panel-delete-table {
   border: 3px solid black;
 }
 body .container .shopping-panel {
-  height: 240px;
+  display: none;
+  height: 245px;
   background-color: chocolate;
 }
 body .container .shopping-panel .shopping-input-panel {
   background-color: #c90303;
-  display: none;
+  display: inline-block;
   border: 3px solid black;
 }
 body .container .shopping-panel .shopping-input-panel .buy-list-form {
@@ -133,6 +134,7 @@ body .container .shopping-panel .income-input-panel .buy-list-form {
   margin: 10px;
 }
 body .container .statistics-panel {
+  display: none;
   background-color: orangered;
 }
 body .container .statistics-panel .amount-per-month-output {

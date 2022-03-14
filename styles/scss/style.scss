@@ -26,7 +26,7 @@ body {
     background-color: #3a3939;
 
     //панель кнопки удалить добавить
-    .button-add-delete-panel{
+    .button-add-delete-panel {
       text-align: center;
       border: 3px solid black;
 
@@ -137,14 +137,16 @@ body {
     }
 
     .shopping-panel {
-      height: 240px;
+      // скрываем панель покупок
+      display: none;
+      height: 245px;
       background-color: chocolate;
 
       .shopping-input-panel {
         //height: 50px;
         background-color: #c90303;
-        //display: inline-block;
-        display: none;
+        display: inline-block;
+        //display: none;
         border: 3px solid black;
 
         .buy-list-form {
@@ -163,7 +165,11 @@ body {
       }
     }
 
+    .hidden {
+    }
+
     .statistics-panel {
+      display: none;
       background-color: orangered;
       //float: none;
 
