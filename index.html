@@ -14,25 +14,6 @@
 <body>
 
 <div class="container">
-	<div class="work-with-sqlite">
-		<div class="panel-create-table">
-			<form name="table" action="/php/create-table.php" method="post">
-				<label for="table-name">Название таблицы:</label>
-				<input type="text" class="table-name_input" name="table-name" id="table-name">
-				<button type="submit">Создать таблицу</button>
-			</form>
-			<div id="result"></div>
-		</div>
-		<div class="panel-delete-table">
-			<form name="delete-table" action="/php/delete-table.php" method="post">
-				<label for="table-name-delete">Название таблицы:</label>
-				<input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">
-				<button type="submit">Удалить таблицу</button>
-			</form>
-			<div id="result-delete"></div>
-		</div>
-	</div>
-	<br>
 	<div class="shopping-panel">
 		<!--		Панель расходов - expense panel-->
 		<div class="shopping-input-panel">
@@ -108,6 +89,15 @@
 			</div>
 			<!--			-->
 		</div>
+	</div>
+	<br>
+	<div class="button-add-delete-panel">
+		<button type="button" class="delete-button">
+			<span class="minus"> - </span>
+		</button>
+		<button type="button" class="add-button">
+			<span class="plus"> + </span>
+		</button>
 	</div>
 </div>
 <script src="js/app.js"></script>

@@ -23,11 +23,74 @@ body {
     margin: auto;
     display: block;
     //height: 500px;
-    background-color: gray;
+    background-color: #3a3939;
+
+    //панель кнопки удалить добавить
+    .button-add-delete-panel{
+      text-align: center;
+      border: 3px solid black;
+
+      .delete-button {
+        //position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: #3a3939;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 6px solid red;
+
+        .minus {
+          margin-left: -9px;
+          margin-top: -38px;
+          position: absolute;
+          font-size: 60px;
+          color: red;
+        }
+
+        .minus:hover {
+          color: orangered;
+        }
+      }
+
+      .delete-button:hover {
+        border: 6px solid orangered;
+      }
+
+      .add-button {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: #3a3939;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 6px solid green;
+
+        .plus {
+          margin-left: -16px;
+          margin-top: -34px;
+          position: absolute;
+          font-size: 60px;
+          color: green;
+        }
+
+        .plus:hover {
+          color: #01d501;
+        }
+      }
+
+      .add-button:hover {
+        border: 6px solid #01d501;
+      }
+    }
 
     .work-with-sqlite {
       height: 100px;
-      background-color: chocolate;
+      background-color: #f57820;
 
       .panel-create-table {
         height: 50px;
@@ -85,7 +148,9 @@ body {
 
           .accordion {
             background-color: #eee;
-            color: #444;
+            //color: #444;
+            color: black;
+            font-size: 15px;
             cursor: pointer;
             padding: 18px;
             width: 100%;

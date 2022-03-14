@@ -20,11 +20,63 @@ body .container {
   width: 700px;
   margin: auto;
   display: block;
-  background-color: gray;
+  background-color: #3a3939;
+}
+body .container .button-add-delete-panel {
+  text-align: center;
+  border: 3px solid black;
+}
+body .container .button-add-delete-panel .delete-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: #3a3939;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 6px solid red;
+}
+body .container .button-add-delete-panel .delete-button .minus {
+  margin-left: -9px;
+  margin-top: -38px;
+  position: absolute;
+  font-size: 60px;
+  color: red;
+}
+body .container .button-add-delete-panel .delete-button .minus:hover {
+  color: orangered;
+}
+body .container .button-add-delete-panel .delete-button:hover {
+  border: 6px solid orangered;
+}
+body .container .button-add-delete-panel .add-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: #3a3939;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 6px solid green;
+}
+body .container .button-add-delete-panel .add-button .plus {
+  margin-left: -16px;
+  margin-top: -34px;
+  position: absolute;
+  font-size: 60px;
+  color: green;
+}
+body .container .button-add-delete-panel .add-button .plus:hover {
+  color: #01d501;
+}
+body .container .button-add-delete-panel .add-button:hover {
+  border: 6px solid #01d501;
 }
 body .container .work-with-sqlite {
   height: 100px;
-  background-color: chocolate;
+  background-color: #f57820;
 }
 body .container .work-with-sqlite .panel-create-table {
   height: 50px;
@@ -66,7 +118,8 @@ body .container .statistics-panel .amount-per-month-output .statistics-per-month
 }
 body .container .statistics-panel .amount-per-month-output .accordion-body .accordion {
   background-color: #eee;
-  color: #444;
+  color: black;
+  font-size: 15px;
   cursor: pointer;
   padding: 18px;
   width: 100%;
