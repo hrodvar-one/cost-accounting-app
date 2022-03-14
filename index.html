@@ -14,36 +14,39 @@
 <body>
 
 <div class="container">
-	<div class="shopping-panel" id="shopping-panel">
-		<!--		Панель расходов - expense panel-->
-		<div class="shopping-input-panel" id="shopping-input-panel">
-			<h3>Панель расходов</h3>
-			<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
-				<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
-				<br>
-				<label for="category">Категория:</label>
-				<select class="table-name_input" id="category" name="category">
-				</select>
-				<br>
-				<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
-				<br>
-				<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
-				<br>
-				<button type="submit">Добавить расходы</button>
-				<br>
-			</form>
-<!--			<div id="result-add-purchase"></div>-->
-			<!--	Форма добавления категории-->
-			<form name="add-new-category" class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
-				<button type="submit">Добавить <br>категорию</button>
-				<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
-			</form>
-			<form name="delete-new-category" class="delete-new-category" action="/php/delete-category-in-expenses-table.php" method="post">
-				<button type="submit">Удалить <br>категорию</button>
-				<label for="category-delete-input"></label>
-				<select class="table-name_input" id="category-delete-input" name="category-delete-input">
-				</select>
-			</form>
+	<div class="main-panel">
+<!--			<div class="shopping-panel" id="shopping-panel">-->
+		<div class="hidden" id="shopping-panel">
+			<!--		Панель расходов - expense panel-->
+			<div class="shopping-input-panel" id="shopping-input-panel">
+				<h3>Панель расходов</h3>
+				<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
+					<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
+					<br>
+					<label for="category">Категория:</label>
+					<select class="table-name_input" id="category" name="category">
+					</select>
+					<br>
+					<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
+					<br>
+					<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
+					<br>
+					<button type="submit">Добавить расходы</button>
+					<br>
+				</form>
+	<!--			<div id="result-add-purchase"></div>-->
+				<!--	Форма добавления категории-->
+				<form name="add-new-category" class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
+					<button type="submit">Добавить <br>категорию</button>
+					<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
+				</form>
+				<form name="delete-new-category" class="delete-new-category" action="/php/delete-category-in-expenses-table.php" method="post">
+					<button type="submit">Удалить <br>категорию</button>
+					<label for="category-delete-input"></label>
+					<select class="table-name_input" id="category-delete-input" name="category-delete-input">
+					</select>
+				</form>
+			</div>
 		</div>
 	</div>
 <!--	<br>-->
@@ -62,7 +65,7 @@
 			<!--			-->
 		</div>
 	</div>
-	<br>
+<!--	<br>-->
 	<div class="button-add-delete-panel">
 		<button type="button" onclick="hideExpensePanel()" class="delete-button">
 			<span class="minus"> - </span>

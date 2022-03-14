@@ -19,6 +19,7 @@ body {
   background-color: darkslategray;
 
   .container {
+    //height: 700px;
     width: 700px;
     margin: auto;
     display: block;
@@ -136,37 +137,73 @@ body {
       }
     }
 
-    .shopping-panel {
-      // скрываем панель покупок
-      display: none;
-      height: 245px;
-      background-color: chocolate;
+    .main-panel {
+      height: 300px;
 
-      .shopping-input-panel {
-        //height: 50px;
-        background-color: #c90303;
-        display: inline-block;
+      .shopping-panel {
+        // скрываем панель покупок
         //display: none;
-        border: 3px solid black;
+        text-align: center;
+        //height: 245px;
+        height: 300px;
+        background-color: chocolate;
+        //background: #3a3939;
 
-        .buy-list-form {
-          margin: 10px;
+        .shopping-input-panel {
+          height: 100%;
+          background-color: #c90303;
+          display: inline-block;
+          //display: none;
+          border: 3px solid black;
+
+          .buy-list-form {
+            margin: 10px;
+          }
         }
-      }
 
-      .income-input-panel {
-        background-color: green;
-        display: inline-block;
-        border: 3px solid black;
+        .income-input-panel {
+          background-color: green;
+          display: inline-block;
+          border: 3px solid black;
 
-        .buy-list-form {
-          margin: 10px;
+          .buy-list-form {
+            margin: 10px;
+          }
         }
       }
     }
 
-    .hidden {
-    }
+    //.shopping-panel {
+    //  // скрываем панель покупок
+    //  //display: none;
+    //  text-align: center;
+    //  //height: 245px;
+    //  height: 300px;
+    //  background-color: chocolate;
+    //  //background: #3a3939;
+    //
+    //  .shopping-input-panel {
+    //    height: 100%;
+    //    background-color: #c90303;
+    //    display: inline-block;
+    //    //display: none;
+    //    border: 3px solid black;
+    //
+    //    .buy-list-form {
+    //      margin: 10px;
+    //    }
+    //  }
+    //
+    //  .income-input-panel {
+    //    background-color: green;
+    //    display: inline-block;
+    //    border: 3px solid black;
+    //
+    //    .buy-list-form {
+    //      margin: 10px;
+    //    }
+    //  }
+    //}
 
     .statistics-panel {
       display: none;
@@ -227,6 +264,10 @@ body {
           }
         }
       }
+    }
+
+    .hidden {
+      display: none;
     }
   }
 }

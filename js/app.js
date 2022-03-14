@@ -350,12 +350,12 @@ function showExpensePanel() {
 	document.getElementById('shopping-input-panel').style.display='inline-block'
 }
 
-// Функция ввода/вывода панели расходов на экран
+// Функция скрытия/появления панели расходов на экран
 //
 function showHideExpensePanel() {
 	if (document.getElementById('shopping-panel').className === 'shopping-panel') {
-		document.getElementById('shopping-panel').className = '';
-	} else if (document.getElementById('shopping-panel').className === '') {
+		document.getElementById('shopping-panel').className = 'hidden';
+	} else if (document.getElementById('shopping-panel').className === 'hidden') {
 		document.getElementById('shopping-panel').className = 'shopping-panel';
 	}
 }

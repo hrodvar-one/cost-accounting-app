@@ -112,25 +112,29 @@ body .container .work-with-sqlite .panel-delete-table {
   background-color: #3a3afd;
   border: 3px solid black;
 }
-body .container .shopping-panel {
-  display: none;
-  height: 245px;
+body .container .main-panel {
+  height: 300px;
+}
+body .container .main-panel .shopping-panel {
+  text-align: center;
+  height: 300px;
   background-color: chocolate;
 }
-body .container .shopping-panel .shopping-input-panel {
+body .container .main-panel .shopping-panel .shopping-input-panel {
+  height: 100%;
   background-color: #c90303;
   display: inline-block;
   border: 3px solid black;
 }
-body .container .shopping-panel .shopping-input-panel .buy-list-form {
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form {
   margin: 10px;
 }
-body .container .shopping-panel .income-input-panel {
+body .container .main-panel .shopping-panel .income-input-panel {
   background-color: green;
   display: inline-block;
   border: 3px solid black;
 }
-body .container .shopping-panel .income-input-panel .buy-list-form {
+body .container .main-panel .shopping-panel .income-input-panel .buy-list-form {
   margin: 10px;
 }
 body .container .statistics-panel {
@@ -176,6 +180,9 @@ body .container .statistics-panel .amount-per-month-output .accordion-body .pane
   background-color: white;
   display: none;
   overflow: hidden;
+}
+body .container .hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
