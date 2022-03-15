@@ -26,6 +26,22 @@ body {
     //height: 500px;
     background-color: #3a3939;
 
+    // настройки полосы прокрутки
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      //background-color: #ebebeb;
+      background-color: #ccc;
+      //-webkit-border-radius: 10px;
+      //border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      //-webkit-border-radius: 10px;
+      //border-radius: 10px;
+      background: #6d6d6d;
+    }
+
     //панель работы с базой sqlite3
     .work-with-sqlite {
       height: 100px;
@@ -99,7 +115,7 @@ body {
         .amount-per-month-output {
           height: 100%;
           width: 400px;
-          background-color: #f57820;
+          background-color: #f86308;
           display: inline-block;
           text-align: left;
           border: 3px solid black;
@@ -110,10 +126,10 @@ body {
 
           //панель аккордеон
           .accordion-body {
-            // включение полосы прокрутки справа
-            //height: 250px;
             height: 282px;
-            overflow-y:scroll;
+            // панель прокрутки скрыта пока высота
+            // области не превысит высоту блока
+            overflow-y:auto;
 
             .accordion {
               background-color: #eee;
@@ -132,8 +148,10 @@ body {
 
               .accordion-span {
                 margin-left: 15px;
+                font-weight: bold;
               }
 
+              // стилизация плюса справа
               &:after {
                 content: '\02795';
                 font-size: 13px;
@@ -155,11 +173,23 @@ body {
               }
             }
 
+            // стилизуем выпадающий блок данных
             .panel {
-              padding: 0 18px;
-              background-color: white;
+              //padding: 0 18px;
+              padding: 0 40px;
+              //background-color: white;
+              background-color: #ccc;
               display: none;
               overflow: hidden;
+
+              .accordion-p{
+                color: red;
+
+                // добавляет знак точки перед
+                &:before{
+                  content: '\2022  ';
+                }
+              }
             }
           }
         }
@@ -181,35 +211,35 @@ body {
         visibility: visible !important;
       }
 
-      @keyframes slideExpandUp {
-        0% {
-          transform: translateY(100%);
-        }
-        30% {
-          transform: translateY(-8%);
-        }
-        40% {
-          transform: translateY(2%);
-        }
-        50% {
-          transform: translateY(0%);
-        }
-        60% {
-          transform: translateY(0%);
-        }
-        70% {
-          transform: translateY(0%);
-        }
-        80% {
-          transform: translateY(0%);
-        }
-        90% {
-          transform: translateY(0%);
-        }
-        100% {
-          transform: translateY(0%);
-        }
-      }
+      //@keyframes slideExpandUp {
+      //  0% {
+      //    transform: translateY(100%);
+      //  }
+      //  30% {
+      //    transform: translateY(-8%);
+      //  }
+      //  40% {
+      //    transform: translateY(2%);
+      //  }
+      //  50% {
+      //    transform: translateY(0%);
+      //  }
+      //  60% {
+      //    transform: translateY(0%);
+      //  }
+      //  70% {
+      //    transform: translateY(0%);
+      //  }
+      //  80% {
+      //    transform: translateY(0%);
+      //  }
+      //  90% {
+      //    transform: translateY(0%);
+      //  }
+      //  100% {
+      //    transform: translateY(0%);
+      //  }
+      //}
     }
 
     //панель кнопки удалить добавить

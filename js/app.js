@@ -94,7 +94,7 @@ function sendFormSummPrice() {
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
 				if (response[j]['category'] === backToArray[i]) {
-					html.push(`<p>${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
+					html.push(`<p class="accordion-p">${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
 				}
 			}
 			html.push(`</div>`);
@@ -297,24 +297,6 @@ function timeConversion(date_string) {
 	}
 
 	return (date_string.substring(date_string.length - 2) + new_string);
-}
-
-// Функция скрытия панели расходов
-//
-function hideExpensePanel() {
-	document.getElementById('shopping-input-panel').style.display='hide'
-
-	// if (document.getElementById('shopping-input-panel').style.display === 'none') {
-	// 	document.getElementById('shopping-input-panel').style.display='inline-block'
-	// } else if (document.getElementById('shopping-input-panel').style.display === 'inline-block'){
-	// document.getElementById('shopping-input-panel').style.display='none'
-	// }
-}
-
-// Функция вывода панели расходов на экран
-//
-function showExpensePanel() {
-	document.getElementById('shopping-input-panel').style.display='inline-block'
 }
 
 // Функция скрытия/появления панели расходов на экране
