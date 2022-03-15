@@ -90,7 +90,7 @@ function sendFormSummPrice() {
 		let html = [];
 
 		for (let i = 0; i < backToArray.length; i++) {
-			html.push(`<button class="accordion">${backToArray[i]}</button>`);
+			html.push(`<button class="accordion"><span class="accordion-span">${backToArray[i]}</span></button>`);
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
 				if (response[j]['category'] === backToArray[i]) {
@@ -224,39 +224,6 @@ elNewCategoryForm.addEventListener('submit', (e) => {
 	document.getElementById("category-input").value = "";
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-// // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// // Список констант для формы удаления строки в таблице
-// const elFormDelete = document.querySelector('[name="delete-table"]');
-// const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
-// const elResultDelete = document.querySelector('#result-delete');
-// const requestURLDelete = elFormDelete.action;
-//
-// function sendCategoryDelete() {
-// 	const tableName = encodeURIComponent(elTableNameDelete.value);
-// 	const formData = 'table-name-delete=' + tableName;
-// 	const xhr = new XMLHttpRequest();
-// 	xhr.open('POST', requestURLDelete);
-// 	xhr.responseType = 'json';
-// 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// 	xhr.onload = () => {
-// 		if (xhr.status !== 200) {
-// 			return;
-// 		}
-// 		// const response = xhr.response;
-// 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
-// 	}
-// 	xhr.send(formData);
-// 	elResultDelete.textContent = 'Таблица удалена';
-// }
-//
-// // запуск функции отправки запроса на создание таблицы
-// // в базе данных при отправке формы
-// elFormDelete.addEventListener('submit', (e) => {
-// 	e.preventDefault();
-// 	sendCategoryDelete();
-// });
-// // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция передачи списка категорий в

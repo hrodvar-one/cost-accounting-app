@@ -45,6 +45,7 @@ body .container .main-panel .shopping-panel {
   background: #3a3939;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
+  text-align: left;
   height: 100%;
   width: 300px;
   background-color: #c90303;
@@ -60,6 +61,7 @@ body .container .main-panel .income-panel {
   background: #3a3939;
 }
 body .container .main-panel .income-panel .income-input-panel {
+  text-align: left;
   height: 100%;
   width: 300px;
   background-color: green;
@@ -70,25 +72,39 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
   margin: 10px;
 }
 body .container .main-panel .statistics-panel {
-  background-color: orangered;
+  text-align: center;
+  height: 400px;
+  background: #3a3939;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output {
+  height: 100%;
+  width: 400px;
+  background-color: #f57820;
+  display: inline-block;
+  text-align: left;
   border: 3px solid black;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form {
   margin: 10px;
+}
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
+  height: 282px;
+  overflow-y: scroll;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion {
   background-color: #eee;
   color: black;
   font-size: 15px;
   cursor: pointer;
-  padding: 18px;
+  padding: 5px;
   width: 100%;
   text-align: left;
   border: 1px solid black;
   outline: none;
   transition: 0.4s;
+}
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion .accordion-span {
+  margin-left: 15px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion:after {
   content: "➕";
@@ -120,6 +136,39 @@ body .container .balance-panel .balance-panel-button {
   width: 300px;
   height: 50px;
   background-color: forestgreen;
+  animation-name: slideExpandUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  visibility: visible !important;
+}
+@keyframes slideExpandUp {
+  0% {
+    transform: translateY(100%);
+  }
+  30% {
+    transform: translateY(-8%);
+  }
+  40% {
+    transform: translateY(2%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(0%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 body .container .button-add-delete-panel {
   text-align: center;

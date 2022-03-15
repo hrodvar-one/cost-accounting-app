@@ -55,6 +55,7 @@ body {
         background: #3a3939;
 
         .shopping-input-panel {
+          text-align: left;
           height: 100%;
           width: 300px;
           background-color: #c90303;
@@ -65,16 +66,6 @@ body {
             margin: 10px;
           }
         }
-
-        //.income-input-panel {
-        //  background-color: green;
-        //  display: inline-block;
-        //  border: 3px solid black;
-        //
-        //  .buy-list-form {
-        //    margin: 10px;
-        //  }
-        //}
       }
 
       // панель ввода доходов
@@ -85,6 +76,7 @@ body {
         background: #3a3939;
 
         .income-input-panel {
+          text-align: left;
           height: 100%;
           width: 300px;
           //background-color: #c90303;
@@ -96,23 +88,20 @@ body {
             margin: 10px;
           }
         }
-
-        //.income-input-panel {
-        //  background-color: green;
-        //  display: inline-block;
-        //  border: 3px solid black;
-        //
-        //  .buy-list-form {
-        //    margin: 10px;
-        //  }
-        //}
       }
 
       .statistics-panel {
-        background-color: orangered;
+        text-align: center;
+        height: 400px;
+        background: #3a3939;
+        //background-color: orangered;
 
         .amount-per-month-output {
-          //height: 400px;
+          height: 100%;
+          width: 400px;
+          background-color: #f57820;
+          display: inline-block;
+          text-align: left;
           border: 3px solid black;
 
           .statistics-per-month-form {
@@ -121,6 +110,10 @@ body {
 
           //панель аккордеон
           .accordion-body {
+            // включение полосы прокрутки справа
+            //height: 250px;
+            height: 282px;
+            overflow-y:scroll;
 
             .accordion {
               background-color: #eee;
@@ -128,13 +121,18 @@ body {
               color: black;
               font-size: 15px;
               cursor: pointer;
-              padding: 18px;
+              //padding: 18px;
+              padding: 5px;
               width: 100%;
               text-align: left;
               //border: none;
               border: 1px solid black;
               outline: none;
               transition: 0.4s;
+
+              .accordion-span {
+                margin-left: 15px;
+              }
 
               &:after {
                 content: '\02795';
@@ -176,6 +174,41 @@ body {
         width: 300px;
         height: 50px;
         background-color: forestgreen;
+
+        animation-name: slideExpandUp;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        visibility: visible !important;
+      }
+
+      @keyframes slideExpandUp {
+        0% {
+          transform: translateY(100%);
+        }
+        30% {
+          transform: translateY(-8%);
+        }
+        40% {
+          transform: translateY(2%);
+        }
+        50% {
+          transform: translateY(0%);
+        }
+        60% {
+          transform: translateY(0%);
+        }
+        70% {
+          transform: translateY(0%);
+        }
+        80% {
+          transform: translateY(0%);
+        }
+        90% {
+          transform: translateY(0%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
       }
     }
 
