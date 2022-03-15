@@ -350,12 +350,44 @@ function showExpensePanel() {
 	document.getElementById('shopping-input-panel').style.display='inline-block'
 }
 
-// Функция скрытия/появления панели расходов на экран
+// Функция скрытия/появления панели расходов на экране
 //
 function showHideExpensePanel() {
 	if (document.getElementById('shopping-panel').className === 'shopping-panel') {
 		document.getElementById('shopping-panel').className = 'hidden';
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('statistics-panel').className = 'hidden';
 	} else if (document.getElementById('shopping-panel').className === 'hidden') {
 		document.getElementById('shopping-panel').className = 'shopping-panel';
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('statistics-panel').className = 'hidden';
+	}
+}
+
+// Функция скрытия/появления панели статистики на экране
+//
+function showHideStatisticsPanel() {
+	if (document.getElementById('statistics-panel').className === 'statistics-panel') {
+		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
+	} else if (document.getElementById('statistics-panel').className === 'hidden') {
+		document.getElementById('statistics-panel').className = 'statistics-panel';
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
+	}
+}
+
+// Функция скрытия/появления панели доходов на экране
+//
+function showHideIncomePanel() {
+	if (document.getElementById('income-panel').className === 'income-panel') {
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
+	} else if (document.getElementById('income-panel').className === 'hidden') {
+		document.getElementById('income-panel').className = 'income-panel';
+		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
 	}
 }

@@ -22,82 +22,6 @@ body .container {
   display: block;
   background-color: #3a3939;
 }
-body .container .button-add-delete-panel {
-  text-align: center;
-  border: 3px solid black;
-}
-body .container .button-add-delete-panel .delete-button {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 40px;
-  width: 100px;
-  height: 100px;
-  background-color: #3a3939;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 6px solid red;
-}
-body .container .button-add-delete-panel .delete-button .minus {
-  margin-left: -9px;
-  margin-top: -38px;
-  position: absolute;
-  font-size: 60px;
-  color: red;
-}
-body .container .button-add-delete-panel .delete-button .minus:hover {
-  color: orangered;
-}
-body .container .button-add-delete-panel .delete-button:hover {
-  border: 6px solid orangered;
-}
-body .container .button-add-delete-panel .delete-button-show {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 40px;
-  width: 100px;
-  height: 100px;
-  background-color: #3a3939;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 6px solid red;
-}
-body .container .button-add-delete-panel .delete-button-show .minus {
-  margin-left: -9px;
-  margin-top: -38px;
-  position: absolute;
-  font-size: 60px;
-  color: red;
-}
-body .container .button-add-delete-panel .delete-button-show .minus:hover {
-  color: orangered;
-}
-body .container .button-add-delete-panel .delete-button-show:hover {
-  border: 6px solid orangered;
-}
-body .container .button-add-delete-panel .add-button {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 40px;
-  width: 100px;
-  height: 100px;
-  background-color: #3a3939;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 6px solid green;
-}
-body .container .button-add-delete-panel .add-button .plus {
-  margin-left: -16px;
-  margin-top: -34px;
-  position: absolute;
-  font-size: 60px;
-  color: green;
-}
-body .container .button-add-delete-panel .add-button .plus:hover {
-  color: #01d501;
-}
-body .container .button-add-delete-panel .add-button:hover {
-  border: 6px solid #01d501;
-}
 body .container .work-with-sqlite {
   height: 100px;
   background-color: #f57820;
@@ -113,15 +37,16 @@ body .container .work-with-sqlite .panel-delete-table {
   border: 3px solid black;
 }
 body .container .main-panel {
-  height: 300px;
+  height: 400px;
 }
 body .container .main-panel .shopping-panel {
   text-align: center;
-  height: 300px;
-  background-color: chocolate;
+  height: 400px;
+  background: #3a3939;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   height: 100%;
+  width: 300px;
   background-color: #c90303;
   display: inline-block;
   border: 3px solid black;
@@ -129,25 +54,31 @@ body .container .main-panel .shopping-panel .shopping-input-panel {
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form {
   margin: 10px;
 }
-body .container .main-panel .shopping-panel .income-input-panel {
+body .container .main-panel .income-panel {
+  text-align: center;
+  height: 400px;
+  background: #3a3939;
+}
+body .container .main-panel .income-panel .income-input-panel {
+  height: 100%;
+  width: 300px;
   background-color: green;
   display: inline-block;
   border: 3px solid black;
 }
-body .container .main-panel .shopping-panel .income-input-panel .buy-list-form {
+body .container .main-panel .income-panel .income-input-panel .income-list-form {
   margin: 10px;
 }
-body .container .statistics-panel {
-  display: none;
+body .container .main-panel .statistics-panel {
   background-color: orangered;
 }
-body .container .statistics-panel .amount-per-month-output {
+body .container .main-panel .statistics-panel .amount-per-month-output {
   border: 3px solid black;
 }
-body .container .statistics-panel .amount-per-month-output .statistics-per-month-form {
+body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form {
   margin: 10px;
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .accordion {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion {
   background-color: #eee;
   color: black;
   font-size: 15px;
@@ -159,27 +90,94 @@ body .container .statistics-panel .amount-per-month-output .accordion-body .acco
   outline: none;
   transition: 0.4s;
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .accordion:after {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion:after {
   content: "➕";
   font-size: 13px;
   color: #777;
   float: right;
   margin-left: 5px;
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .accordion:hover {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion:hover {
   background-color: #ccc;
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .active {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active {
   background-color: #ccc;
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .active:after {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active:after {
   content: "➖";
 }
-body .container .statistics-panel .amount-per-month-output .accordion-body .panel {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel {
   padding: 0 18px;
   background-color: white;
   display: none;
   overflow: hidden;
+}
+body .container .balance-panel {
+  margin: 10px;
+  text-align: center;
+}
+body .container .balance-panel .balance-panel-button {
+  width: 300px;
+  height: 50px;
+  background-color: forestgreen;
+}
+body .container .button-add-delete-panel {
+  text-align: center;
+  border: 3px solid black;
+}
+body .container .button-add-delete-panel .delete-button-show {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: #3a3939;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 6px solid red;
+}
+body .container .button-add-delete-panel .delete-button-show:active {
+  border-color: #f57820;
+}
+body .container .button-add-delete-panel .delete-button-show:active .minus {
+  color: #f57820;
+}
+body .container .button-add-delete-panel .delete-button-show .minus {
+  margin-left: -9px;
+  margin-top: -38px;
+  position: absolute;
+  font-size: 60px;
+  color: red;
+}
+body .container .button-add-delete-panel .delete-button-show:hover {
+  background-color: #4d4d4d;
+}
+body .container .button-add-delete-panel .add-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: #3a3939;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 6px solid green;
+}
+body .container .button-add-delete-panel .add-button:active {
+  border-color: #01d501;
+}
+body .container .button-add-delete-panel .add-button:active .plus {
+  color: #01d501;
+}
+body .container .button-add-delete-panel .add-button .plus {
+  margin-left: -16px;
+  margin-top: -34px;
+  position: absolute;
+  font-size: 60px;
+  color: green;
+}
+body .container .button-add-delete-panel .add-button:hover {
+  background-color: #4d4d4d;
 }
 body .container .hidden {
   display: none;

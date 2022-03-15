@@ -26,100 +26,7 @@ body {
     //height: 500px;
     background-color: #3a3939;
 
-    //панель кнопки удалить добавить
-    .button-add-delete-panel {
-      text-align: center;
-      border: 3px solid black;
-
-      .delete-button {
-        //position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 40px;
-        width: 100px;
-        height: 100px;
-        background-color: #3a3939;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 6px solid red;
-
-        .minus {
-          margin-left: -9px;
-          margin-top: -38px;
-          position: absolute;
-          font-size: 60px;
-          color: red;
-        }
-
-        .minus:hover {
-          color: orangered;
-        }
-      }
-
-      .delete-button:hover {
-        border: 6px solid orangered;
-      }
-
-      //кнопка возврата панели расходов
-      .delete-button-show {
-        //position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 40px;
-        width: 100px;
-        height: 100px;
-        background-color: #3a3939;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 6px solid red;
-
-        .minus {
-          margin-left: -9px;
-          margin-top: -38px;
-          position: absolute;
-          font-size: 60px;
-          color: red;
-        }
-
-        .minus:hover {
-          color: orangered;
-        }
-      }
-
-      .delete-button-show:hover {
-        border: 6px solid orangered;
-      }
-
-      // кнопка показывающая панель доходов
-      .add-button {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 40px;
-        width: 100px;
-        height: 100px;
-        background-color: #3a3939;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 6px solid green;
-
-        .plus {
-          margin-left: -16px;
-          margin-top: -34px;
-          position: absolute;
-          font-size: 60px;
-          color: green;
-        }
-
-        .plus:hover {
-          color: #01d501;
-        }
-      }
-
-      .add-button:hover {
-        border: 6px solid #01d501;
-      }
-    }
-
+    //панель работы с базой sqlite3
     .work-with-sqlite {
       height: 100px;
       background-color: #f57820;
@@ -138,22 +45,20 @@ body {
     }
 
     .main-panel {
-      height: 300px;
+      height: 400px;
 
+      // панель ввода расходов
       .shopping-panel {
-        // скрываем панель покупок
-        //display: none;
         text-align: center;
-        //height: 245px;
-        height: 300px;
-        background-color: chocolate;
-        //background: #3a3939;
+        height: 400px;
+        //background-color: chocolate;
+        background: #3a3939;
 
         .shopping-input-panel {
           height: 100%;
+          width: 300px;
           background-color: #c90303;
           display: inline-block;
-          //display: none;
           border: 3px solid black;
 
           .buy-list-form {
@@ -161,111 +66,204 @@ body {
           }
         }
 
+        //.income-input-panel {
+        //  background-color: green;
+        //  display: inline-block;
+        //  border: 3px solid black;
+        //
+        //  .buy-list-form {
+        //    margin: 10px;
+        //  }
+        //}
+      }
+
+      // панель ввода доходов
+      .income-panel {
+        text-align: center;
+        height: 400px;
+        //background-color: chocolate;
+        background: #3a3939;
+
         .income-input-panel {
+          height: 100%;
+          width: 300px;
+          //background-color: #c90303;
           background-color: green;
           display: inline-block;
           border: 3px solid black;
 
-          .buy-list-form {
+          .income-list-form {
             margin: 10px;
           }
         }
+
+        //.income-input-panel {
+        //  background-color: green;
+        //  display: inline-block;
+        //  border: 3px solid black;
+        //
+        //  .buy-list-form {
+        //    margin: 10px;
+        //  }
+        //}
       }
-    }
 
-    //.shopping-panel {
-    //  // скрываем панель покупок
-    //  //display: none;
-    //  text-align: center;
-    //  //height: 245px;
-    //  height: 300px;
-    //  background-color: chocolate;
-    //  //background: #3a3939;
-    //
-    //  .shopping-input-panel {
-    //    height: 100%;
-    //    background-color: #c90303;
-    //    display: inline-block;
-    //    //display: none;
-    //    border: 3px solid black;
-    //
-    //    .buy-list-form {
-    //      margin: 10px;
-    //    }
-    //  }
-    //
-    //  .income-input-panel {
-    //    background-color: green;
-    //    display: inline-block;
-    //    border: 3px solid black;
-    //
-    //    .buy-list-form {
-    //      margin: 10px;
-    //    }
-    //  }
-    //}
+      .statistics-panel {
+        background-color: orangered;
 
-    .statistics-panel {
-      display: none;
-      background-color: orangered;
-      //float: none;
+        .amount-per-month-output {
+          //height: 400px;
+          border: 3px solid black;
 
-      .amount-per-month-output {
-        //height: 400px;
-        border: 3px solid black;
+          .statistics-per-month-form {
+            margin: 10px;
+          }
 
-        .statistics-per-month-form {
-          margin: 10px;
-        }
+          //панель аккордеон
+          .accordion-body {
 
-        //панель аккордеон
-        .accordion-body {
+            .accordion {
+              background-color: #eee;
+              //color: #444;
+              color: black;
+              font-size: 15px;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              text-align: left;
+              //border: none;
+              border: 1px solid black;
+              outline: none;
+              transition: 0.4s;
 
-          .accordion {
-            background-color: #eee;
-            //color: #444;
-            color: black;
-            font-size: 15px;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            text-align: left;
-            //border: none;
-            border: 1px solid black;
-            outline: none;
-            transition: 0.4s;
+              &:after {
+                content: '\02795';
+                font-size: 13px;
+                color: #777;
+                float: right;
+                margin-left: 5px;
+              }
 
-            &:after {
-              content: '\02795';
-              font-size: 13px;
-              color: #777;
-              float: right;
-              margin-left: 5px;
+              &:hover {
+                background-color: #ccc;
+              }
             }
 
-            &:hover {
+            .active {
               background-color: #ccc;
+
+              &:after {
+                content: "\2796";
+              }
             }
-          }
 
-          .active {
-            background-color: #ccc;
-
-            &:after {
-              content: "\2796";
+            .panel {
+              padding: 0 18px;
+              background-color: white;
+              display: none;
+              overflow: hidden;
             }
-          }
-
-          .panel {
-            padding: 0 18px;
-            background-color: white;
-            display: none;
-            overflow: hidden;
           }
         }
       }
     }
 
+    .balance-panel {
+      margin: 10px;
+      text-align: center;
+
+      .balance-panel-button {
+        width: 300px;
+        height: 50px;
+        background-color: forestgreen;
+      }
+    }
+
+    //панель кнопки удалить добавить
+    .button-add-delete-panel {
+      text-align: center;
+      border: 3px solid black;
+
+      //кнопка возврата панели расходов
+      .delete-button-show {
+        //position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: #3a3939;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 6px solid red;
+        //transition: box-shadow 0.3s ease-in-out;
+
+        &:active {
+          border-color: #f57820;
+
+          .minus {
+            color: #f57820;
+          }
+        }
+
+        .minus {
+          margin-left: -9px;
+          margin-top: -38px;
+          position: absolute;
+          font-size: 60px;
+          color: red;
+        }
+
+        //.minus:hover {
+        //  //color: orangered;
+        //}
+      }
+
+      .delete-button-show:hover {
+        //border: 6px solid orangered;
+        background-color: #4d4d4d;
+      }
+
+      // кнопка показывающая панель доходов
+      .add-button {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: #3a3939;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 6px solid green;
+
+        &:active {
+          border-color: #01d501;
+
+          .plus {
+            color: #01d501;
+          }
+        }
+
+        .plus {
+          margin-left: -16px;
+          margin-top: -34px;
+          position: absolute;
+          font-size: 60px;
+          color: green;
+        }
+
+        //.plus:hover {
+        //  color: #01d501;
+        //}
+      }
+
+      .add-button:hover {
+        //border: 6px solid #01d501;
+        background-color: #4d4d4d;
+      }
+    }
+
+    // специальный класс для скрытия нужных блоков
     .hidden {
       display: none;
     }

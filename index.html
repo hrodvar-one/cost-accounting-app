@@ -48,32 +48,77 @@
 				</form>
 			</div>
 		</div>
-	</div>
-<!--	<br>-->
-	<div class="statistics-panel">
-		<div class="amount-per-month-output">
-			<h3>Панель статистики</h3>
-			<form name="statistics-per-month-form" class="statistics-per-month-form" action="/php/request-amount-for-month.php" method="post">
-				<label for="month">Введите месяц:</label><input type="month" class="table-name_input" name="month" id="month">
-				<br>
-				<button type="submit">Вывести сумму</button>
-			</form>
-<!--			<ul id="result-statistics-one"></ul>-->
-			<!--	Панель с выпадающими блоками		-->
-			<div class="accordion-body" id="result-statistics-one">
+		<!--		Панель расходов - income panel-->
+		<div class="hidden" id="income-panel">
+			<div class="income-input-panel" id="income-input-panel">
+				<h3>Панель доходов</h3>
+				<form name="income-list-form" class="income-list-form" action="" method="post">
+					<label for="date">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
+					<br>
+					<label for="category">Категория:</label>
+					<select class="table-name_input" id="category" name="category">
+					</select>
+					<br>
+					<label for="title">Название:</label><input type="text" class="table-name_input" name="title" id="title">
+					<br>
+					<label for="price">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
+					<br>
+					<button type="submit">Добавить доходы</button>
+					<br>
+				</form>
+				<!--			<div id="result-add-purchase"></div>-->
+				<!--	Форма добавления категории-->
+				<form name="add-new-category" class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
+					<button type="submit">Добавить <br>категорию</button>
+					<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
+				</form>
+				<form name="delete-new-category" class="delete-new-category" action="/php/delete-category-in-expenses-table.php" method="post">
+					<button type="submit">Удалить <br>категорию</button>
+					<label for="category-delete-input"></label>
+					<select class="table-name_input" id="category-delete-input" name="category-delete-input">
+					</select>
+				</form>
 			</div>
-			<!--			-->
+		</div>
+<!--		<div class="statistics-panel" id="statistics-panel">-->
+		<div class="hidden" id="statistics-panel">
+			<div class="amount-per-month-output">
+				<h3>Панель статистики</h3>
+				<form name="statistics-per-month-form" class="statistics-per-month-form" action="/php/request-amount-for-month.php" method="post">
+					<label for="month">Введите месяц:</label><input type="month" class="table-name_input" name="month" id="month">
+					<br>
+					<button type="submit">Вывести сумму</button>
+				</form>
+				<!--			<ul id="result-statistics-one"></ul>-->
+				<!--	Панель с выпадающими блоками		-->
+				<div class="accordion-body" id="result-statistics-one">
+				</div>
+			</div>
 		</div>
 	</div>
-<!--	<br>-->
-	<div class="button-add-delete-panel">
-		<button type="button" onclick="hideExpensePanel()" class="delete-button">
-			<span class="minus"> - </span>
+<!--	<div class="statistics-panel">-->
+<!--		<div class="amount-per-month-output">-->
+<!--			<h3>Панель статистики</h3>-->
+<!--			<form name="statistics-per-month-form" class="statistics-per-month-form" action="/php/request-amount-for-month.php" method="post">-->
+<!--				<label for="month">Введите месяц:</label><input type="month" class="table-name_input" name="month" id="month">-->
+<!--				<br>-->
+<!--				<button type="submit">Вывести сумму</button>-->
+<!--			</form>-->
+<!--				Панель с выпадающими блоками		-->
+<!--			<div class="accordion-body" id="result-statistics-one">-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="balance-panel">
+		<button type="button" class="balance-panel-button" onclick="showHideStatisticsPanel()">
+			Баланс
 		</button>
+	</div>
+	<div class="button-add-delete-panel">
 		<button type="button" onclick="showHideExpensePanel()" class="delete-button-show">
 			<span class="minus"> - </span>
 		</button>
-		<button type="button" class="add-button">
+		<button type="button" onclick="showHideIncomePanel()" class="add-button">
 			<span class="plus"> + </span>
 		</button>
 	</div>
