@@ -90,8 +90,40 @@ function sendFormSummPrice() {
 		let summa_2 = 0;
 		let test_array_2 = [];
 
+		// Функция группировки response по category
+		const groupResponseByCategory = response.reduce((group, product) => {
+			const { category } = product;
+			group[category] = group[category] ?? [];
+			group[category].push(product);
+			return group;
+		}, {});
+		console.log(groupResponseByCategory);
+		console.log(Object.keys(groupResponseByCategory).length);
+		console.log(groupResponseByCategory['еда']);
+		console.log(groupResponseByCategory['еда'].length)
+		console.log(groupResponseByCategory['еда'][1]['price']);
+		// console.log(test_array_2);
 
 		let html = [];
+
+		// function arraySum() {
+		// 	for (let i = 0; i < backToArray.length; i++) {
+		// 		for (let j = 0; j < groupResponseByCategory[i].length; j++) {
+		// 			summa_2 += groupResponseByCategory['еда'][1]['price'];
+		// 		}
+		// 		test_array_2.push(summa_2);
+		// 	}
+		// }
+
+
+		for (let i = 0; i < backToArray.length; i++) {
+			for (let j = 0; j < groupResponseByCategory.length; j++) {
+				summa_2 += groupResponseByCategory['еда'][1]['price'];
+			}
+			test_array_2.push(summa_2);
+		}
+
+		console.log(test_array_2);
 
 		for (let i = 0; i < backToArray.length; i++) {
 			html.push(`<button class="accordion"><span class="accordion-span">${backToArray[i]}</span></button>`);
@@ -103,8 +135,6 @@ function sendFormSummPrice() {
 			}
 			html.push(`</div>`);
 		}
-
-		console.log(test_array_2);
 
 		// сумма всех цен товаров
 		for (let j = 0; j < size; j++) {
