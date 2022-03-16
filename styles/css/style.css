@@ -26,7 +26,7 @@ body .container ::-webkit-scrollbar {
   width: 5px;
 }
 body .container ::-webkit-scrollbar-track {
-  background-color: #ccc;
+  background-color: #3a3939;
 }
 body .container ::-webkit-scrollbar-thumb {
   background: #6d6d6d;
@@ -88,7 +88,6 @@ body .container .main-panel .statistics-panel {
 body .container .main-panel .statistics-panel .amount-per-month-output {
   height: 100%;
   width: 400px;
-  background-color: #f86308;
   display: inline-block;
   text-align: left;
   border: 3px solid black;
@@ -101,8 +100,8 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   overflow-y: auto;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion {
-  background-color: #eee;
-  color: black;
+  background-color: #3a3939;
+  color: #d7d6d6;
   font-size: 15px;
   cursor: pointer;
   padding: 5px;
@@ -113,36 +112,32 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   transition: 0.4s;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion .accordion-span {
-  margin-left: 15px;
+  margin-left: 10px;
   font-weight: bold;
 }
-body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion:after {
-  content: "➕";
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion .accordion-span::before {
+  content: "➕    ";
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion:hover {
-  background-color: #ccc;
+  background-color: #5e5e5e;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active {
-  background-color: #ccc;
+  background-color: #3a3939;
 }
-body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active:after {
-  content: "➖";
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active .accordion-span::before {
+  content: "➖    ";
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel {
   padding: 0 40px;
-  background-color: #ccc;
+  background-color: #3a3939;
   display: none;
   overflow: hidden;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p {
-  color: red;
+  color: #d7d6d6;
 }
-body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p:before {
-  content: "• ";
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p .accordion-p-span {
+  color: red;
 }
 body .container .balance-panel {
   margin: 10px;

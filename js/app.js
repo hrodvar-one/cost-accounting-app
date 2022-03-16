@@ -87,6 +87,10 @@ function sendFormSummPrice() {
 		// console.log(response[0]['category']);
 		// console.log(size);
 		let summa = 0;
+		let summa_2 = 0;
+		let test_array_2 = [];
+
+
 		let html = [];
 
 		for (let i = 0; i < backToArray.length; i++) {
@@ -94,11 +98,13 @@ function sendFormSummPrice() {
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
 				if (response[j]['category'] === backToArray[i]) {
-					html.push(`<p class="accordion-p">${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
+					html.push(`<p class="accordion-p"><span class="accordion-p-span">&#8226; </span>${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
 				}
 			}
 			html.push(`</div>`);
 		}
+
+		console.log(test_array_2);
 
 		// сумма всех цен товаров
 		for (let j = 0; j < size; j++) {

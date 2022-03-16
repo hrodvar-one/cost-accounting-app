@@ -32,7 +32,7 @@ body {
     }
     ::-webkit-scrollbar-track {
       //background-color: #ebebeb;
-      background-color: #ccc;
+      background-color: #3a3939;
       //-webkit-border-radius: 10px;
       //border-radius: 10px;
     }
@@ -115,7 +115,7 @@ body {
         .amount-per-month-output {
           height: 100%;
           width: 400px;
-          background-color: #f86308;
+          //background-color: #f86308;
           display: inline-block;
           text-align: left;
           border: 3px solid black;
@@ -132,9 +132,9 @@ body {
             overflow-y:auto;
 
             .accordion {
-              background-color: #eee;
-              //color: #444;
-              color: black;
+              //background-color: #eee;
+              background-color: #3a3939;
+              color: #d7d6d6;
               font-size: 15px;
               cursor: pointer;
               //padding: 18px;
@@ -147,29 +147,28 @@ body {
               transition: 0.4s;
 
               .accordion-span {
-                margin-left: 15px;
+                margin-left: 10px;
                 font-weight: bold;
-              }
 
-              // стилизация плюса справа
-              &:after {
-                content: '\02795';
-                font-size: 13px;
-                color: #777;
-                float: right;
-                margin-left: 5px;
+                &::before {
+                  content: '\02795     ';
+                }
               }
 
               &:hover {
-                background-color: #ccc;
+                background-color: #5e5e5e;
               }
             }
 
             .active {
-              background-color: #ccc;
+              background-color: #3a3939;
 
-              &:after {
-                content: "\2796";
+              .accordion-span {
+
+                // добавляет минус до элемента span
+                &::before {
+                  content: '\2796     ';
+                }
               }
             }
 
@@ -178,16 +177,21 @@ body {
               //padding: 0 18px;
               padding: 0 40px;
               //background-color: white;
-              background-color: #ccc;
+              background-color: #3a3939;
               display: none;
               overflow: hidden;
 
               .accordion-p{
-                color: red;
+                // цвет текста выпадающего меню
+                color: #d7d6d6;
 
-                // добавляет знак точки перед
-                &:before{
-                  content: '\2022  ';
+                //// добавляет знак точки перед
+                //&:before{
+                //  content: '\2022  ';
+                //}
+
+                .accordion-p-span {
+                  color: red;
                 }
               }
             }
