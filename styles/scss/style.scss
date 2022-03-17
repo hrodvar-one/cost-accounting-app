@@ -131,6 +131,10 @@ body {
             // области не превысит высоту блока
             overflow-y:auto;
 
+            li {
+              color: #d7d6d6;
+            }
+
             .accordion {
               //background-color: #eee;
               background-color: #3a3939;
@@ -147,6 +151,7 @@ body {
               transition: 0.4s;
 
               .accordion-span {
+                color: #fc4e4e;
                 margin-left: 10px;
                 font-weight: bold;
 
@@ -164,6 +169,7 @@ body {
               background-color: #3a3939;
 
               .accordion-span {
+                color: #fc4e4e;
 
                 // добавляет минус до элемента span
                 &::before {

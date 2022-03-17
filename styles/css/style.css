@@ -99,6 +99,9 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   height: 282px;
   overflow-y: auto;
 }
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body li {
+  color: #d7d6d6;
+}
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion {
   background-color: #3a3939;
   color: #d7d6d6;
@@ -112,6 +115,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   transition: 0.4s;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion .accordion-span {
+  color: #fc4e4e;
   margin-left: 10px;
   font-weight: bold;
 }
@@ -123,6 +127,9 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active {
   background-color: #3a3939;
+}
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active .accordion-span {
+  color: #fc4e4e;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active .accordion-span::before {
   content: "➖    ";
