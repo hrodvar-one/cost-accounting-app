@@ -132,7 +132,7 @@ function sendFormSummPrice() {
 			summa = response[j]['price'] + summa;
 		}
 
-		html.push(`<li>Итого : <b>${summa}</b></li>`);
+		html.push(`<li class="accordion-body-li"><span class="accordion-body-li-span">Итого : <b>${summa}</b></span></li>`);
 		elResultStatistics.innerHTML = html.join('');
 
 		// Вторая раскрывающаяся панель (аккордеон)

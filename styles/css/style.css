@@ -56,8 +56,8 @@ body .container .main-panel .shopping-panel {
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
   height: 100%;
-  width: 300px;
-  background-color: #c90303;
+  width: 400px;
+  background-color: #3a3939;
   display: inline-block;
   border: 3px solid black;
 }
@@ -72,8 +72,7 @@ body .container .main-panel .income-panel {
 body .container .main-panel .income-panel .income-input-panel {
   text-align: left;
   height: 100%;
-  width: 300px;
-  background-color: green;
+  width: 400px;
   display: inline-block;
   border: 3px solid black;
 }
@@ -92,15 +91,32 @@ body .container .main-panel .statistics-panel .amount-per-month-output {
   text-align: left;
   border: 3px solid black;
 }
+body .container .main-panel .statistics-panel .amount-per-month-output .statistics-panel-h3 {
+  text-align: center;
+  color: #d7d6d6;
+}
 body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form {
   margin: 10px;
 }
+body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form .statistics-form-label-span {
+  color: #d7d6d6;
+}
+body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form .statistics-form-button {
+  margin-top: 5px;
+}
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
-  height: 282px;
+  height: 276px;
   overflow-y: auto;
 }
-body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body li {
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion-body-li {
+  margin-top: 5px;
+  margin-left: 40px;
   color: #d7d6d6;
+  list-style-type: none;
+}
+body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion-body-li .accordion-body-li-span {
+  padding: 5px;
+  border: 1px solid black;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion {
   background-color: #3a3939;
@@ -139,6 +155,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   background-color: #3a3939;
   display: none;
   overflow: hidden;
+  border: 1px solid black;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p {
   color: #d7d6d6;

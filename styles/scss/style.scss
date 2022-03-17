@@ -67,14 +67,17 @@ body {
       .shopping-panel {
         text-align: center;
         height: 400px;
+        //width: 400px;
         //background-color: chocolate;
         background: #3a3939;
 
         .shopping-input-panel {
           text-align: left;
           height: 100%;
-          width: 300px;
-          background-color: #c90303;
+          //width: 300px;
+          width: 400px;
+          background-color: #3a3939;
+          //background-color: #c90303;
           display: inline-block;
           border: 3px solid black;
 
@@ -94,9 +97,10 @@ body {
         .income-input-panel {
           text-align: left;
           height: 100%;
-          width: 300px;
+          //width: 300px;
+          width: 400px;
           //background-color: #c90303;
-          background-color: green;
+          //background-color: green;
           display: inline-block;
           border: 3px solid black;
 
@@ -120,19 +124,42 @@ body {
           text-align: left;
           border: 3px solid black;
 
+          .statistics-panel-h3 {
+            text-align: center;
+            color: #d7d6d6;
+          }
+
           .statistics-per-month-form {
+            //text-align: center;
             margin: 10px;
+
+            .statistics-form-label-span {
+              color: #d7d6d6;
+            }
+
+            .statistics-form-button {
+              margin-top: 5px;
+              //margin-left: 40px;
+            }
           }
 
           //панель аккордеон
           .accordion-body {
-            height: 282px;
+            height: 276px;
             // панель прокрутки скрыта пока высота
             // области не превысит высоту блока
             overflow-y:auto;
 
-            li {
+            .accordion-body-li {
+              margin-top: 5px;
+              margin-left: 40px;
               color: #d7d6d6;
+              list-style-type: none;
+
+              .accordion-body-li-span {
+                padding: 5px;
+                border: 1px solid black;
+              }
             }
 
             .accordion {
@@ -186,6 +213,7 @@ body {
               background-color: #3a3939;
               display: none;
               overflow: hidden;
+              border: 1px solid black;
 
               .accordion-p{
                 // цвет текста выпадающего меню
