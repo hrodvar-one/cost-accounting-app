@@ -81,6 +81,8 @@ function sendFormSummPrice() {
 
 		console.log(test_array);
 		console.log(backToArray);
+		console.log(backToArray[0]);
+
 		console.log(backToArray.length);
 
 		// console.log(response[0]);
@@ -97,36 +99,25 @@ function sendFormSummPrice() {
 			group[category].push(product);
 			return group;
 		}, {});
-		console.log(groupResponseByCategory);
-		console.log(Object.keys(groupResponseByCategory).length);
-		console.log(groupResponseByCategory['еда']);
-		console.log(groupResponseByCategory['еда'].length)
-		console.log(groupResponseByCategory['еда'][1]['price']);
-		// console.log(test_array_2);
+		// console.log(groupResponseByCategory);
+		// console.log(Object.keys(groupResponseByCategory).length);
+		// console.log(groupResponseByCategory['еда']);
+		// console.log(groupResponseByCategory['еда'].length)
+		// console.log(groupResponseByCategory['еда'][0]['price']);
 
 		let html = [];
 
-		// function arraySum() {
-		// 	for (let i = 0; i < backToArray.length; i++) {
-		// 		for (let j = 0; j < groupResponseByCategory[i].length; j++) {
-		// 			summa_2 += groupResponseByCategory['еда'][1]['price'];
-		// 		}
-		// 		test_array_2.push(summa_2);
-		// 	}
-		// }
-
-
-		for (let i = 0; i < backToArray.length; i++) {
-			for (let j = 0; j < groupResponseByCategory.length; j++) {
-				summa_2 += groupResponseByCategory['еда'][1]['price'];
+		// функция суммирования значения цены
+		function sumPricesByCategory (categoryName) {
+			summa_2 = 0;
+			for (let i = 0; i < groupResponseByCategory[categoryName].length; i++) {
+				summa_2 += groupResponseByCategory[categoryName][i]['price'];
 			}
-			test_array_2.push(summa_2);
+			return summa_2;
 		}
 
-		console.log(test_array_2);
-
 		for (let i = 0; i < backToArray.length; i++) {
-			html.push(`<button class="accordion"><span class="accordion-span">${backToArray[i]}</span></button>`);
+			html.push(`<button class="accordion"><span class="accordion-span">${backToArray[i]} : ${sumPricesByCategory(backToArray[i])}</span></button>`);
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
 				if (response[j]['category'] === backToArray[i]) {
@@ -140,27 +131,6 @@ function sendFormSummPrice() {
 		for (let j = 0; j < size; j++) {
 			summa = response[j]['price'] + summa;
 		}
-
-		// copy
-		// for (let i = 0; i < size; i++) {
-		// 	summa = response[i]['price'] + summa;
-		// 	// html.push(`<button class="accordion">${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></button>`);
-		// 	html.push(`<button class="accordion">${response[i]['category']}</button>`);
-		// 	html.push(`<div class="panel">`);
-		// 	for (let j = 0; j < size; j++) {
-		// 		if (response[i]['category'] === response[j]['category']) {
-		// 			// for (let k = j; k < size; i++) {
-		// 			// 	html.push(`<li>${response[i]['category']} : <b>${response[i]['SUM(price)']}</b></li>`);
-		// 			// 	summa = response[i]['SUM(price)'] + summa;
-		// 			// }
-		// 			html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
-		// 			// html.push(`<p>${response[j]['date']} : <b>${response[j]['title']}</b> : <b>${response[j]['price']}</b></p>`);
-		// 		}
-		// 	}
-		// 	// html.push(`<p>${response[i]['date']} : <b>${response[i]['title']}</b> : <b>${response[i]['price']}</b></p>`);
-		// 	html.push(`</div>`);
-		// }
-		// copy
 
 		html.push(`<li>Итого : <b>${summa}</b></li>`);
 		elResultStatistics.innerHTML = html.join('');
