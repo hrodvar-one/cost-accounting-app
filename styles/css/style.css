@@ -51,12 +51,13 @@ body .container .main-panel {
 body .container .main-panel .shopping-panel {
   text-align: center;
   height: 400px;
+  background-color: #f57820;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
   height: 100%;
   width: 400px;
-  background-color: #3a3939;
+  background-color: blue;
   display: inline-block;
   border: 3px solid black;
 }
@@ -65,7 +66,14 @@ body .container .main-panel .shopping-panel .shopping-input-panel .shopping-inpu
   color: #d7d6d6;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form {
+  background-color: #01d501;
   margin: 10px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .add-new-expense-category {
+  width: 200px;
+  height: 200px;
+  background-color: #fc4e4e;
+  margin: 20px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-label {
   color: #d7d6d6;
@@ -182,10 +190,6 @@ body .container .balance-panel .balance-panel-button {
   width: 300px;
   height: 50px;
   background-color: forestgreen;
-  animation-name: slideExpandUp;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  visibility: visible !important;
 }
 body .container .button-add-delete-panel {
   text-align: center;
