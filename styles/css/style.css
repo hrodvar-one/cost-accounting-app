@@ -51,7 +51,6 @@ body .container .main-panel {
 body .container .main-panel .shopping-panel {
   text-align: center;
   height: 400px;
-  background: #3a3939;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
@@ -61,13 +60,19 @@ body .container .main-panel .shopping-panel .shopping-input-panel {
   display: inline-block;
   border: 3px solid black;
 }
+body .container .main-panel .shopping-panel .shopping-input-panel .shopping-input-panel-h3 {
+  text-align: center;
+  color: #d7d6d6;
+}
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form {
   margin: 10px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-label {
+  color: #d7d6d6;
 }
 body .container .main-panel .income-panel {
   text-align: center;
   height: 400px;
-  background: #3a3939;
 }
 body .container .main-panel .income-panel .income-input-panel {
   text-align: left;
@@ -76,13 +81,19 @@ body .container .main-panel .income-panel .income-input-panel {
   display: inline-block;
   border: 3px solid black;
 }
+body .container .main-panel .income-panel .income-input-panel .income-input-panel-h3 {
+  text-align: center;
+  color: #d7d6d6;
+}
 body .container .main-panel .income-panel .income-input-panel .income-list-form {
   margin: 10px;
+}
+body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-label {
+  color: #d7d6d6;
 }
 body .container .main-panel .statistics-panel {
   text-align: center;
   height: 400px;
-  background: #3a3939;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output {
   height: 100%;
