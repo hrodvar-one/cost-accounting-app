@@ -31,6 +31,14 @@ body .container ::-webkit-scrollbar-track {
 body .container ::-webkit-scrollbar-thumb {
   background: #6d6d6d;
 }
+body .container .header {
+  text-align: right;
+}
+body .container .header .header-button-logout {
+  width: 100px;
+  height: 30px;
+  margin: 20px;
+}
 body .container .work-with-sqlite {
   height: 100px;
   background-color: #f57820;

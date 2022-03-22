@@ -1,3 +1,12 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Модуль запрета перехода
+//
+const indexUrl = "http://localhost:9001/index.html";
+const errorUrl = "http://localhost:9001/404.html";
+if (document.referrer !== indexUrl) {
+	window.location = errorUrl;
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Список констант для формы добавления покупок
@@ -346,3 +355,7 @@ function showHideIncomePanel() {
 		document.getElementById('shopping-panel').className = 'hidden';
 	}
 }
+
+// Ждём события клик на кнопку Выйти(Logout)
+const buttonLogout = document.querySelector('[id="header-button-logout"]');
+buttonLogout.addEventListener("click", () => window.location.href="../index.html");

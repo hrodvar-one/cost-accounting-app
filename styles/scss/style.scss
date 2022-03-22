@@ -42,6 +42,16 @@ body {
       background: #6d6d6d;
     }
 
+    .header {
+      text-align: right;
+
+      .header-button-logout {
+        width: 100px;
+        height: 30px;
+        margin: 20px;
+      }
+    }
+
     //панель работы с базой sqlite3
     .work-with-sqlite {
       height: 100px;
