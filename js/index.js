@@ -13,7 +13,8 @@ function sendFormSignin() {
 	const formData = 'login=' + login + '&password=' + password;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURLformSignin);
-	xhr.responseType = 'json';
+	// xhr.responseType = 'json';
+	xhr.responseType = 'text';
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.onload = () => {
 		if (xhr.status !== 200) {
@@ -21,6 +22,12 @@ function sendFormSignin() {
 		}
 		const response = xhr.response;
 		console.log(response);
+
+		if (response === '1') {
+			window.location.href="../app.html";
+		} else {
+			alert('Введите верный пароль');
+		}
 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);

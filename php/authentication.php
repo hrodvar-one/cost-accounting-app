@@ -1,11 +1,11 @@
 <?php
 
-//// получим POST данные
-//$login_name = $_POST['login'];
-//$password_name = $_POST['password'];
+// получим POST данные
+$login_name = $_POST['login'];
+$password_name = $_POST['password'];
 
-$login_name = 'administrator';
-$password_name = '753951852456';
+//$login_name = 'administrator';
+//$password_name = '753951852456';
 
 //print_r($login_name);
 //print_r($password_name);
