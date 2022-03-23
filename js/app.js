@@ -318,6 +318,7 @@ function timeConversion(date_string) {
 //
 function showHideExpensePanel() {
 	if (document.getElementById('shopping-panel').className === 'shopping-panel') {
+		document.getElementById('work-with-sqlite').className = 'hidden';
 		document.getElementById('shopping-panel').className = 'hidden';
 		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('statistics-panel').className = 'hidden';
@@ -325,6 +326,7 @@ function showHideExpensePanel() {
 		document.getElementById('shopping-panel').className = 'shopping-panel';
 		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('work-with-sqlite').className = 'hidden';
 	}
 }
 
@@ -335,10 +337,12 @@ function showHideStatisticsPanel() {
 		document.getElementById('statistics-panel').className = 'hidden';
 		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('shopping-panel').className = 'hidden';
+		document.getElementById('work-with-sqlite').className = 'hidden';
 	} else if (document.getElementById('statistics-panel').className === 'hidden') {
 		document.getElementById('statistics-panel').className = 'statistics-panel';
 		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('shopping-panel').className = 'hidden';
+		document.getElementById('work-with-sqlite').className = 'hidden';
 	}
 }
 
@@ -349,8 +353,26 @@ function showHideIncomePanel() {
 		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('statistics-panel').className = 'hidden';
 		document.getElementById('shopping-panel').className = 'hidden';
+		document.getElementById('work-with-sqlite').className = 'hidden';
 	} else if (document.getElementById('income-panel').className === 'hidden') {
 		document.getElementById('income-panel').className = 'income-panel';
+		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
+		document.getElementById('work-with-sqlite').className = 'hidden';
+	}
+}
+
+// Функция скрытия/появления панели настроек на экране
+//
+function showHideSettingsPanel() {
+	if (document.getElementById('work-with-sqlite').className === 'work-with-sqlite') {
+		document.getElementById('work-with-sqlite').className = 'hidden';
+		document.getElementById('income-panel').className = 'hidden';
+		document.getElementById('statistics-panel').className = 'hidden';
+		document.getElementById('shopping-panel').className = 'hidden';
+	} else if (document.getElementById('work-with-sqlite').className === 'hidden') {
+		document.getElementById('work-with-sqlite').className = 'work-with-sqlite';
+		document.getElementById('income-panel').className = 'hidden';
 		document.getElementById('statistics-panel').className = 'hidden';
 		document.getElementById('shopping-panel').className = 'hidden';
 	}

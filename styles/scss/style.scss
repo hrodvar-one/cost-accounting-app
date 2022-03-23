@@ -22,9 +22,10 @@ body {
     //height: 700px;
     width: 700px;
     margin: auto;
-    display: block;
+    //display: block;
     //height: 500px;
-    background-color: #3a3939;
+    //background-color: #3a3939;
+    background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -43,12 +44,38 @@ body {
     }
 
     .header {
-      text-align: right;
+      text-align: center;
+      margin-bottom: 5px;
 
-      .header-button-logout {
+      .header-output{
+        //background-color: forestgreen;
+
+        .header-output-span {
+          background-color: forestgreen;
+          color: #d7d6d6;
+          font-size: 30px;
+          text-shadow: 1px 1px 2px black;
+        }
+      }
+    }
+
+    .aside {
+      background-color: darkred;
+      width: 120px;
+      float: right;
+
+      .aside-button-logout {
         width: 100px;
         height: 30px;
-        margin: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .aside-button-settings {
+        width: 100px;
+        height: 30px;
+        margin: 15px 10px 10px;
       }
     }
 
@@ -71,13 +98,20 @@ body {
     }
 
     .main-panel {
+      left: -20%;
       height: 400px;
+      width: 460px;
+      background-color: #fc4e4e;
+      // центрирование блока внутри блока container
+      margin: auto;
+      //text-align: center;
 
       // панель ввода расходов
       .shopping-panel {
         text-align: center;
         height: 400px;
-        //background-color: #f57820;
+        //width: 400px;
+        background-color: #f57820;
 
         .shopping-input-panel {
           text-align: left;
@@ -85,6 +119,7 @@ body {
           width: 400px;
           //background-color: #3a3939;
           //background-color: blue;
+          background-color: darkgreen;
           display: inline-block;
           border: 3px solid black;
 
@@ -118,7 +153,7 @@ body {
       .income-panel {
         text-align: center;
         height: 400px;
-        //background-color: chocolate;
+        background-color: darkolivegreen;
         //background: #3a3939;
 
         .income-input-panel {
@@ -127,7 +162,7 @@ body {
           //width: 300px;
           width: 400px;
           //background-color: #c90303;
-          //background-color: green;
+          background-color: green;
           display: inline-block;
           border: 3px solid black;
 
@@ -150,12 +185,12 @@ body {
         text-align: center;
         height: 400px;
         //background: #3a3939;
-        //background-color: orangered;
+        background-color: orangered;
 
         .amount-per-month-output {
           height: 100%;
           width: 400px;
-          //background-color: #f86308;
+          background-color: blueviolet;
           display: inline-block;
           text-align: left;
           border: 3px solid black;
