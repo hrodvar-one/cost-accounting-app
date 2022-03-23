@@ -8,6 +8,94 @@ if (document.referrer !== indexUrl) {
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Список констант для формы создания таблицы
+const elForm = document.querySelector('[name="table"]');
+const elTableName = document.querySelector('[name="table-name"]');
+const elResult = document.querySelector('#result');
+const requestURL = elForm.action;
+
+function sendForm() {
+	const tableName = encodeURIComponent(elTableName.value);
+	const formData = 'table-name=' + tableName;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', requestURL);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+	elResult.textContent = 'Таблица создана';
+}
+
+// запуск функции отправки запроса на создание таблицы
+// в базе данных при отправке формы
+elForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendForm();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Список констант для формы удаления таблицы
+const elFormDelete = document.querySelector('[name="delete-table"]');
+const elTableNameDelete = document.querySelector('[name="table-name-delete"]');
+const elResultDelete = document.querySelector('#result-delete');
+const requestURLDelete = elFormDelete.action;
+
+function sendFormDelete() {
+	const tableName = encodeURIComponent(elTableNameDelete.value);
+	const formData = 'table-name-delete=' + tableName;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', requestURLDelete);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+	elResultDelete.textContent = 'Таблица удалена';
+}
+
+// запуск функции отправки запроса на создание таблицы
+// в базе данных при отправке формы
+elFormDelete.addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormDelete();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Функция отправки запроса на очистку расходов
+function sendFormClearExpenses() {
+	const date = encodeURIComponent(document.querySelector('[name="clear-expenses"]').value);
+	const formData = 'date=' + date;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', document.querySelector('[name="clear-expenses-form"]').action);
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+}
+
+// запуск функции отправки запроса на очистку
+// расходов за выбранный месяц
+// в таблице базы данных
+document.querySelector('[name="clear-expenses-form"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormClearExpenses();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Список констант для формы добавления покупок
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
@@ -53,7 +141,8 @@ elBuyListForm.addEventListener('submit', (e) => {
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// скрипт вывода суммы за продукты за определённый
+// Панель статистики.
+// Скрипт вывода суммы за продукты за определённый
 // месяц
 const elFormStat = document.querySelector('[name="statistics-per-month-form"]');
 const elMonth = document.querySelector('[name="month"]');
@@ -130,7 +219,7 @@ function sendFormSummPrice() {
 			html.push(`<div class="panel">`);
 			for (let j = 0; j < size; j++) {
 				if (response[j]['category'] === backToArray[i]) {
-					html.push(`<p class="accordion-p"><span class="accordion-p-span">&#8226; </span>${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> : <b>${response[j]['price'] + ' руб.'}</b></p>`);
+					html.push(`<p class="accordion-p"><span class="accordion-p-span">&#8226; </span>${timeConversion(response[j]['date'])} : <b>${response[j]['title']}</b> <b>${response[j]['price'] + ' руб.'}</b></p>`);
 				}
 			}
 			html.push(`</div>`);
@@ -178,7 +267,7 @@ elFormStat.addEventListener('submit', (e) => {
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция удаления категории из общего списка
-// категорий
+// категорий расходов
 function deleteCategory() {
 	const form = document.querySelector('[name="category-delete-input"]');
 	const category = encodeURIComponent(form.value);
@@ -201,7 +290,6 @@ document.querySelector('[name="delete-new-category"]').addEventListener('submit'
 	e.preventDefault();
 	deleteCategory();
 });
-
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -275,6 +363,47 @@ function requestCategoriesFromDB() {
 	}
 	xhr.send();
 }
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Панель расходов
+//
+const elBuyListForm = document.querySelector('[name="buy-list-form"]');
+
+const elResultAddPurchase = document.querySelector('#result-add-purchase');
+const requestURLBuyListForm = elBuyListForm.action;
+
+// Функция передачи значений формы Панели расходов
+// через Ajax запрос в php скрипт
+function sendFormAddIncomeList() {
+	const date = encodeURIComponent(document.querySelector('[name="income-date"]').value);
+	const category = encodeURIComponent(document.querySelector('[name="income-category"]').value);
+	const title = encodeURIComponent(document.querySelector('[name="income-title"]').value);
+	const price = encodeURIComponent(document.querySelector('[name="income-price"]').value);
+	const formData = 'date=' + date + '&category=' + category + '&title=' + title + '&price=' + price;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', document.querySelector('[name="income-list-form"]').action);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		// const response = xhr.response;
+		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
+	}
+	xhr.send(formData);
+	// elResultAddPurchase.textContent = 'Расходы добавлены';
+}
+
+// запуск функции отправки запроса на добавление
+// расходов в соответствующие колонки
+// в таблице базы данных
+document.querySelector('[name="income-list-form"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormAddIncomeList();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта

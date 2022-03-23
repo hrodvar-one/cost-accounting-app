@@ -19,7 +19,7 @@ body {
 body .container {
   width: 700px;
   margin: auto;
-  background-color: blue;
+  background-color: #3a3939;
 }
 body .container ::-webkit-scrollbar {
   width: 5px;
@@ -69,6 +69,11 @@ body .container .work-with-sqlite .panel-create-table {
 body .container .work-with-sqlite .panel-delete-table {
   height: 50px;
   background-color: #3a3afd;
+  border: 3px solid black;
+}
+body .container .work-with-sqlite .panel-clear-expenses {
+  height: 50px;
+  background-color: orangered;
   border: 3px solid black;
 }
 body .container .main-panel {

@@ -24,8 +24,8 @@ body {
     margin: auto;
     //display: block;
     //height: 500px;
-    //background-color: #3a3939;
-    background-color: blue;
+    background-color: #3a3939;
+    //background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -93,6 +93,12 @@ body {
       .panel-delete-table {
         height: 50px;
         background-color: #3a3afd;
+        border: 3px solid black;
+      }
+
+      .panel-clear-expenses {
+        height: 50px;
+        background-color: orangered;
         border: 3px solid black;
       }
     }

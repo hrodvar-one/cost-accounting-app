@@ -53,6 +53,15 @@
 				</form>
 				<div id="result-delete"></div>
 			</div>
+			<!--	Панель для очистки расходов		-->
+			<div class="panel-clear-expenses">
+				<form name="clear-expenses-form" action="/php/clear-expenses.php" method="post">
+<!--					<label for="clear-expenses-form-label"></label>-->
+					<label for="clear-expenses">Выберите месяц:</label><input type="month" class="table-name_input" name="clear-expenses" id="clear-expenses">
+					<button type="submit">Очистить расходы</button>
+				</form>
+				<div id="result-clear"></div>
+			</div>
 		</div>
 		<!--	Панель расходов - expense panel-->
 		<div class="hidden" id="shopping-panel">
@@ -91,15 +100,15 @@
 			<div class="income-input-panel" id="income-input-panel">
 				<h3 class="income-input-panel-h3">Панель доходов</h3>
 				<form name="income-list-form" class="income-list-form" action="" method="post">
-					<label for="date" class="income-list-form-label">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
+					<label for="income-date" class="income-list-form-label">Дата:</label><input type="date" class="table-name_input" name="income-date" id="income-date">
 					<br>
-					<label for="category" class="income-list-form-label">Категория:</label>
-					<select class="table-name_input" id="category" name="category">
+					<label for="income-category" class="income-list-form-label">Категория:</label>
+					<select class="table-name_input" id="income-category" name="income-category">
 					</select>
 					<br>
-					<label for="title" class="income-list-form-label">Название:</label><input type="text" class="table-name_input" name="title" id="title">
+					<label for="income-title" class="income-list-form-label">Название:</label><input type="text" class="table-name_input" name="income-title" id="income-title">
 					<br>
-					<label for="price" class="income-list-form-label">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
+					<label for="income-price" class="income-list-form-label">Цена:</label><input type="text" class="table-name_input" name="income-price" id="income-price">
 					<br>
 					<button type="submit">Добавить доходы</button>
 					<br>
