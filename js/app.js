@@ -514,6 +514,12 @@ function requestCategoriesIncomeFromDB() {
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+// Функция вывода баланса с учётом расходов и
+// доходов
+function fullBalance() {
+
+}
+
 // Функция в которую добавлены две функции загрузки
 // категорий расходов и доходов
 function unionTwoFunctionsCategoryOutput() {
