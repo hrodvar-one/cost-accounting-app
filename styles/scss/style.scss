@@ -47,14 +47,20 @@ body {
       text-align: center;
       margin-bottom: 5px;
 
-      .header-output{
-        //background-color: forestgreen;
+      .header-main {
+        padding-top: 10px;
 
-        .header-output-span {
-          background-color: forestgreen;
-          color: #d7d6d6;
-          font-size: 30px;
-          text-shadow: 1px 1px 2px black;
+        .header-output{
+          //background-color: forestgreen;
+
+          .header-output-span {
+            padding: 5px;
+            background-color: forestgreen;
+            color: #d7d6d6;
+            font-size: 30px;
+            text-shadow: 1px 1px 2px black;
+            border: 2px solid black;
+          }
         }
       }
     }
@@ -113,7 +119,7 @@ body {
       left: -20%;
       height: 400px;
       width: 460px;
-      background-color: #fc4e4e;
+      //background-color: #fc4e4e;
       // центрирование блока внутри блока container
       margin: auto;
       //text-align: center;
@@ -123,15 +129,13 @@ body {
         text-align: center;
         height: 400px;
         //width: 400px;
-        background-color: #f57820;
+        //background-color: #f57820;
 
         .shopping-input-panel {
           text-align: left;
           height: 100%;
           width: 400px;
-          //background-color: #3a3939;
-          //background-color: blue;
-          background-color: darkgreen;
+          //background-color: darkgreen;
           display: inline-block;
           border: 3px solid black;
 
@@ -165,16 +169,14 @@ body {
       .income-panel {
         text-align: center;
         height: 400px;
-        background-color: darkolivegreen;
-        //background: #3a3939;
+        //background-color: darkolivegreen;
 
         .income-input-panel {
           text-align: left;
           height: 100%;
           //width: 300px;
           width: 400px;
-          //background-color: #c90303;
-          background-color: green;
+          //background-color: green;
           display: inline-block;
           border: 3px solid black;
 
@@ -196,13 +198,12 @@ body {
       .statistics-panel {
         text-align: center;
         height: 400px;
-        //background: #3a3939;
-        background-color: orangered;
+        //background-color: orangered;
 
         .amount-per-month-output {
           height: 100%;
           width: 400px;
-          background-color: blueviolet;
+          //background-color: blueviolet;
           display: inline-block;
           text-align: left;
           border: 3px solid black;

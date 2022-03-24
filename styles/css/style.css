@@ -34,11 +34,16 @@ body .container .header {
   text-align: center;
   margin-bottom: 5px;
 }
-body .container .header .header-output .header-output-span {
+body .container .header .header-main {
+  padding-top: 10px;
+}
+body .container .header .header-main .header-output .header-output-span {
+  padding: 5px;
   background-color: forestgreen;
   color: #d7d6d6;
   font-size: 30px;
   text-shadow: 1px 1px 2px black;
+  border: 2px solid black;
 }
 body .container .aside {
   background-color: darkred;
@@ -85,19 +90,16 @@ body .container .main-panel {
   left: -20%;
   height: 400px;
   width: 460px;
-  background-color: #fc4e4e;
   margin: auto;
 }
 body .container .main-panel .shopping-panel {
   text-align: center;
   height: 400px;
-  background-color: #f57820;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
   height: 100%;
   width: 400px;
-  background-color: darkgreen;
   display: inline-block;
   border: 3px solid black;
 }
@@ -120,13 +122,11 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
 body .container .main-panel .income-panel {
   text-align: center;
   height: 400px;
-  background-color: darkolivegreen;
 }
 body .container .main-panel .income-panel .income-input-panel {
   text-align: left;
   height: 100%;
   width: 400px;
-  background-color: green;
   display: inline-block;
   border: 3px solid black;
 }
@@ -143,12 +143,10 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
 body .container .main-panel .statistics-panel {
   text-align: center;
   height: 400px;
-  background-color: orangered;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output {
   height: 100%;
   width: 400px;
-  background-color: blueviolet;
   display: inline-block;
   text-align: left;
   border: 3px solid black;

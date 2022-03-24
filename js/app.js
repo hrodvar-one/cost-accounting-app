@@ -61,6 +61,7 @@ function sendFormDelete() {
 	}
 	xhr.send(formData);
 	elResultDelete.textContent = 'Таблица удалена';
+	fullBalance()
 }
 
 // запуск функции отправки запроса на создание таблицы
@@ -85,6 +86,7 @@ function sendFormClearExpenses() {
 		}
 	}
 	xhr.send(formData);
+	fullBalance()
 }
 
 // запуск функции отправки запроса на очистку
@@ -110,6 +112,7 @@ function sendFormClearIncome() {
 		}
 	}
 	xhr.send(formData);
+	fullBalance()
 }
 
 // запуск функции отправки запроса на очистку
@@ -152,6 +155,7 @@ function sendFormAddBuyList() {
 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
+	fullBalance();
 	// elResultAddPurchase.textContent = 'Расходы добавлены';
 }
 
@@ -413,6 +417,7 @@ function sendFormAddIncomeList() {
 		// elResult.innerHTML = `<ul><li>Имя: <b>${response.test}</b></li></ul>`;
 	}
 	xhr.send(formData);
+	fullBalance();
 	// elResultAddPurchase.textContent = 'Расходы добавлены';
 }
 
@@ -517,20 +522,49 @@ function requestCategoriesIncomeFromDB() {
 // Функция вывода баланса с учётом расходов и
 // доходов
 function fullBalance() {
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', '/php/request-full-balance.php');
+	// xhr.responseType = 'json';
+	// xhr.responseType = 'text';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		const response = xhr.response;
+		console.log(response);
+		console.log(typeof response);
 
+		// let testOne = Number(response);
+
+		let html = [];
+		html.push(`<span class="header-output-span" id="header-output-span">Баланс ${response} Руб</span>`);
+
+		// if (testOne < 0) {
+		// 	let spanHeaderElement = document.querySelector('#header-output-span');
+		//
+		// 	html.push(`<span class="header-output-span" id="header-output-span">Баланс ${response} Руб</span>`);
+		//
+		// 	spanHeaderElement.style.backgroundColor = 'red';
+
+		// }
+		document.querySelector('#header-output').innerHTML = html.join('');
+	}
+	xhr.send();
 }
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // Функция в которую добавлены две функции загрузки
 // категорий расходов и доходов
-function unionTwoFunctionsCategoryOutput() {
+function unionThreeFunctionsForWindowOnload() {
+	fullBalance();
 	requestCategoriesFromDB();
 	requestCategoriesIncomeFromDB();
 }
 
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта
-// window.onload = requestCategoriesFromDB;
-window.onload = unionTwoFunctionsCategoryOutput;
+window.onload = unionThreeFunctionsForWindowOnload;
 
 // Функция конвертации даты
 //
