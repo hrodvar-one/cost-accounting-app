@@ -107,7 +107,7 @@ const elPrice = document.querySelector('[name="price"]');
 const elResultAddPurchase = document.querySelector('#result-add-purchase');
 const requestURLBuyListForm = elBuyListForm.action;
 
-// Функция передачи значений формы Панели покупок
+// Функция передачи значений формы Панели расходов
 // через Ajax запрос в php скрипт
 function sendFormAddBuyList() {
 	const date = encodeURIComponent(elDate.value);
@@ -263,7 +263,7 @@ elFormStat.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormSummPrice();
 });
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // функция удаления категории из общего списка
@@ -293,7 +293,8 @@ document.querySelector('[name="delete-new-category"]').addEventListener('submit'
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Список констант для формы добавления новой категории
+// Список констант для формы добавления новой
+// категории расходов
 const elNewCategoryForm = document.querySelector('[name="add-new-category"]');
 const elNewCategory = document.querySelector('[name="category-input"]');
 // const elResultAddPurchase = document.querySelector('#result-add-purchase');
@@ -365,14 +366,9 @@ function requestCategoriesFromDB() {
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Панель расходов
+// Панель доходов
 //
-const elBuyListForm = document.querySelector('[name="buy-list-form"]');
-
-const elResultAddPurchase = document.querySelector('#result-add-purchase');
-const requestURLBuyListForm = elBuyListForm.action;
-
-// Функция передачи значений формы Панели расходов
+// Функция передачи значений формы Панели доходов
 // через Ajax запрос в php скрипт
 function sendFormAddIncomeList() {
 	const date = encodeURIComponent(document.querySelector('[name="income-date"]').value);
@@ -396,18 +392,114 @@ function sendFormAddIncomeList() {
 }
 
 // запуск функции отправки запроса на добавление
-// расходов в соответствующие колонки
+// доходов в соответствующие колонки
 // в таблице базы данных
 document.querySelector('[name="income-list-form"]').addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormAddIncomeList();
 });
+
+// Функция передачи значения формы Добавить категорию
+// панели доходов через Ajax запрос в php скрипт
+//
+function sendFormAddNewIncomeCategory() {
+	const category = encodeURIComponent(document.querySelector('[name="category-income-input"]').value);
+	const formData = 'category=' + category;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', document.querySelector('[name="add-new-income-category"]').action);
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+	requestCategoriesIncomeFromDB();
+}
+
+// запуск функции отправки запроса на добавление
+// новой категории доходов в соответствующую таблицу
+// базы данных
+document.querySelector('[name="add-new-income-category"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormAddNewIncomeCategory();
+	// делаем поле ввода пустым после отправки данных на сервер
+	document.getElementById("category-income-input").value = "";
+});
+
+// функция удаления категории из общего списка
+// категорий доходов
+function deleteIncomeCategory() {
+	const form = document.querySelector('[name="category-income-delete-input"]');
+	const category = encodeURIComponent(form.value);
+	console.log(category);
+	const formData = 'category=' + category;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', '/php/delete-category-in-income-table.php');
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+	requestCategoriesIncomeFromDB();
+}
+
+document.querySelector('[name="delete-new-income-category"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	deleteIncomeCategory();
+});
+
+// функция передачи списка категорий доходов в
+// выпадающий список
+function requestCategoriesIncomeFromDB() {
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', '/php/request-categories-income-from-table.php');
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+		const response = xhr.response;
+
+		// Вычисляем количество элементов в объекте
+		// и присваиваем постоянной size
+		const size = Object.keys(response).length
+
+		// console.log(response);
+		// console.log(response[0]);
+		// console.log(response[0]['category']);
+		// console.log(size);
+
+		let html = [];
+		html.push(`<option value="none" hidden="">Выберите тип</option>`);
+		for (let i = 0; i < size; i++) {
+			html.push(`<option value="${response[i]['category']}">${response[i]['category']}</option>`);
+			// console.log(summa);
+		}
+		// addselecttest.innerHTML = html.join('');
+		document.querySelector('#income-category').innerHTML = html.join('');
+		document.querySelector('#category-income-delete-input').innerHTML = html.join('');
+	}
+	xhr.send();
+}
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+// Функция в которую добавлены две функции загрузки
+// категорий расходов и доходов
+function unionTwoFunctionsCategoryOutput() {
+	requestCategoriesFromDB();
+	requestCategoriesIncomeFromDB();
+}
 
 // Загрузка списка категорий из БД в выпадающий
 // список категорий при загрузке страницы сайта
-window.onload = requestCategoriesFromDB;
+// window.onload = requestCategoriesFromDB;
+window.onload = unionTwoFunctionsCategoryOutput;
 
 // Функция конвертации даты
 //

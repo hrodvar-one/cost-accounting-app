@@ -99,7 +99,7 @@
 		<div class="hidden" id="income-panel">
 			<div class="income-input-panel" id="income-input-panel">
 				<h3 class="income-input-panel-h3">Панель доходов</h3>
-				<form name="income-list-form" class="income-list-form" action="" method="post">
+				<form name="income-list-form" class="income-list-form" action="/php/add-income-in-db.php" method="post">
 					<label for="income-date" class="income-list-form-label">Дата:</label><input type="date" class="table-name_input" name="income-date" id="income-date">
 					<br>
 					<label for="income-category" class="income-list-form-label">Категория:</label>
@@ -115,15 +115,14 @@
 				</form>
 				<!--			<div id="result-add-purchase"></div>-->
 				<!--	Форма добавления категории-->
-				<form name="add-new-category" class="add-new-category" action="/php/add-new-category-in-expenses-table.php" method="post">
+				<form name="add-new-income-category" class="add-new-category" action="/php/add-new-category-in-income-table.php" method="post">
 					<button type="submit">Добавить <br>категорию</button>
-					<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
+					<label for="category-income-input"></label><input type="text" class="table-name_input" name="category-income-input" id="category-income-input">
 				</form>
-				<form name="delete-new-category" class="delete-new-category" action="/php/delete-category-in-expenses-table.php" method="post">
+				<form name="delete-new-income-category" class="delete-new-category" action="/php/delete-category-in-income-table.php" method="post">
 					<button type="submit">Удалить <br>категорию</button>
-					<label for="category-delete-input"></label>
-					<select class="table-name_input" id="category-delete-input" name="category-delete-input">
-					</select>
+					<label for="category-income-delete-input"></label>
+					<select class="table-name_input" id="category-income-delete-input" name="category-income-delete-input"></select>
 				</form>
 			</div>
 		</div>
