@@ -62,6 +62,14 @@
 				</form>
 				<div id="result-clear"></div>
 			</div>
+			<!--	Панель для очистки доходов		-->
+			<div class="panel-clear-income">
+				<form name="clear-income-form" action="/php/clear-income.php" method="post">
+					<label for="clear-income">Выберите месяц:</label><input type="month" class="table-name_input" name="clear-income" id="clear-income">
+					<button type="submit">Очистить доходы</button>
+				</form>
+				<div id="result-clear-income"></div>
+			</div>
 		</div>
 		<!--	Панель расходов - expense panel-->
 		<div class="hidden" id="shopping-panel">
@@ -108,7 +116,7 @@
 					<br>
 					<label for="income-title" class="income-list-form-label">Название:</label><input type="text" class="table-name_input" name="income-title" id="income-title">
 					<br>
-					<label for="income-price" class="income-list-form-label">Цена:</label><input type="text" class="table-name_input" name="income-price" id="income-price">
+					<label for="income-price" class="income-list-form-label">Сумма:</label><input type="text" class="table-name_input" name="income-price" id="income-price">
 					<br>
 					<button type="submit">Добавить доходы</button>
 					<br>

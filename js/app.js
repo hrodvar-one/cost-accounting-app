@@ -97,6 +97,31 @@ document.querySelector('[name="clear-expenses-form"]').addEventListener('submit'
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Функция отправки запроса на очистку доходов
+function sendFormClearIncome() {
+	const date = encodeURIComponent(document.querySelector('[name="clear-income"]').value);
+	const formData = 'date=' + date;
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', document.querySelector('[name="clear-income-form"]').action);
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = () => {
+		if (xhr.status !== 200) {
+			return;
+		}
+	}
+	xhr.send(formData);
+}
+
+// запуск функции отправки запроса на очистку
+// расходов за выбранный месяц
+// в таблице базы данных
+document.querySelector('[name="clear-income-form"]').addEventListener('submit', (e) => {
+	e.preventDefault();
+	sendFormClearIncome();
+});
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Список констант для формы добавления покупок
 const elBuyListForm = document.querySelector('[name="buy-list-form"]');
 const elDate = document.querySelector('[name="date"]');

@@ -76,6 +76,11 @@ body .container .work-with-sqlite .panel-clear-expenses {
   background-color: orangered;
   border: 3px solid black;
 }
+body .container .work-with-sqlite .panel-clear-income {
+  height: 50px;
+  background-color: blueviolet;
+  border: 3px solid black;
+}
 body .container .main-panel {
   left: -20%;
   height: 400px;
