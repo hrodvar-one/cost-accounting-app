@@ -93,6 +93,7 @@ body .container .main-panel {
   margin: auto;
 }
 body .container .main-panel .income-expenses-main-panel {
+  padding: 140px;
   text-align: center;
   background-color: #f57820;
   height: 400px;
