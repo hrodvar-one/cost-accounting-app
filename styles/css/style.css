@@ -38,7 +38,7 @@ body .container .header .header-main {
   padding-top: 10px;
 }
 body .container .header .header-main .header-output .header-output-span {
-  padding: 5px;
+  padding: 3px;
   background-color: forestgreen;
   color: #d7d6d6;
   font-size: 30px;
@@ -91,6 +91,18 @@ body .container .main-panel {
   height: 400px;
   width: 460px;
   margin: auto;
+}
+body .container .main-panel .income-expenses-main-panel {
+  text-align: center;
+  background-color: #f57820;
+  height: 400px;
+}
+body .container .main-panel .income-expenses-main-panel .income-main-panel .income-main-panel-output .income-main-panel-output-span {
+  background-color: forestgreen;
+  color: #d7d6d6;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+  border: 2px solid black;
 }
 body .container .main-panel .shopping-panel {
   text-align: center;
@@ -191,7 +203,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   transition: 0.4s;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion .accordion-span {
-  color: #fc4e4e;
+  color: #fd3939;
   margin-left: 10px;
   font-weight: bold;
 }
@@ -205,7 +217,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   background-color: #3a3939;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active .accordion-span {
-  color: #fc4e4e;
+  color: #fd3939;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .active .accordion-span::before {
   content: "➖    ";
@@ -223,11 +235,11 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p .accordion-p-span {
   color: red;
 }
-body .container .balance-panel {
+body .container .statistics-activation-panel {
   margin: 10px;
   text-align: center;
 }
-body .container .balance-panel .balance-panel-button {
+body .container .statistics-activation-panel .statistics-panel-button {
   width: 300px;
   height: 50px;
   background-color: forestgreen;

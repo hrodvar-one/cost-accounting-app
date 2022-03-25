@@ -532,30 +532,28 @@ function fullBalance() {
 			return;
 		}
 		const response = xhr.response;
-		console.log(response);
-		console.log(typeof response);
+		// console.log(response);
+		// console.log(typeof response);
 
-		// let testOne = Number(response);
+		let numberResponse = Number(response);
+		// console.log(testOne);
+		// console.log(typeof testOne);
 
 		let html = [];
 		html.push(`<span class="header-output-span" id="header-output-span">Баланс ${response} Руб</span>`);
-
-		// if (testOne < 0) {
-		// 	let spanHeaderElement = document.querySelector('#header-output-span');
-		//
-		// 	html.push(`<span class="header-output-span" id="header-output-span">Баланс ${response} Руб</span>`);
-		//
-		// 	spanHeaderElement.style.backgroundColor = 'red';
-
-		// }
 		document.querySelector('#header-output').innerHTML = html.join('');
+		// если общий баланс меньше нуля, то цвет блока меняется на красный
+		if (numberResponse < 0) {
+			let spanHeaderElement = document.querySelector('#header-output-span');
+			spanHeaderElement.style.backgroundColor = 'red';
+		}
 	}
 	xhr.send();
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// Функция в которую добавлены две функции загрузки
-// категорий расходов и доходов
+// Функция содержащая три функции, которые
+// должны выполняться при загрузке страницы
 function unionThreeFunctionsForWindowOnload() {
 	fullBalance();
 	requestCategoriesFromDB();

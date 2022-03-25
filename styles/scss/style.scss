@@ -54,7 +54,7 @@ body {
           //background-color: forestgreen;
 
           .header-output-span {
-            padding: 5px;
+            padding: 3px;
             background-color: forestgreen;
             color: #d7d6d6;
             font-size: 30px;
@@ -123,6 +123,30 @@ body {
       // центрирование блока внутри блока container
       margin: auto;
       //text-align: center;
+
+      .income-expenses-main-panel {
+        //padding: 50%;
+        //padding: 50px;
+        text-align: center;
+        background-color: #f57820;
+        height: 400px;
+
+        .income-main-panel {
+          //top: 50px;
+
+          .income-main-panel-output {
+
+            .income-main-panel-output-span {
+              //padding: 3px;
+              background-color: forestgreen;
+              color: #d7d6d6;
+              font-size: 30px;
+              text-shadow: 1px 1px 2px black;
+              border: 2px solid black;
+            }
+          }
+        }
+      }
 
       // панель ввода расходов
       .shopping-panel {
@@ -262,7 +286,8 @@ body {
               transition: 0.4s;
 
               .accordion-span {
-                color: #fc4e4e;
+                //color: #fc4e4e;
+                color: #fd3939;
                 margin-left: 10px;
                 font-weight: bold;
 
@@ -280,7 +305,8 @@ body {
               background-color: #3a3939;
 
               .accordion-span {
-                color: #fc4e4e;
+                //color: #fc4e4e;
+                color: #fd3939;
 
                 // добавляет минус до элемента span
                 &::before {
@@ -318,50 +344,15 @@ body {
       }
     }
 
-    .balance-panel {
+    .statistics-activation-panel {
       margin: 10px;
       text-align: center;
 
-      .balance-panel-button {
+      .statistics-panel-button {
         width: 300px;
         height: 50px;
         background-color: forestgreen;
-
-        //animation-name: slideExpandUp;
-        //animation-duration: 1s;
-        //animation-timing-function: ease-out;
-        //visibility: visible !important;
       }
-
-      //@keyframes slideExpandUp {
-      //  0% {
-      //    transform: translateY(100%);
-      //  }
-      //  30% {
-      //    transform: translateY(-8%);
-      //  }
-      //  40% {
-      //    transform: translateY(2%);
-      //  }
-      //  50% {
-      //    transform: translateY(0%);
-      //  }
-      //  60% {
-      //    transform: translateY(0%);
-      //  }
-      //  70% {
-      //    transform: translateY(0%);
-      //  }
-      //  80% {
-      //    transform: translateY(0%);
-      //  }
-      //  90% {
-      //    transform: translateY(0%);
-      //  }
-      //  100% {
-      //    transform: translateY(0%);
-      //  }
-      //}
     }
 
     //панель кнопки удалить добавить

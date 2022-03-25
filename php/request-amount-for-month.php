@@ -20,7 +20,7 @@ $db = new SQLite3('../db/app_db.db');
 // '".$date."%'
 // '2022-03%'
 
-$test_request = $db->query("SELECT date, category, title, price
+$expenses_request = $db->query("SELECT date, category, title, price
 				FROM expenses_list
 				WHERE date LIKE '".$date."%'");
 
@@ -30,7 +30,7 @@ $test_request = $db->query("SELECT date, category, title, price
 //}
 
 $massive_all = array();
-while ($row = $test_request->fetchArray(SQLITE3_ASSOC))
+while ($row = $expenses_request->fetchArray(SQLITE3_ASSOC))
 	array_push($massive_all, $row);
 
 //print_r(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
@@ -38,13 +38,8 @@ while ($row = $test_request->fetchArray(SQLITE3_ASSOC))
 //print_r(json_encode($massive_all, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 //echo(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 
-
 // закрываем соединение с базой данных
 $db->close();
 
-//// сформируем ответ
-//$output = ['data' => $massive];
-
-//exit(json_encode($massive, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 exit(json_encode($massive_all, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
 

@@ -32,8 +32,21 @@
 		</button>
 	</aside>
 	<div class="main-panel">
+		<div class="income-expenses-main-panel" id="income-expenses-main-panel">
+			<div class="income-main-panel">
+				<output class="income-main-panel-output" id="income-main-panel-output" readonly>
+				<span class="income-main-panel-output-span">Доходы:</span>
+				</output>
+			</div>
+			<div class="expenses-main-panel">
+				<output class="expenses-main-panel" id="expenses-main-panel" readonly>
+				Расходы:
+				</output>
+			</div>
+		</div>
 		<!--	Панель настроек-->
 		<div class="hidden" id="work-with-sqlite">
+			<!--	Панель для создания таблиц в БД		-->
 			<div class="panel-create-table">
 				<form name="table" action="/php/create-table.php" method="post">
 					<label for="table-name">Название таблицы:</label>
@@ -42,6 +55,7 @@
 				</form>
 				<div id="result"></div>
 			</div>
+			<!--	Панель для удаления таблиц в БД		-->
 			<div class="panel-delete-table">
 				<form name="delete-table" action="/php/delete-table.php" method="post">
 					<label for="table-name-delete">Название таблицы:</label>
@@ -147,8 +161,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="balance-panel">
-		<button type="button" class="balance-panel-button" onclick="showHideStatisticsPanel()">
+	<div class="statistics-activation-panel">
+		<button type="button" class="statistics-panel-button" onclick="showHideStatisticsPanel()">
 			<span>Панель статистики</span>
 		</button>
 	</div>
