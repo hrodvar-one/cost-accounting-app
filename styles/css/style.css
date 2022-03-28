@@ -46,7 +46,6 @@ body .container .header .header-main .header-output .header-output-span {
   border: 2px solid black;
 }
 body .container .aside {
-  background-color: darkred;
   width: 120px;
   float: right;
 }
@@ -55,15 +54,33 @@ body .container .aside .aside-button-logout {
   height: 30px;
   margin-top: 10px;
   margin-right: 10px;
-  margin-left: 10px;
+  background-color: #da3c01;
+}
+body .container .aside .aside-button-logout .aside-button-logout-span {
+  color: #d7d6d6;
+  text-shadow: 1px 1px 2px black;
+}
+body .container .aside .aside-button-logout:hover {
+  background-color: #ff5115;
 }
 body .container .aside .aside-button-settings {
   width: 100px;
   height: 30px;
-  margin: 15px 10px 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: #da3c01;
+}
+body .container .aside .aside-button-settings .aside-button-settings-span {
+  color: #d7d6d6;
+  text-shadow: 1px 1px 2px black;
+}
+body .container .aside .aside-button-settings:hover {
+  background-color: #ff5115;
 }
 body .container .work-with-sqlite {
+  margin: auto;
   height: 100px;
+  width: 400px;
   background-color: #f57820;
 }
 body .container .work-with-sqlite .panel-create-table {
@@ -244,6 +261,14 @@ body .container .statistics-activation-panel .statistics-panel-button {
   width: 300px;
   height: 50px;
   background-color: forestgreen;
+}
+body .container .statistics-activation-panel .statistics-panel-button .statistics-activation-panel-button-span {
+  color: #d7d6d6;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+}
+body .container .statistics-activation-panel .statistics-panel-button:hover {
+  background-color: #2cb62c;
 }
 body .container .button-add-delete-panel {
   text-align: center;

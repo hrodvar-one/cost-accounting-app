@@ -66,7 +66,7 @@ body {
     }
 
     .aside {
-      background-color: darkred;
+      //background-color: darkred;
       width: 120px;
       float: right;
 
@@ -75,19 +75,44 @@ body {
         height: 30px;
         margin-top: 10px;
         margin-right: 10px;
-        margin-left: 10px;
+        //background-color: #f57820;
+        background-color: #da3c01;
+        //margin-left: 10px;
+
+        .aside-button-logout-span {
+          color: #d7d6d6;
+          text-shadow: 1px 1px 2px black;
+        }
+      }
+
+      .aside-button-logout:hover {
+        background-color: #ff5115;
       }
 
       .aside-button-settings {
         width: 100px;
         height: 30px;
-        margin: 15px 10px 10px;
+        margin-top: 20px;
+        margin-right: 10px;
+        //background-color: #f57820;
+        background-color: #da3c01;
+
+        .aside-button-settings-span {
+          color: #d7d6d6;
+          text-shadow: 1px 1px 2px black;
+        }
+      }
+
+      .aside-button-settings:hover {
+        background-color: #ff5115;
       }
     }
 
     //панель работы с базой sqlite3
     .work-with-sqlite {
+      margin: auto;
       height: 100px;
+      width: 400px;
       background-color: #f57820;
 
       .panel-create-table {
@@ -351,6 +376,17 @@ body {
         width: 300px;
         height: 50px;
         background-color: forestgreen;
+
+        .statistics-activation-panel-button-span {
+          //background-color: forestgreen;
+          color: #d7d6d6;
+          font-size: 30px;
+          text-shadow: 1px 1px 2px black;
+        }
+      }
+
+      .statistics-panel-button:hover {
+        background-color: #2cb62c;
       }
     }
 
@@ -390,7 +426,7 @@ body {
         }
 
         //.minus:hover {
-        //  //color: orangered;
+        //  color: orangered;
         //}
       }
 

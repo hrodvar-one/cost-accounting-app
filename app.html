@@ -32,24 +32,24 @@
 		</button>
 	</aside>
 	<div class="main-panel">
-		<div class="income-expenses-main-panel" id="income-expenses-main-panel">
-			<div class="income-main-panel">
-				<output class="income-main-panel-output" id="income-main-panel-output" readonly>
-				<span class="income-main-panel-output-span">Доходы:</span>
-				</output>
-			</div>
-			<div class="expenses-main-panel">
-				<output class="expenses-main-panel" id="expenses-main-panel" readonly>
-				Расходы:
-				</output>
-			</div>
-		</div>
+<!--		<div class="income-expenses-main-panel" id="income-expenses-main-panel">-->
+<!--			<div class="income-main-panel">-->
+<!--				<output class="income-main-panel-output" id="income-main-panel-output" readonly>-->
+<!--				<span class="income-main-panel-output-span">Доходы:</span>-->
+<!--				</output>-->
+<!--			</div>-->
+<!--			<div class="expenses-main-panel">-->
+<!--				<output class="expenses-main-panel" id="expenses-main-panel" readonly>-->
+<!--				Расходы:-->
+<!--				</output>-->
+<!--			</div>-->
+<!--		</div>-->
 		<!--	Панель настроек-->
 		<div class="hidden" id="work-with-sqlite">
 			<!--	Панель для создания таблиц в БД		-->
 			<div class="panel-create-table">
 				<form name="table" action="/php/create-table.php" method="post">
-					<label for="table-name">Название таблицы:</label>
+					<label for="table-name">Название <br>таблицы:</label>
 					<input type="text" class="table-name_input" name="table-name" id="table-name">
 					<button type="submit">Создать таблицу</button>
 				</form>
@@ -58,7 +58,7 @@
 			<!--	Панель для удаления таблиц в БД		-->
 			<div class="panel-delete-table">
 				<form name="delete-table" action="/php/delete-table.php" method="post">
-					<label for="table-name-delete">Название таблицы:</label>
+					<label for="table-name-delete">Название <br>таблицы:</label>
 					<input type="text" class="table-name_input" name="table-name-delete" id="table-name-delete">
 					<button type="submit">Удалить таблицу</button>
 				</form>
@@ -68,7 +68,7 @@
 			<div class="panel-clear-expenses">
 				<form name="clear-expenses-form" action="/php/clear-expenses.php" method="post">
 <!--					<label for="clear-expenses-form-label"></label>-->
-					<label for="clear-expenses">Выберите месяц:</label><input type="month" class="table-name_input" name="clear-expenses" id="clear-expenses">
+					<label for="clear-expenses">Выберите <br>месяц:</label><input type="month" class="table-name_input" name="clear-expenses" id="clear-expenses">
 					<button type="submit">Очистить расходы</button>
 				</form>
 				<div id="result-clear"></div>
@@ -76,7 +76,7 @@
 			<!--	Панель для очистки доходов		-->
 			<div class="panel-clear-income">
 				<form name="clear-income-form" action="/php/clear-income.php" method="post">
-					<label for="clear-income">Выберите месяц:</label><input type="month" class="table-name_input" name="clear-income" id="clear-income">
+					<label for="clear-income">Выберите <br>месяц:</label><input type="month" class="table-name_input" name="clear-income" id="clear-income">
 					<button type="submit">Очистить доходы</button>
 				</form>
 				<div id="result-clear-income"></div>
@@ -163,7 +163,7 @@
 	</div>
 	<div class="statistics-activation-panel">
 		<button type="button" class="statistics-panel-button" onclick="showHideStatisticsPanel()">
-			<span>Панель статистики</span>
+			<span class="statistics-activation-panel-button-span">Панель статистики</span>
 		</button>
 	</div>
 	<div class="button-add-delete-panel">
