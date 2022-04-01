@@ -1,8 +1,10 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Модуль запрета перехода
 //
-const indexUrl = "http://localhost:9001/index.html";
-const errorUrl = "http://localhost:9001/404.html";
+// const indexUrl = "http://localhost:9001/index.html";
+const indexUrl = "http://vhost250618.ispsite.ru/index.html";
+// const errorUrl = "http://localhost:9001/404.html";
+const errorUrl = "http://vhost250618.ispsite.ru/404.html";
 if (document.referrer !== indexUrl) {
 	window.location = errorUrl;
 }
