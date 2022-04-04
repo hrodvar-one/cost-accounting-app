@@ -6,6 +6,8 @@
 // стили для input
 .table-name_input {
   padding-left: 8px;
+  margin-bottom: 10px;
+  height: 30px;
   //font-family: inherit;
   color: #212529;
   background-color: #e0dfdf;
@@ -13,6 +15,10 @@
   border: 1px solid black;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+option {
+  height: 20px;
 }
 
 body {
@@ -24,8 +30,8 @@ body {
     margin: auto;
     //display: block;
     //height: 500px;
-    //background-color: #3a3939;
-    background-color: blue;
+    background-color: #3a3939;
+    //background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -57,7 +63,8 @@ body {
             padding: 3px;
             background-color: forestgreen;
             color: #d7d6d6;
-            font-size: 30px;
+            //font-size: 30px;
+            font-size: 50px;
             text-shadow: 1px 1px 2px black;
             border: 2px solid black;
           }
@@ -115,25 +122,26 @@ body {
       background-color: #f57820;
 
       .panel-create-table {
-        height: 50px;
+        //height: 50px;
+        height: 70px;
         background-color: forestgreen;
         border: 3px solid black;
       }
 
       .panel-delete-table {
-        height: 50px;
+        height: 70px;
         background-color: #3a3afd;
         border: 3px solid black;
       }
 
       .panel-clear-expenses {
-        height: 50px;
+        height: 70px;
         background-color: orangered;
         border: 3px solid black;
       }
 
       .panel-clear-income {
-        height: 50px;
+        height: 70px;
         background-color: blueviolet;
         border: 3px solid black;
       }
@@ -196,6 +204,11 @@ body {
           .buy-list-form {
             //background-color: #01d501;
             margin: 10px;
+
+            .buy-list-form-button {
+              height: 50px;
+              border-radius: 6px;
+            }
 
           .add-new-expense-category {
             width: 200px;
@@ -274,6 +287,8 @@ body {
 
             .statistics-form-button {
               margin-top: 5px;
+              height: 50px;
+              border-radius: 6px;
               //margin-left: 40px;
             }
           }

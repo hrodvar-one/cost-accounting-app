@@ -5,12 +5,18 @@
 
 .table-name_input {
   padding-left: 8px;
+  margin-bottom: 10px;
+  height: 30px;
   color: #212529;
   background-color: #e0dfdf;
   background-clip: padding-box;
   border: 1px solid black;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+option {
+  height: 20px;
 }
 
 body {
@@ -20,7 +26,7 @@ body .container {
   height: 1240px;
   width: 700px;
   margin: auto;
-  background-color: blue;
+  background-color: #3a3939;
 }
 body .container ::-webkit-scrollbar {
   width: 5px;
@@ -42,7 +48,7 @@ body .container .header .header-main .header-output .header-output-span {
   padding: 3px;
   background-color: forestgreen;
   color: #d7d6d6;
-  font-size: 30px;
+  font-size: 50px;
   text-shadow: 1px 1px 2px black;
   border: 2px solid black;
 }
@@ -85,22 +91,22 @@ body .container .work-with-sqlite {
   background-color: #f57820;
 }
 body .container .work-with-sqlite .panel-create-table {
-  height: 50px;
+  height: 70px;
   background-color: forestgreen;
   border: 3px solid black;
 }
 body .container .work-with-sqlite .panel-delete-table {
-  height: 50px;
+  height: 70px;
   background-color: #3a3afd;
   border: 3px solid black;
 }
 body .container .work-with-sqlite .panel-clear-expenses {
-  height: 50px;
+  height: 70px;
   background-color: orangered;
   border: 3px solid black;
 }
 body .container .work-with-sqlite .panel-clear-income {
-  height: 50px;
+  height: 70px;
   background-color: blueviolet;
   border: 3px solid black;
 }
@@ -140,6 +146,10 @@ body .container .main-panel .shopping-panel .shopping-input-panel .shopping-inpu
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form {
   margin: 10px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-button {
+  height: 50px;
+  border-radius: 6px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .add-new-expense-category {
   width: 200px;
@@ -194,6 +204,8 @@ body .container .main-panel .statistics-panel .amount-per-month-output .statisti
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form .statistics-form-button {
   margin-top: 5px;
+  height: 50px;
+  border-radius: 6px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
   height: 276px;
