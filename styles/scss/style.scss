@@ -19,13 +19,13 @@ body {
   background-color: darkslategray;
 
   .container {
-    //height: 700px;
+    height: 1240px;
     width: 700px;
     margin: auto;
     //display: block;
     //height: 500px;
-    background-color: #3a3939;
-    //background-color: blue;
+    //background-color: #3a3939;
+    background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -141,7 +141,8 @@ body {
 
     .main-panel {
       left: -20%;
-      height: 400px;
+      //height: 400px;
+      height: 880px;
       width: 460px;
       //background-color: #fc4e4e;
       // центрирование блока внутри блока container
@@ -174,7 +175,8 @@ body {
       // панель ввода расходов
       .shopping-panel {
         text-align: center;
-        height: 400px;
+        //height: 400px;
+        height: 850px;
         //width: 400px;
         //background-color: #f57820;
 
@@ -215,7 +217,8 @@ body {
       // панель ввода доходов
       .income-panel {
         text-align: center;
-        height: 400px;
+        //height: 400px;
+        height: 850px;
         //background-color: darkolivegreen;
 
         .income-input-panel {
@@ -244,7 +247,8 @@ body {
 
       .statistics-panel {
         text-align: center;
-        height: 400px;
+        //height: 400px;
+        height: 850px;
         //background-color: orangered;
 
         .amount-per-month-output {
@@ -368,12 +372,13 @@ body {
     }
 
     .statistics-activation-panel {
-      margin: 10px;
+      //margin: 10px;
+      margin-bottom: 20px;
       text-align: center;
 
       .statistics-panel-button {
-        width: 300px;
-        height: 50px;
+        width: 350px;
+        height: 70px;
         background-color: forestgreen;
 
         .statistics-activation-panel-button-span {
@@ -391,6 +396,8 @@ body {
 
     //панель кнопки удалить добавить
     .button-add-delete-panel {
+      //margin-top: 450px;
+      background-color: yellowgreen;
       text-align: center;
       border: 3px solid black;
 

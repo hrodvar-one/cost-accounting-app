@@ -17,9 +17,10 @@ body {
   background-color: darkslategray;
 }
 body .container {
+  height: 1240px;
   width: 700px;
   margin: auto;
-  background-color: #3a3939;
+  background-color: blue;
 }
 body .container ::-webkit-scrollbar {
   width: 5px;
@@ -105,7 +106,7 @@ body .container .work-with-sqlite .panel-clear-income {
 }
 body .container .main-panel {
   left: -20%;
-  height: 400px;
+  height: 880px;
   width: 460px;
   margin: auto;
 }
@@ -124,7 +125,7 @@ body .container .main-panel .income-expenses-main-panel .income-main-panel .inco
 }
 body .container .main-panel .shopping-panel {
   text-align: center;
-  height: 400px;
+  height: 850px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
@@ -151,7 +152,7 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
 }
 body .container .main-panel .income-panel {
   text-align: center;
-  height: 400px;
+  height: 850px;
 }
 body .container .main-panel .income-panel .income-input-panel {
   text-align: left;
@@ -172,7 +173,7 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
 }
 body .container .main-panel .statistics-panel {
   text-align: center;
-  height: 400px;
+  height: 850px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output {
   height: 100%;
@@ -254,12 +255,12 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   color: red;
 }
 body .container .statistics-activation-panel {
-  margin: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 body .container .statistics-activation-panel .statistics-panel-button {
-  width: 300px;
-  height: 50px;
+  width: 350px;
+  height: 70px;
   background-color: forestgreen;
 }
 body .container .statistics-activation-panel .statistics-panel-button .statistics-activation-panel-button-span {
@@ -271,6 +272,7 @@ body .container .statistics-activation-panel .statistics-panel-button:hover {
   background-color: #2cb62c;
 }
 body .container .button-add-delete-panel {
+  background-color: yellowgreen;
   text-align: center;
   border: 3px solid black;
 }
