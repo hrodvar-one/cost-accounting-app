@@ -23,7 +23,7 @@ body {
   background-color: darkslategray;
 }
 body .container {
-  height: 1240px;
+  height: 900px;
   width: 700px;
   margin: auto;
   background-color: #3a3939;
@@ -112,8 +112,9 @@ body .container .work-with-sqlite .panel-clear-income {
 }
 body .container .main-panel {
   left: -20%;
-  height: 880px;
+  height: 550px;
   width: 460px;
+  background-color: #fc4e4e;
   margin: auto;
 }
 body .container .main-panel .income-expenses-main-panel {
@@ -131,7 +132,7 @@ body .container .main-panel .income-expenses-main-panel .income-main-panel .inco
 }
 body .container .main-panel .shopping-panel {
   text-align: center;
-  height: 850px;
+  height: 550px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
@@ -162,7 +163,7 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
 }
 body .container .main-panel .income-panel {
   text-align: center;
-  height: 850px;
+  height: 550px;
 }
 body .container .main-panel .income-panel .income-input-panel {
   text-align: left;
@@ -183,7 +184,7 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
 }
 body .container .main-panel .statistics-panel {
   text-align: center;
-  height: 850px;
+  height: 550px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output {
   height: 100%;
@@ -267,6 +268,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
   color: red;
 }
 body .container .statistics-activation-panel {
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 }

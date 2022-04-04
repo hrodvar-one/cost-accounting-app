@@ -25,7 +25,7 @@ body {
   background-color: darkslategray;
 
   .container {
-    height: 1240px;
+    height: 900px;
     width: 700px;
     margin: auto;
     //display: block;
@@ -149,10 +149,9 @@ body {
 
     .main-panel {
       left: -20%;
-      //height: 400px;
-      height: 880px;
+      height: 550px;
       width: 460px;
-      //background-color: #fc4e4e;
+      background-color: #fc4e4e;
       // центрирование блока внутри блока container
       margin: auto;
       //text-align: center;
@@ -184,7 +183,7 @@ body {
       .shopping-panel {
         text-align: center;
         //height: 400px;
-        height: 850px;
+        height: 550px;
         //width: 400px;
         //background-color: #f57820;
 
@@ -231,7 +230,7 @@ body {
       .income-panel {
         text-align: center;
         //height: 400px;
-        height: 850px;
+        height: 550px;
         //background-color: darkolivegreen;
 
         .income-input-panel {
@@ -261,7 +260,7 @@ body {
       .statistics-panel {
         text-align: center;
         //height: 400px;
-        height: 850px;
+        height: 550px;
         //background-color: orangered;
 
         .amount-per-month-output {
@@ -388,6 +387,7 @@ body {
 
     .statistics-activation-panel {
       //margin: 10px;
+      margin-top: 20px;
       margin-bottom: 20px;
       text-align: center;
 
