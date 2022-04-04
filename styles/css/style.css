@@ -15,10 +15,6 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-option {
-  height: 20px;
-}
-
 body {
   background-color: darkslategray;
 }
@@ -346,6 +342,16 @@ body .container .button-add-delete-panel .add-button:hover {
 }
 body .container .hidden {
   display: none;
+}
+
+@media screen and (min-width: 300px) {
+  .container {
+    height: 4000px;
+  }
+
+  .main-panel {
+    background-color: #2cb62c;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
