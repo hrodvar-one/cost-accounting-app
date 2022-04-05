@@ -22,7 +22,7 @@ body .container {
   height: 900px;
   width: 700px;
   margin: auto;
-  background-color: blue;
+  background-color: #3a3939;
 }
 body .container ::-webkit-scrollbar {
   width: 5px;
@@ -110,7 +110,6 @@ body .container .main-panel {
   left: -20%;
   height: 550px;
   width: 460px;
-  background-color: #fc4e4e;
   margin: auto;
 }
 body .container .main-panel .income-expenses-main-panel {
@@ -263,6 +262,11 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p .accordion-p-span {
   color: red;
 }
+@media (max-width: 1080px) {
+  body .container .main-panel {
+    height: 850px;
+  }
+}
 body .container .statistics-activation-panel {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -343,10 +347,10 @@ body .container .button-add-delete-panel .add-button:hover {
 body .container .hidden {
   display: none;
 }
-
 @media (max-width: 1080px) {
-  body {
-    background-color: #2cb62c;
+  body .container {
+    background-color: #bbbb04;
+    height: 1290px;
   }
 }
 

@@ -8,7 +8,6 @@
   padding-left: 8px;
   margin-bottom: 10px;
   height: 30px;
-  //font-family: inherit;
   color: #212529;
   background-color: #e0dfdf;
   background-clip: padding-box;
@@ -24,10 +23,8 @@ body {
     height: 900px;
     width: 700px;
     margin: auto;
-    //display: block;
-    //height: 500px;
-    //background-color: #3a3939;
-    background-color: blue;
+    background-color: #3a3939;
+    //background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -36,12 +33,8 @@ body {
     ::-webkit-scrollbar-track {
       //background-color: #ebebeb;
       background-color: #3a3939;
-      //-webkit-border-radius: 10px;
-      //border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
-      //-webkit-border-radius: 10px;
-      //border-radius: 10px;
       background: #6d6d6d;
     }
 
@@ -59,7 +52,6 @@ body {
             padding: 3px;
             background-color: forestgreen;
             color: #d7d6d6;
-            //font-size: 30px;
             font-size: 50px;
             text-shadow: 1px 1px 2px black;
             border: 2px solid black;
@@ -118,7 +110,6 @@ body {
       background-color: #f57820;
 
       .panel-create-table {
-        //height: 50px;
         height: 70px;
         background-color: forestgreen;
         border: 3px solid black;
@@ -147,10 +138,8 @@ body {
       left: -20%;
       height: 550px;
       width: 460px;
-      background-color: #fc4e4e;
-      // центрирование блока внутри блока container
+      //background-color: #fc4e4e;
       margin: auto;
-      //text-align: center;
 
       .income-expenses-main-panel {
         padding: 140px;
@@ -159,12 +148,10 @@ body {
         height: 400px;
 
         .income-main-panel {
-          //top: 50px;
 
           .income-main-panel-output {
 
             .income-main-panel-output-span {
-              //padding: 3px;
               background-color: forestgreen;
               color: #d7d6d6;
               font-size: 30px;
@@ -178,9 +165,7 @@ body {
       // панель ввода расходов
       .shopping-panel {
         text-align: center;
-        //height: 400px;
         height: 550px;
-        //width: 400px;
         //background-color: #f57820;
 
         .shopping-input-panel {
@@ -210,9 +195,6 @@ body {
             height: 200px;
             background-color: #fc4e4e;
             margin: 20px;
-
-            //.add-new-category-button {
-            //}
           }
 
             .buy-list-form-label {
@@ -225,7 +207,6 @@ body {
       // панель ввода доходов
       .income-panel {
         text-align: center;
-        //height: 400px;
         height: 550px;
         //background-color: darkolivegreen;
 
@@ -291,8 +272,6 @@ body {
           //панель аккордеон
           .accordion-body {
             height: 276px;
-            // панель прокрутки скрыта пока высота
-            // области не превысит высоту блока
             overflow-y:auto;
 
             .accordion-body-li {
@@ -381,6 +360,13 @@ body {
       }
     }
 
+    @media (max-width: 1080px) {
+      .main-panel {
+        //background-color: #2cb62c;
+        height: 850px;
+      }
+    }
+
     .statistics-activation-panel {
       //margin: 10px;
       margin-top: 20px;
@@ -441,14 +427,9 @@ body {
           font-size: 60px;
           color: red;
         }
-
-        //.minus:hover {
-        //  color: orangered;
-        //}
       }
 
       .delete-button-show:hover {
-        //border: 6px solid orangered;
         background-color: #4d4d4d;
       }
 
@@ -479,10 +460,6 @@ body {
           font-size: 60px;
           color: green;
         }
-
-        //.plus:hover {
-        //  color: #01d501;
-        //}
       }
 
       .add-button:hover {
@@ -496,13 +473,11 @@ body {
       display: none;
     }
   }
-}
 
-@media (max-width: 1080px) {
-  //.main-panel {
-  //  background-color: #2cb62c;
-  //}
-  body {
-    background-color: #2cb62c;
+  @media (max-width: 1080px) {
+    .container {
+      background-color: #bbbb04;
+      height: 1290px;
+    }
   }
 }
