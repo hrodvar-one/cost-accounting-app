@@ -26,8 +26,8 @@ body {
     margin: auto;
     //display: block;
     //height: 500px;
-    background-color: #3a3939;
-    //background-color: blue;
+    //background-color: #3a3939;
+    background-color: blue;
 
     // настройки полосы прокрутки
     ::-webkit-scrollbar {
@@ -498,12 +498,11 @@ body {
   }
 }
 
-@media screen and (min-width: 300px) {
-  .container {
-    height: 4000px;
-  }
-
-  .main-panel {
+@media (max-width: 1080px) {
+  //.main-panel {
+  //  background-color: #2cb62c;
+  //}
+  body {
     background-color: #2cb62c;
   }
 }

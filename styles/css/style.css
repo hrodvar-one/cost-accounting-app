@@ -22,7 +22,7 @@ body .container {
   height: 900px;
   width: 700px;
   margin: auto;
-  background-color: #3a3939;
+  background-color: blue;
 }
 body .container ::-webkit-scrollbar {
   width: 5px;
@@ -344,12 +344,8 @@ body .container .hidden {
   display: none;
 }
 
-@media screen and (min-width: 300px) {
-  .container {
-    height: 4000px;
-  }
-
-  .main-panel {
+@media (max-width: 1080px) {
+  body {
     background-color: #2cb62c;
   }
 }
