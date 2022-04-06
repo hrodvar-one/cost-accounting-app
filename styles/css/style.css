@@ -5,7 +5,6 @@
 
 .table-name_input {
   padding-left: 8px;
-  margin-bottom: 10px;
   height: 30px;
   color: #212529;
   background-color: #e0dfdf;
@@ -121,6 +120,7 @@ body .container .main-panel .shopping-panel .shopping-input-panel {
   text-align: left;
   height: 100%;
   width: 400px;
+  background-color: darkgreen;
   display: inline-block;
   border: 3px solid black;
 }
@@ -133,20 +133,39 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
   margin: 10px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-label-span {
+  font-size: x-large;
   text-shadow: 1px 1px 2px black;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-button {
   height: 50px;
   border-radius: 6px;
 }
-body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .add-new-expense-category {
-  width: 200px;
-  height: 200px;
-  background-color: #fc4e4e;
-  margin: 20px;
-}
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-label {
   color: #d7d6d6;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button {
+  height: 50px;
+  margin-left: 30px;
+  background-color: forestgreen;
+  border-radius: 6px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button::before {
+  content: "↻  ";
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .add-new-expense-category {
+  width: 400px;
+  height: 50px;
+  background-color: #fc4e4e;
+  margin: 10px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .add-new-expense-category .add-new-category-button {
+  height: 40px;
+  word-break: break-all;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .delete-new-expense-category {
+  width: 300px;
+  background-color: #fc4e4e;
+  margin: 10px;
 }
 @media (max-width: 1080px) {
   body .container .main-panel .shopping-panel {
@@ -174,6 +193,7 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
   margin: 10px;
 }
 body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-label-span {
+  font-size: x-large;
   text-shadow: 1px 1px 2px black;
 }
 body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-button {
@@ -209,6 +229,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .statisti
   margin: 10px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .statistics-per-month-form .statistics-form-label-span {
+  font-size: x-large;
   color: #d7d6d6;
   text-shadow: 1px 1px 2px black;
 }
