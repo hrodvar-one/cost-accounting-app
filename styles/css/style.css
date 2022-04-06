@@ -218,7 +218,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .statisti
   border-radius: 6px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
-  height: 276px;
+  height: 380px;
   overflow-y: auto;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion-body-li {
@@ -275,6 +275,11 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .panel .accordion-p .accordion-p-span {
   color: red;
+}
+@media (max-width: 1080px) {
+  body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
+    height: 680px;
+  }
 }
 @media (max-width: 1080px) {
   body .container .main-panel .statistics-panel {

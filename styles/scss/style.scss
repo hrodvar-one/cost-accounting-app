@@ -281,7 +281,8 @@ body {
 
           //панель аккордеон
           .accordion-body {
-            height: 276px;
+            //height: 276px;
+            height: 380px;
             overflow-y:auto;
 
             .accordion-body-li {
@@ -364,6 +365,12 @@ body {
                   color: red;
                 }
               }
+            }
+          }
+
+          @media (max-width: 1080px){
+            .accordion-body {
+              height: 680px;
             }
           }
         }
