@@ -167,6 +167,7 @@ function sendFormAddBuyList() {
 elBuyListForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormAddBuyList();
+	fullBalance()
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 

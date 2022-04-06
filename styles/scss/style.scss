@@ -141,32 +141,11 @@ body {
       //background-color: #fc4e4e;
       margin: auto;
 
-      .income-expenses-main-panel {
-        padding: 140px;
-        text-align: center;
-        background-color: #f57820;
-        height: 400px;
-
-        .income-main-panel {
-
-          .income-main-panel-output {
-
-            .income-main-panel-output-span {
-              background-color: forestgreen;
-              color: #d7d6d6;
-              font-size: 30px;
-              text-shadow: 1px 1px 2px black;
-              border: 2px solid black;
-            }
-          }
-        }
-      }
-
       // панель ввода расходов
       .shopping-panel {
         text-align: center;
         height: 550px;
-        //background-color: #f57820;
+        background-color: #f57820;
 
         .shopping-input-panel {
           text-align: left;
@@ -179,11 +158,16 @@ body {
           .shopping-input-panel-h3 {
             text-align: center;
             color: #d7d6d6;
+            text-shadow: 1px 1px 2px black;
           }
 
           .buy-list-form {
             //background-color: #01d501;
             margin: 10px;
+
+            .buy-list-form-label-span {
+              text-shadow: 1px 1px 2px black;
+            }
 
             .buy-list-form-button {
               height: 50px;
@@ -204,11 +188,18 @@ body {
         }
       }
 
+      @media (max-width: 1080px) {
+        .shopping-panel {
+          //background-color: #bbbb04;
+          height: 850px;
+        }
+      }
+
       // панель ввода доходов
       .income-panel {
         text-align: center;
         height: 550px;
-        //background-color: darkolivegreen;
+        background-color: darkolivegreen;
 
         .income-input-panel {
           text-align: left;
@@ -222,10 +213,20 @@ body {
           .income-input-panel-h3 {
             text-align: center;
             color: #d7d6d6;
+            text-shadow: 1px 1px 2px black;
           }
 
           .income-list-form {
             margin: 10px;
+
+            .income-list-form-label-span {
+              text-shadow: 1px 1px 2px black;
+            }
+
+            .income-list-form-button {
+              height: 50px;
+              border-radius: 6px;
+            }
 
             .income-list-form-label {
               color: #d7d6d6;
@@ -234,11 +235,18 @@ body {
         }
       }
 
+      @media (max-width: 1080px) {
+        .income-panel {
+          //background-color: #bbbb04;
+          height: 850px;
+        }
+      }
+
       .statistics-panel {
         text-align: center;
         //height: 400px;
         height: 550px;
-        //background-color: orangered;
+        background-color: orangered;
 
         .amount-per-month-output {
           height: 100%;
@@ -251,6 +259,7 @@ body {
           .statistics-panel-h3 {
             text-align: center;
             color: #d7d6d6;
+            text-shadow: 1px 1px 2px black;
           }
 
           .statistics-per-month-form {
@@ -259,6 +268,7 @@ body {
 
             .statistics-form-label-span {
               color: #d7d6d6;
+              text-shadow: 1px 1px 2px black;
             }
 
             .statistics-form-button {
@@ -356,6 +366,13 @@ body {
               }
             }
           }
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .statistics-panel {
+          //background-color: #bbbb04;
+          height: 850px;
         }
       }
     }
@@ -476,7 +493,7 @@ body {
 
   @media (max-width: 1080px) {
     .container {
-      background-color: #bbbb04;
+      //background-color: #bbbb04;
       height: 1290px;
     }
   }

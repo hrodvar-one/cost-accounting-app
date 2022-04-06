@@ -33,18 +33,6 @@
 		</button>
 	</aside>
 	<div class="main-panel">
-<!--		<div class="income-expenses-main-panel" id="income-expenses-main-panel">-->
-<!--			<div class="income-main-panel">-->
-<!--				<output class="income-main-panel-output" id="income-main-panel-output" readonly>-->
-<!--				<span class="income-main-panel-output-span">Доходы:</span>-->
-<!--				</output>-->
-<!--			</div>-->
-<!--			<div class="expenses-main-panel">-->
-<!--				<output class="expenses-main-panel" id="expenses-main-panel" readonly>-->
-<!--				Расходы:-->
-<!--				</output>-->
-<!--			</div>-->
-<!--		</div>-->
 		<!--	Панель настроек-->
 		<div class="hidden" id="work-with-sqlite">
 			<!--	Панель для создания таблиц в БД		-->
@@ -88,15 +76,23 @@
 			<div class="shopping-input-panel" id="shopping-input-panel">
 				<h3 class="shopping-input-panel-h3">Панель расходов</h3>
 				<form name="buy-list-form" class="buy-list-form" action="/php/add-buylist-in-table.php" method="post">
-					<label for="date" class="buy-list-form-label">Дата:</label><input type="date" class="table-name_input" name="date" id="date">
+					<label for="date" class="buy-list-form-label">
+						<span class="buy-list-form-label-span">Дата:</span>
+					</label><input type="date" class="table-name_input" name="date" id="date">
 					<br>
-					<label for="category" class="buy-list-form-label">Категория:</label>
+					<label for="category" class="buy-list-form-label">
+						<span class="buy-list-form-label-span">Категория:</span>
+					</label>
 					<select class="table-name_input" id="category" name="category">
 					</select>
 					<br>
-					<label for="title" class="buy-list-form-label">Название:</label><input type="text" class="table-name_input" name="title" id="title">
+					<label for="title" class="buy-list-form-label">
+						<span class="buy-list-form-label-span">Название:</span>
+					</label><input type="text" class="table-name_input" name="title" id="title">
 					<br>
-					<label for="price" class="buy-list-form-label">Цена:</label><input type="text" class="table-name_input" name="price" id="price">
+					<label for="price" class="buy-list-form-label">
+						<span class="buy-list-form-label-span">Цена:</span>
+					</label><input type="text" class="table-name_input" name="price" id="price">
 					<br>
 					<button type="submit" class="buy-list-form-button">Добавить расходы</button>
 					<br>
@@ -120,17 +116,25 @@
 			<div class="income-input-panel" id="income-input-panel">
 				<h3 class="income-input-panel-h3">Панель доходов</h3>
 				<form name="income-list-form" class="income-list-form" action="/php/add-income-in-db.php" method="post">
-					<label for="income-date" class="income-list-form-label">Дата:</label><input type="date" class="table-name_input" name="income-date" id="income-date">
+					<label for="income-date" class="income-list-form-label">
+						<span class="income-list-form-label-span">Дата:</span>
+					</label><input type="date" class="table-name_input" name="income-date" id="income-date">
 					<br>
-					<label for="income-category" class="income-list-form-label">Категория:</label>
+					<label for="income-category" class="income-list-form-label">
+						<span class="income-list-form-label-span">Категория:</span>
+					</label>
 					<select class="table-name_input" id="income-category" name="income-category">
 					</select>
 					<br>
-					<label for="income-title" class="income-list-form-label">Название:</label><input type="text" class="table-name_input" name="income-title" id="income-title">
+					<label for="income-title" class="income-list-form-label">
+						<span class="income-list-form-label-span">Название:</span>
+					</label><input type="text" class="table-name_input" name="income-title" id="income-title">
 					<br>
-					<label for="income-price" class="income-list-form-label">Сумма:</label><input type="text" class="table-name_input" name="income-price" id="income-price">
+					<label for="income-price" class="income-list-form-label">
+						<span class="income-list-form-label-span">Сумма:</span>
+					</label><input type="text" class="table-name_input" name="income-price" id="income-price">
 					<br>
-					<button type="submit">Добавить доходы</button>
+					<button type="submit" class="income-list-form-button">Добавить доходы</button>
 					<br>
 				</form>
 				<!--			<div id="result-add-purchase"></div>-->
@@ -151,7 +155,9 @@
 			<div class="amount-per-month-output">
 				<h3 class="statistics-panel-h3">Панель статистики</h3>
 				<form name="statistics-per-month-form" class="statistics-per-month-form" action="/php/request-amount-for-month.php" method="post">
-					<label for="month"><span class="statistics-form-label-span">Введите месяц:</span></label><input type="month" class="table-name_input" name="month" id="month">
+					<label for="month">
+						<span class="statistics-form-label-span">Введите месяц:</span>
+					</label><input type="month" class="table-name_input" name="month" id="month">
 					<br>
 					<button type="submit" class="statistics-form-button">Вывести сумму</button>
 				</form>
