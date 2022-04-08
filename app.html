@@ -99,7 +99,7 @@
 					</button>
 				</form>
 				<!--			<div id="result-add-purchase"></div>-->
-				<!--	Форма добавления категории-->
+				<!--	Форма добавления категории расходов-->
 				<form name="add-new-category" class="add-new-expense-category" action="/php/add-new-category-in-expenses-table.php" method="post">
 <!--					<button type="submit" class="add-new-category-button">Добавить категорию</button>-->
 					<label for="category-input"></label><input type="text" class="table-name_input" name="category-input" id="category-input">
@@ -140,15 +140,15 @@
 					</button>
 				</form>
 				<!--			<div id="result-add-purchase"></div>-->
-				<!--	Форма добавления категории-->
-				<form name="add-new-income-category" class="add-new-category" action="/php/add-new-category-in-income-table.php" method="post">
-					<button type="submit">Добавить <br>категорию</button>
+				<!--	Форма добавления категории доходов-->
+				<form name="add-new-income-category" class="add-new-income-category" action="/php/add-new-category-in-income-table.php" method="post">
 					<label for="category-income-input"></label><input type="text" class="table-name_input" name="category-income-input" id="category-income-input">
+					<button type="submit" class="add-new-income-category-button">Добавить категорию</button>
 				</form>
-				<form name="delete-new-income-category" class="delete-new-category" action="/php/delete-category-in-income-table.php" method="post">
-					<button type="submit">Удалить <br>категорию</button>
+				<form name="delete-new-income-category" class="delete-new-income-category" action="/php/delete-category-in-income-table.php" method="post">
 					<label for="category-income-delete-input"></label>
 					<select class="table-name_input" id="category-income-delete-input" name="category-income-delete-input"></select>
+					<button type="submit" class="delete-new-income-category-button">Удалить категорию</button>
 				</form>
 			</div>
 		</div>
