@@ -144,6 +144,10 @@ function sendFormAddBuyList() {
 	const category = encodeURIComponent(elCategory.value);
 	const title = encodeURIComponent(elTitle.value);
 	const price = encodeURIComponent(elPrice.value);
+	if (date === '' || category === '' || title === '' || price === '') {
+		alert('Введите данные');
+		return;
+	}
 	const formData = 'date=' + date + '&category=' + category + '&title=' + title + '&price=' + price;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURLBuyListForm);
@@ -167,7 +171,7 @@ function sendFormAddBuyList() {
 elBuyListForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	sendFormAddBuyList();
-	fullBalance()
+	fullBalance();
 });
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -303,7 +307,11 @@ elFormStat.addEventListener('submit', (e) => {
 function deleteCategory() {
 	const form = document.querySelector('[name="category-delete-input"]');
 	const category = encodeURIComponent(form.value);
-	console.log(category);
+	if (category === 'none') {
+		alert('Выберите категорию');
+		return;
+	}
+	// console.log(category);
 	const formData = 'category=' + category;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', '/php/delete-category-in-expenses-table.php');
@@ -336,6 +344,10 @@ const requestURLNewCategoryForm = elNewCategoryForm.action;
 // через Ajax запрос в php скрипт
 function sendFormAddNewCategory() {
 	const category = encodeURIComponent(elNewCategory.value);
+	if (category === '') {
+		alert('Введите категорию');
+		return;
+	}
 	const formData = 'category=' + category;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURLNewCategoryForm);
@@ -395,6 +407,14 @@ function requestCategoriesFromDB() {
 		document.querySelector('#category-delete-input').innerHTML = html.join('');
 	}
 	xhr.send();
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Функция сброса введённых данных в форму
+// добавления расходов
+function buyListFormReset() {
+	
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

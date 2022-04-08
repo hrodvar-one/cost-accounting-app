@@ -182,10 +182,15 @@ body {
 
             .buy-list-form-reset-button {
               height: 50px;
+              width: 80px;
               margin-left: 50px;
               //background-color: forestgreen;
-              background-color: #fc5113;
+              background-color: red;
               border-radius: 6px;
+
+              .buy-list-form-reset-button-span {
+                color: #d7d6d6;
+              }
 
               &::before {
                 content: '\21BB   ';
@@ -336,7 +341,7 @@ body {
           //панель аккордеон
           .accordion-body {
             //height: 276px;
-            height: 380px;
+            height: 388px;
             overflow-y:auto;
 
             .accordion-body-li {
@@ -424,7 +429,7 @@ body {
 
           @media (max-width: 1080px){
             .accordion-body {
-              height: 680px;
+              height: 688px;
             }
           }
         }

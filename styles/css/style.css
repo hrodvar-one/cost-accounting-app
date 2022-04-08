@@ -146,9 +146,13 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button {
   height: 50px;
+  width: 80px;
   margin-left: 50px;
-  background-color: #fc5113;
+  background-color: red;
   border-radius: 6px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button .buy-list-form-reset-button-span {
+  color: #d7d6d6;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button::before {
   content: "↻  ";
@@ -245,7 +249,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .statisti
   border-radius: 6px;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
-  height: 380px;
+  height: 388px;
   overflow-y: auto;
 }
 body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body .accordion-body-li {
@@ -305,7 +309,7 @@ body .container .main-panel .statistics-panel .amount-per-month-output .accordio
 }
 @media (max-width: 1080px) {
   body .container .main-panel .statistics-panel .amount-per-month-output .accordion-body {
-    height: 680px;
+    height: 688px;
   }
 }
 @media (max-width: 1080px) {
