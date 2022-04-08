@@ -171,6 +171,7 @@ body {
             }
 
             .buy-list-form-button {
+              margin-top: 15px;
               height: 50px;
               border-radius: 6px;
             }
@@ -181,8 +182,9 @@ body {
 
             .buy-list-form-reset-button {
               height: 50px;
-              margin-left: 30px;
-              background-color: forestgreen;
+              margin-left: 50px;
+              //background-color: forestgreen;
+              background-color: #fc5113;
               border-radius: 6px;
 
               &::before {
@@ -192,25 +194,33 @@ body {
           }
 
           .add-new-expense-category {
-            width: 400px;
+            width: 370px;
             height: 50px;
-            background-color: #fc4e4e;
-            margin: 10px;
-
-            input {
-              //margin-top: 5px;
-            }
+            //background-color: #fc4e4e;
+            margin-top: 50px;
+            margin-left: 10px;
 
             .add-new-category-button {
-              height: 40px;
+              margin-left: 20px;
+              //height: 40px;
+              height: 50px;
               word-break: break-all;
             }
           }
 
           .delete-new-expense-category {
-            width: 300px;
-            background-color: #fc4e4e;
-            margin: 10px;
+            width: 370px;
+            //background-color: #fc4e4e;
+            margin-left: 10px;
+            margin-top: 30px;
+            //margin: 10px;
+
+            .delete-new-category-button {
+              margin-left: 20px;
+              //height: 40px;
+              height: 50px;
+              //word-break: break-all;
+            }
           }
 
           //  .buy-list-form-label {

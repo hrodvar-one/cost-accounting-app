@@ -137,6 +137,7 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
   text-shadow: 1px 1px 2px black;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-button {
+  margin-top: 15px;
   height: 50px;
   border-radius: 6px;
 }
@@ -145,27 +146,32 @@ body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button {
   height: 50px;
-  margin-left: 30px;
-  background-color: forestgreen;
+  margin-left: 50px;
+  background-color: #fc5113;
   border-radius: 6px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .buy-list-form .buy-list-form-reset-button::before {
   content: "↻  ";
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .add-new-expense-category {
-  width: 400px;
+  width: 370px;
   height: 50px;
-  background-color: #fc4e4e;
-  margin: 10px;
+  margin-top: 50px;
+  margin-left: 10px;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .add-new-expense-category .add-new-category-button {
-  height: 40px;
+  margin-left: 20px;
+  height: 50px;
   word-break: break-all;
 }
 body .container .main-panel .shopping-panel .shopping-input-panel .delete-new-expense-category {
-  width: 300px;
-  background-color: #fc4e4e;
-  margin: 10px;
+  width: 370px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+body .container .main-panel .shopping-panel .shopping-input-panel .delete-new-expense-category .delete-new-category-button {
+  margin-left: 20px;
+  height: 50px;
 }
 @media (max-width: 1080px) {
   body .container .main-panel .shopping-panel {
