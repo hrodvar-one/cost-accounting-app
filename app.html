@@ -94,7 +94,7 @@
 						<span class="buy-list-form-label-span">Цена:</span>
 					</label><input type="text" class="table-name_input" name="price" id="price">
 					<button type="submit" class="buy-list-form-button">Добавить расходы</button>
-					<button type="reset" class="buy-list-form-reset-button">
+					<button type="button" class="buy-list-form-reset-button" onclick="buyListFormReset()">
 						<span class="buy-list-form-reset-button-span">Сброс</span>
 					</button>
 				</form>
@@ -134,9 +134,10 @@
 					<label for="income-price" class="income-list-form-label">
 						<span class="income-list-form-label-span">Сумма:</span>
 					</label><input type="text" class="table-name_input" name="income-price" id="income-price">
-					<br>
 					<button type="submit" class="income-list-form-button">Добавить доходы</button>
-					<br>
+					<button type="button" class="income-list-form-reset-button" onclick="incomeListFormReset()">
+						<span class="income-list-form-reset-button-span">Сброс</span>
+					</button>
 				</form>
 				<!--			<div id="result-add-purchase"></div>-->
 				<!--	Форма добавления категории-->

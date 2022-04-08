@@ -414,8 +414,16 @@ function requestCategoriesFromDB() {
 // Функция сброса введённых данных в форму
 // добавления расходов
 function buyListFormReset() {
-	
+	let date = document.getElementById("date");
+	date.value = 'none';
+	let category = document.getElementById("category");
+	category.value = '';
+	let title = document.getElementById("title");
+	title.value = '';
+	let price = document.getElementById("price");
+	price.value = '';
 }
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Панель доходов
@@ -541,6 +549,21 @@ function requestCategoriesIncomeFromDB() {
 	xhr.send();
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Функция сброса введённых данных в форму
+// добавления доходов
+function incomeListFormReset() {
+	let date = document.getElementById("income-date");
+	date.value = 'none';
+	let category = document.getElementById("income-category");
+	category.value = '';
+	let title = document.getElementById("income-title");
+	title.value = '';
+	let price = document.getElementById("income-price");
+	price.value = '';
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // Функция вывода баланса с учётом расходов и
 // доходов

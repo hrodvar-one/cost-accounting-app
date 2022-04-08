@@ -213,6 +213,19 @@ body .container .main-panel .income-panel .income-input-panel .income-list-form 
 body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-label {
   color: #d7d6d6;
 }
+body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-reset-button {
+  height: 50px;
+  width: 80px;
+  margin-left: 50px;
+  background-color: red;
+  border-radius: 6px;
+}
+body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-reset-button .income-list-form-reset-button-span {
+  color: #d7d6d6;
+}
+body .container .main-panel .income-panel .income-input-panel .income-list-form .income-list-form-reset-button::before {
+  content: "↻  ";
+}
 @media (max-width: 1080px) {
   body .container .main-panel .income-panel {
     height: 850px;

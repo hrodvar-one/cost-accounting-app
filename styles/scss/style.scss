@@ -289,6 +289,23 @@ body {
             .income-list-form-label {
               color: #d7d6d6;
             }
+
+            .income-list-form-reset-button {
+              height: 50px;
+              width: 80px;
+              margin-left: 50px;
+              //background-color: forestgreen;
+              background-color: red;
+              border-radius: 6px;
+
+              .income-list-form-reset-button-span {
+                color: #d7d6d6;
+              }
+
+              &::before {
+                content: '\21BB   ';
+              }
+            }
           }
         }
       }
