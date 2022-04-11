@@ -19,6 +19,10 @@ const requestURL = elForm.action;
 
 function sendForm() {
 	const tableName = encodeURIComponent(elTableName.value);
+	if (tableName === '') {
+		alert('Введите название таблицы');
+		return;
+	}
 	const formData = 'table-name=' + tableName;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURL);
@@ -51,6 +55,10 @@ const requestURLDelete = elFormDelete.action;
 
 function sendFormDelete() {
 	const tableName = encodeURIComponent(elTableNameDelete.value);
+	if (tableName === '') {
+		alert('Введите название таблицы');
+		return;
+	}
 	const formData = 'table-name-delete=' + tableName;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', requestURLDelete);
@@ -340,7 +348,7 @@ const elNewCategory = document.querySelector('[name="category-input"]');
 // const elResultAddPurchase = document.querySelector('#result-add-purchase');
 const requestURLNewCategoryForm = elNewCategoryForm.action;
 
-// Функция передачи значения формы Добавить категорию
+// Функция передачи значения формы Добавить категорию расходов
 // через Ajax запрос в php скрипт
 function sendFormAddNewCategory() {
 	const category = encodeURIComponent(elNewCategory.value);
@@ -435,6 +443,10 @@ function sendFormAddIncomeList() {
 	const category = encodeURIComponent(document.querySelector('[name="income-category"]').value);
 	const title = encodeURIComponent(document.querySelector('[name="income-title"]').value);
 	const price = encodeURIComponent(document.querySelector('[name="income-price"]').value);
+	if (date === '' || category === '' || title === '' || price === '') {
+		alert('Введите данные');
+		return;
+	}
 	const formData = 'date=' + date + '&category=' + category + '&title=' + title + '&price=' + price;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', document.querySelector('[name="income-list-form"]').action);
@@ -465,6 +477,10 @@ document.querySelector('[name="income-list-form"]').addEventListener('submit', (
 //
 function sendFormAddNewIncomeCategory() {
 	const category = encodeURIComponent(document.querySelector('[name="category-income-input"]').value);
+	if (category === '') {
+		alert('Введите категорию');
+		return;
+	}
 	const formData = 'category=' + category;
 	const xhr = new XMLHttpRequest();
 	xhr.open('POST', document.querySelector('[name="add-new-income-category"]').action);
@@ -494,6 +510,10 @@ document.querySelector('[name="add-new-income-category"]').addEventListener('sub
 function deleteIncomeCategory() {
 	const form = document.querySelector('[name="category-income-delete-input"]');
 	const category = encodeURIComponent(form.value);
+	if (category === 'none') {
+		alert('Выберите категорию');
+		return;
+	}
 	console.log(category);
 	const formData = 'category=' + category;
 	const xhr = new XMLHttpRequest();
